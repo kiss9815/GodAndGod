@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager pager;
     MainPagerAdapter pagerAdapter;
     Fragment f;
-
+    private backpress backPressCloseHandler;
     boolean isEditClicked = false;
 
     @Override
@@ -135,8 +135,16 @@ public class MainActivity extends AppCompatActivity {
                 .replace(R.id.container, f)
                 .commit();
 
-    }
 
+
+        backPressCloseHandler = new backpress(this);
+    }
+    @Override
+    public void onBackPressed() {
+
+        backPressCloseHandler.onBackPressed();
+
+    }
 
 
 
