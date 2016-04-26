@@ -15,14 +15,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:singleLine="true"
-        android:id="@+id/editText"
+        android:id="@+id/editSearch"
         android:layout_toRightOf="@+id/textView"/>
 
-    <ImageView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/buttonChat"
         android:layout_alignParentRight="true"
-        android:src="@android:drawable/ic_input_add"
+        android:background="@android:drawable/ic_input_add"
         />
 
 </RelativeLayout>
