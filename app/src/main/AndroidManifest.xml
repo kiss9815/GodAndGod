@@ -22,7 +22,12 @@
         <activity
             android:name=".Main.Login.LoginActivity"
             android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Main.Login.LoginHelp"
+            android:label="@string/title_activity_login_help"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
     </application>
 
 </manifest>
