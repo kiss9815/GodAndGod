@@ -11,14 +11,16 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Main.MainActivity"
-            android:launchMode="singleTask"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Main.Search.SearchActivity" />
         <activity
             android:name=".Login.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Login.LoginHelpActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Login.SplashActivity">
@@ -27,8 +29,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <activity
+            android:name=".Login.SignInActivity"
+            android:label="@string/title_activity_sign_in"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
