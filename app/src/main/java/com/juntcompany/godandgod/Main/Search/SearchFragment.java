@@ -1,4 +1,4 @@
-package com.juntcompany.godandgod.Main.Main.Live;
+package com.juntcompany.godandgod.Main.Search;
 
 
 import android.os.Bundle;
@@ -16,10 +16,10 @@ import com.juntcompany.godandgod.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LiveFragment extends Fragment {
+public class SearchFragment extends Fragment {
 
 
-    public LiveFragment() {
+    public SearchFragment() {
         // Required empty public constructor
         setHasOptionsMenu(true);
     }
@@ -29,25 +29,32 @@ public class LiveFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_live, container, false);
-    }
+        View view = inflater.inflate(R.layout.fragment_search, container, false);
 
+        return view;
+}
     ActionBar actionBar;
     @Override
     public void onResume() {
         super.onResume();
-        actionBar = ((MainActivity) getActivity()).getSupportActionBar();
-
+         actionBar = ((MainActivity) getActivity()).getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
         View view = actionBar.getCustomView();
         Button btn = (Button)view.findViewById(R.id.buttonChat);
         btn.setVisibility(View.GONE);
 
-        Button buttonStar = new Button(getContext());
-        buttonStar.setBackgroundResource(android.R.drawable.btn_star);
-
 
     }
 
-
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home: {
+                getFragmentManager().popBackStack();
+                actionBar.setDisplayHomeAsUpEnabled(false);
+                break;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

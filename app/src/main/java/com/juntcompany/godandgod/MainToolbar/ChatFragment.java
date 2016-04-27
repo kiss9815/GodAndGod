@@ -1,4 +1,4 @@
-package com.juntcompany.godandgod.Main.Main.MainToolbar;
+package com.juntcompany.godandgod.MainToolbar;
 
 
 import android.os.Bundle;
@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.juntcompany.godandgod.Main.MainPagerAdapter;
 import com.juntcompany.godandgod.R;
 
 /**

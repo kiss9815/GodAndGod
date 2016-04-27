@@ -1,6 +1,5 @@
 package com.juntcompany.godandgod.Main;
 
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -10,22 +9,20 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import com.juntcompany.godandgod.Main.Login.LoginActivity;
-import com.juntcompany.godandgod.Main.Main.Friend.FriendFragment;
-import com.juntcompany.godandgod.Main.Main.Home.HomeFragment;
-import com.juntcompany.godandgod.Main.Main.Live.LiveFragment;
-import com.juntcompany.godandgod.Main.Main.Love.LoveFragment;
-import com.juntcompany.godandgod.Main.Main.MainToolbar.ChatFragment;
-import com.juntcompany.godandgod.Main.Main.Search.SearchFragment;
-import com.juntcompany.godandgod.Main.Main.Video.VideoFragment;
+import com.juntcompany.godandgod.Login.LoginActivity;
+import com.juntcompany.godandgod.Main.Friend.FriendFragment;
+import com.juntcompany.godandgod.Main.Home.HomeFragment;
+import com.juntcompany.godandgod.Main.Live.LiveFragment;
+import com.juntcompany.godandgod.Main.Love.LoveFragment;
+import com.juntcompany.godandgod.MainToolbar.ChatFragment;
+import com.juntcompany.godandgod.Main.Search.SearchFragment;
+import com.juntcompany.godandgod.Main.Video.VideoFragment;
 import com.juntcompany.godandgod.R;
 
 public class MainActivity extends AppCompatActivity {

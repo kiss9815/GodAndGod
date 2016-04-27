@@ -1,4 +1,4 @@
-package com.juntcompany.godandgod.Main.Main.Video;
+package com.juntcompany.godandgod.Main.Video;
 
 
 import android.os.Bundle;

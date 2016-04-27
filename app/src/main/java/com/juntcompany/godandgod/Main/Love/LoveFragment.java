@@ -1,4 +1,4 @@
-package com.juntcompany.godandgod.Main.Main.Home;
+package com.juntcompany.godandgod.Main.Love;
 
 
 import android.os.Bundle;
@@ -15,10 +15,10 @@ import com.juntcompany.godandgod.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
+public class LoveFragment extends Fragment {
 
 
-    public HomeFragment() {
+    public LoveFragment() {
         // Required empty public constructor
     }
 
@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_love, container, false);
     }
 
     ActionBar actionBar;

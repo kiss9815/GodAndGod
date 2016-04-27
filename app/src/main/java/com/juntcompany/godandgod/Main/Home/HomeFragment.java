@@ -1,7 +1,6 @@
-package com.juntcompany.godandgod.Main.Main.Friend;
+package com.juntcompany.godandgod.Main.Home;
 
 
-import android.app.Notification;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
@@ -16,10 +15,10 @@ import com.juntcompany.godandgod.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FriendFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
 
-    public FriendFragment() {
+    public HomeFragment() {
         // Required empty public constructor
     }
 
@@ -28,10 +27,11 @@ public class FriendFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_friend, container, false);
+        return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
     ActionBar actionBar;
+
     @Override
     public void onResume() {
         super.onResume();
@@ -40,8 +40,6 @@ public class FriendFragment extends Fragment {
         View view = actionBar.getCustomView();
         Button btn = (Button)view.findViewById(R.id.buttonChat);
         btn.setVisibility(View.VISIBLE);
-
-
 
 
     }

@@ -1,14 +1,10 @@
-package com.juntcompany.godandgod.Main.Main.MainToolbar;
+package com.juntcompany.godandgod.MainToolbar;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.juntcompany.godandgod.Main.Main.Friend.FriendFragment;
-import com.juntcompany.godandgod.Main.Main.Home.HomeFragment;
-import com.juntcompany.godandgod.Main.Main.Live.LiveFragment;
-import com.juntcompany.godandgod.Main.Main.Love.LoveFragment;
-import com.juntcompany.godandgod.Main.Main.Video.VideoFragment;
+import com.juntcompany.godandgod.Main.Home.HomeFragment;
 
 /**
  * Created by EOM on 2016-04-25.

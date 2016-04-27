@@ -1,4 +1,4 @@
-package com.juntcompany.godandgod.Main.Main.Love;
+package com.juntcompany.godandgod.Main.Friend;
 
 
 import android.os.Bundle;
@@ -15,10 +15,10 @@ import com.juntcompany.godandgod.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LoveFragment extends Fragment {
+public class FriendFragment extends Fragment {
 
 
-    public LoveFragment() {
+    public FriendFragment() {
         // Required empty public constructor
     }
 
@@ -27,11 +27,10 @@ public class LoveFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_love, container, false);
+        return inflater.inflate(R.layout.fragment_friend, container, false);
     }
 
     ActionBar actionBar;
-
     @Override
     public void onResume() {
         super.onResume();
@@ -40,6 +39,8 @@ public class LoveFragment extends Fragment {
         View view = actionBar.getCustomView();
         Button btn = (Button)view.findViewById(R.id.buttonChat);
         btn.setVisibility(View.VISIBLE);
+
+
 
 
     }
