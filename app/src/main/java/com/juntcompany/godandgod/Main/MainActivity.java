@@ -1,6 +1,7 @@
 package com.juntcompany.godandgod.Main;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
@@ -16,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.juntcompany.godandgod.Main.Login.LoginActivity;
 import com.juntcompany.godandgod.Main.Main.Friend.FriendFragment;
 import com.juntcompany.godandgod.Main.Main.Home.HomeFragment;
 import com.juntcompany.godandgod.Main.Main.Live.LiveFragment;
@@ -26,14 +29,14 @@ import com.juntcompany.godandgod.Main.Main.Video.VideoFragment;
 import com.juntcompany.godandgod.R;
 
 public class MainActivity extends AppCompatActivity {
-
+    Intent intent;
     TabLayout tabLayout;
     ViewPager pager;
     MainPagerAdapter pagerAdapter;
     Fragment f;
     private backpress backPressCloseHandler;
     boolean isEditClicked = false;
-
+    public static boolean loginStatus = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -145,7 +148,56 @@ public class MainActivity extends AppCompatActivity {
         backPressCloseHandler.onBackPressed();
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        // 메뉴버튼이 처음 눌러졌을 때 실행되는 콜백메서드
+        // 메뉴버튼을 눌렀을 때 보여줄 menu 에 대해서 정의
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        Log.d("test", "onCreateOptionsMenu - 최초 메뉴키를 눌렀을 때 호출됨");
+        return true;
+    }
 
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        Log.d("test", "onPrepareOptionsMenu - 옵션메뉴가 " +
+                "화면에 보여질때 마다 호출됨");
+        if(loginStatus){
+            menu.getItem(0).setTitle("로그아웃");
+        }else{
+            menu.getItem(0).setTitle("로그인");
+        }
+
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        // 메뉴의 항목을 선택(클릭)했을 때 호출되는 콜백메서드
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        Log.d("test", "onOptionsItemSelected - 메뉴항목을 클릭했을 때 호출됨");
+
+        int id = item.getItemId();
+
+
+        switch(id) {
+            case R.id.menuLogin:
+                if(!loginStatus)
+                {
+                    intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(intent);
+                }
+                else
+                {
+                    loginStatus = false;
+                }
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 
 }
