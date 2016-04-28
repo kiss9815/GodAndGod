@@ -1,10 +1,12 @@
 package com.juntcompany.godandgod.Login.SignIn;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,13 +27,14 @@ public class SignInPolicyFragment extends Fragment {
     }
 
 
+    private static final String Title = "약관 및 개인정보";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_sign_in_policy, container, false);
         TextView ttn = (TextView) view.findViewById(R.id.nextEmailPhone);//다음페이지
-        TextView ttb = (TextView) view.findViewById(R.id.backLoginPage);//이전페이지
         SignInActivity.fNum = 1;
         ttn.setOnClickListener(new View.OnClickListener() {//다음페이지로
             @Override
@@ -42,20 +45,19 @@ public class SignInPolicyFragment extends Fragment {
                 ft.commit();    //어떤 버튼이 눌리던 백스택에 해당 프래그먼트가 저장됨
             }
         });
-
+        ((SignInActivity) getActivity()).setActionTitle(Title);
+        ((SignInActivity) getActivity()).showActionBar();
         return view;
     }
 
-    private static final String Title = "약관 및 개인정보";
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        ActionBar actionBar = ((SignInActivity) getActivity()).getSupportActionBar();
-        View view = actionBar.getCustomView();
-        TextView textView = (TextView) view.findViewById(R.id.toolbar_text);
-        textView.setText(Title);
-
-    }
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        ActionBar actionBar = ((SignInActivity) getActivity()).getSupportActionBar();
+//        View view = actionBar.getCustomView();
+//        TextView textView = (TextView) view.findViewById(R.id.toolbar_text);
+//        textView.setText(Title);
+//
+//    }
 
 }
