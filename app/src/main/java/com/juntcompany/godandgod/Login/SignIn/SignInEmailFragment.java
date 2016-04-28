@@ -23,9 +23,9 @@ public class SignInEmailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view =inflater.inflate(R.layout.fragment_sign_in_policy, container, false);
+        View view =inflater.inflate(R.layout.fragment_sign_in_email, container, false);
         Button btn = (Button)view.findViewById(R.id.buttonNext);
-
+        SignInActivity.fNum = 3;
 //        btn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -52,5 +52,6 @@ public class SignInEmailFragment extends Fragment {
         textView.setText(Title);
 
     }
+
 
 }

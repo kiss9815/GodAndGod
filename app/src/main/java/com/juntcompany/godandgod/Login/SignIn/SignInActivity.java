@@ -1,9 +1,7 @@
 package com.juntcompany.godandgod.Login.SignIn;
 
-import android.content.Intent;
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
@@ -18,17 +16,20 @@ import android.widget.Toast;
 import com.juntcompany.godandgod.R;
 
 public class SignInActivity extends AppCompatActivity {
-    public static int fNum = 0;//count 대체한 프래그먼트 넘버
+    public static Activity signActvity;
+    public static int fNum = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+        signActvity = SignInActivity.this;
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            ////
+        ////
         ActionBar actionBar = getSupportActionBar();
 //        actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowTitleEnabled(false);
@@ -36,37 +37,39 @@ public class SignInActivity extends AppCompatActivity {
         View view = getLayoutInflater().inflate(R.layout.toolbar_sign_in, null);
         actionBar.setCustomView(view, new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
 
-        Fragment f = new SignInPolicyFragment();//첫번째 프래그먼트를 설정
-        SignInActivity.fNum = -1;//첫 프래그먼트에서 종료하기 위해 설정
+        Fragment f = new SignChooseFragment();//첫번째 프래그먼트를 설정
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.container, f);
         ft.commit();
 
 
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         FragmentTransaction ft;
         switch (item.getItemId()) {
             case android.R.id.home:
                 switch (fNum) {
-                    case -1:
-                        finish();
-                        break;
-                    case 0:
-                        SignInPolicyFragment policy = new SignInPolicyFragment();
-                        SignInActivity.fNum--;
+                    case 1:
+                        SignChooseFragment choose = new SignChooseFragment();
+                        SignInActivity.fNum = 0;
                         ft = getSupportFragmentManager().beginTransaction();
-                        ft.replace(R.id.container, policy);
-                        ft.addToBackStack("" + SignInActivity.fNum);
+                        ft.replace(R.id.container, choose);
                         ft.commit();
                         break;
-                    case 1:
+                    case 2:
+                        SignInPolicyFragment policy = new SignInPolicyFragment();
+                        SignInActivity.fNum = 1;
+                        ft = getSupportFragmentManager().beginTransaction();
+                        ft.replace(R.id.container, policy);
+                        ft.commit();
+                        break;
+                    case 3:
                         SignInPhoneFragment phone = new SignInPhoneFragment();
-                        SignInActivity.fNum--;
+                        SignInActivity.fNum = 2;
                         ft = getSupportFragmentManager().beginTransaction();
                         ft.replace(R.id.container, phone);
-                        ft.addToBackStack("" + SignInActivity.fNum);
                         ft.commit();
                         break;
                 }
@@ -77,4 +80,33 @@ public class SignInActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        FragmentTransaction ft;
+        switch (fNum) {
+            case 1:
+                SignChooseFragment choose = new SignChooseFragment();
+                SignInActivity.fNum = 0;
+                ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.container, choose);
+                ft.commit();
+                break;
+            case 2:
+                SignInPolicyFragment policy = new SignInPolicyFragment();
+                SignInActivity.fNum = 1;
+                ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.container, policy);
+                ft.commit();
+                break;
+            case 3:
+                SignInPhoneFragment phone = new SignInPhoneFragment();
+                SignInActivity.fNum = 2;
+                ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.container, phone);
+                ft.commit();
+                break;
+        }
+
+    }
 }
+
