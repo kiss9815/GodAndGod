@@ -56,6 +56,7 @@ public class SignInActivity extends AppCompatActivity {
             case android.R.id.home:
                 switch (fNum) {
                     case 1:
+                        getSupportActionBar().hide();
                         SignChooseFragment choose = new SignChooseFragment();
                         SignInActivity.fNum = 0;
                         ft = getSupportFragmentManager().beginTransaction();
@@ -76,6 +77,44 @@ public class SignInActivity extends AppCompatActivity {
                         ft.replace(R.id.container, phone);
                         ft.commit();
                         break;
+                    case 4:
+                        SignInEmailFragment email = new SignInEmailFragment();
+                        SignInActivity.fNum = 3;
+                        ft = getSupportFragmentManager().beginTransaction();
+                        ft.replace(R.id.container, email);
+                        ft.commit();
+                        break;
+                    case 5:
+                        SignNameFragment name = new SignNameFragment();
+                        SignInActivity.fNum = 4;
+                        ft = getSupportFragmentManager().beginTransaction();
+                        ft.replace(R.id.container, name);
+                        ft.commit();
+                        break;
+                    case 6:
+                        SignBirthFragment birth = new SignBirthFragment();
+                        SignInActivity.fNum = 5;
+                        ft = getSupportFragmentManager().beginTransaction();
+                        ft.replace(R.id.container, birth);
+                        ft.commit();
+                        break;
+                    case 7:
+                        SignPasswordFragment pw = new SignPasswordFragment();
+                        SignInActivity.fNum = 6;
+                        ft = getSupportFragmentManager().beginTransaction();
+                        ft.replace(R.id.container, pw);
+                        ft.commit();
+                        break;
+                    case 8:
+                        SignReligionFragment religion = new SignReligionFragment();
+                        SignInActivity.fNum = 7;
+                        ft = getSupportFragmentManager().beginTransaction();
+                        ft.replace(R.id.container, religion);
+                        ft.commit();
+                        break;
+                    default:
+                        SignInActivity.signActvity.finish();
+                        break;
                 }
                 return true;
 
@@ -89,6 +128,7 @@ public class SignInActivity extends AppCompatActivity {
         FragmentTransaction ft;
         switch (fNum) {
             case 1:
+                getSupportActionBar().hide();
                 SignChooseFragment choose = new SignChooseFragment();
                 SignInActivity.fNum = 0;
                 ft = getSupportFragmentManager().beginTransaction();

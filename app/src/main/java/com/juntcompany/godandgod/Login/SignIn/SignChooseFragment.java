@@ -38,7 +38,6 @@ public class SignChooseFragment extends Fragment {
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, f);
                 ft.addToBackStack("" + SignInActivity.fNum);
-                Toast.makeText(getContext(), String.valueOf(SignInActivity.fNum), Toast.LENGTH_SHORT).show();
                 ft.commit();    //어떤 버튼이 눌리던 백스택에 해당 프래그먼트가 저장됨
             }
         });
