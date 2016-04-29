@@ -11,9 +11,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 import com.juntcompany.godandgod.Login.LoginActivity;
 import com.juntcompany.godandgod.Main.MainActivity;
+import com.juntcompany.godandgod.Manager.PropertyManager;
 import com.juntcompany.godandgod.R;
 
 public class SignInGenderFragment extends Fragment {
@@ -26,12 +32,47 @@ public class SignInGenderFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view =inflater.inflate(R.layout.fragment_sign_in_religion, container, false);
+        final View view =inflater.inflate(R.layout.fragment_sign_in_gender, container, false);
         Button btn = (Button)view.findViewById(R.id.buttonNext);
+        TextView male = (TextView)view.findViewById(R.id.male);
+        TextView female = (TextView)view.findViewById(R.id.female);
         SignInActivity.fNum = 8;
-        btn.setOnClickListener(new View.OnClickListener() {
+        male.setOnClickListener(new View.OnClickListener() {
+            RadioButton malecheck = (RadioButton) view.findViewById(R.id.maleCheck);
             @Override
             public void onClick(View v) {
+                malecheck.setChecked(true);
+                SignInActivity.male = 1;
+                SignInActivity.female = 0;
+            }
+        });
+        female.setOnClickListener(new View.OnClickListener() {
+            RadioButton femalecheck = (RadioButton) view.findViewById(R.id.femaleCheck);
+            @Override
+            public void onClick(View v) {
+                femalecheck.setChecked(true);
+                SignInActivity.male = 0;
+                SignInActivity.female = 1;
+            }
+        });
+
+
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            RadioButton malecheck = (RadioButton) view.findViewById(R.id.maleCheck);
+            RadioButton femalecheck = (RadioButton) view.findViewById(R.id.femaleCheck);
+            @Override
+            public void onClick(View v) {
+                if(malecheck.isChecked())
+                {
+                    SignInActivity.male = 1;
+                    SignInActivity.female = 0;
+                }
+                else if(femalecheck.isChecked())
+                {
+                    SignInActivity.male = 0;
+                    SignInActivity.female = 1;
+                }
                 SignInFinalFragment f = new SignInFinalFragment();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, f);

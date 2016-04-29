@@ -24,6 +24,10 @@ public class SignInPasswordFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View view =inflater.inflate(R.layout.fragment_sign_in_password, container, false);
         Button btn = (Button)view.findViewById(R.id.buttonNext);
+        TextView pw = (TextView) view.findViewById(R.id.signInPwInput);
+        if(SignInActivity.pwInput != null) {
+            pw.setText(SignInActivity.pwInput);
+        }
         SignInActivity.fNum = 6;
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -18,11 +18,13 @@ import com.juntcompany.godandgod.R;
 public class SignInActivity extends AppCompatActivity {
     public static Activity signActvity;
     public static int fNum = 0;
-    public static int personalStatue;
+    public static int personalStatue = 0;
     public static int birthYear = 1980;
     public static int birthMonth = 1;
     public static int birthDate = 1;
-    public static String pwInput;
+    public static int male = 0;
+    public static int female = 0;
+    public static String pwInput = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -32,6 +32,14 @@ public class SignInFinalFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SignInActivity.fNum = 0;
+                SignInActivity.personalStatue = 0;
+                SignInActivity.birthYear = 1980;
+                SignInActivity.birthMonth = 1;
+                SignInActivity.birthDate = 1;
+                SignInActivity.male = 0;
+                SignInActivity.female = 0;
+                SignInActivity.pwInput = null;
                 Activity sa = SignInActivity.signActvity;
                 sa.finish();
             }
@@ -47,15 +55,30 @@ public class SignInFinalFragment extends Fragment {
         TextView gender = (TextView) view.findViewById(R.id.genderText);
 
 
+        String sex = "";
+        if (SignInActivity.male == 1 && SignInActivity.female == 0) {
+            sex = "남성";
+        } else if (SignInActivity.male == 0 && SignInActivity.female == 1) {
+            sex = "여성";
+        } else {
+            sex = "오류";
+        }
+        String ok = null;
+        if(SignInActivity.personalStatue == 2)
+        {
+            ok = "동의";
+        }
         String birthday = SignInActivity.birthYear + "년 " + SignInActivity.birthMonth + "월" + SignInActivity.birthDate + "일";
-        policy.setText(String.valueOf(SignInActivity.personalStatue));
+        policy.setText(ok);
         policy.setTextColor(Color.BLACK);
         birth.setText(birthday);
         birth.setTextColor(Color.BLACK);
         pw.setText(SignInActivity.pwInput);
         pw.setTextColor(Color.BLACK);
+        gender.setText(sex);
+        gender.setTextColor(Color.BLACK);
 
-        ((SignInActivity) getActivity()).showActionBar();
+        ((SignInActivity) getActivity()).hideActionBar();
 
         ((SignInActivity) getActivity()).setActionTitle(Title);
         return view;
