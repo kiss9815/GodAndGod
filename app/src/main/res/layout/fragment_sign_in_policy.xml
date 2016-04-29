@@ -1,68 +1,58 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#dcdcdc"
     tools:context="com.juntcompany.godandgod.Login.SignIn.SignInPolicyFragment">
-
 
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@+id/imageView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"
-        android:id="@+id/tableLayout3">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="친구들의 종교에 대해 알아보고"
-            android:textColor="#000000"
-            android:layout_marginBottom="5dp"
-            android:textSize="18dp"
-            android:gravity="center"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="#FFFFFF">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView2"
-            android:layout_centerHorizontal="true"
-            android:text="함께 하려면 가입하세요."
+            android:layout_height="50dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="left|center_vertical"
             android:textColor="#000000"
-            android:textSize="18dp"
-            android:gravity="center"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:text="개인정보"
+            android:textSize="25dp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:textSize="14dp"
+            android:textColor="#000000"
+            android:text="@string/personal"/>
+
+        <Button
+            android:id="@+id/agree"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:textColor="#000000"
+            android:background="#dcdcdc"
+            android:layout_margin="5dp"
+            android:text="개인정보 취급방침에 동의하시려면 누르세요." />
     </TableLayout>
-    <TextView
-        android:layout_width="350dp"
-        android:layout_height="60dp"
-        android:text="이메일 또는 전화번호로 가입하기."
-        android:textColor="#000000"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:id="@+id/nextEmailPhone"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_below="@+id/tableLayout3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="63dp" />
 
-    <TextView
-        android:layout_width="350dp"
-        android:layout_height="60dp"
-        android:text="이미 계정이 있으신가요? 로그인"
-        android:textColor="#000000"
-        android:textSize="17dp"
-        android:gravity="center"
-        android:id="@+id/backLoginPage"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-
-</RelativeLayout>
+    <Button
+        android:id="@+id/nextpage"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#6495ed"
+        android:text="다음 페이지로"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp" />
+</TableLayout>

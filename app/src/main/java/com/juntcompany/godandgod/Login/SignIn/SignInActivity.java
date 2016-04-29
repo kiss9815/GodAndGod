@@ -18,6 +18,7 @@ import com.juntcompany.godandgod.R;
 public class SignInActivity extends AppCompatActivity {
     public static Activity signActvity;
     public static int fNum = 0;
+    public static int personalStatue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
