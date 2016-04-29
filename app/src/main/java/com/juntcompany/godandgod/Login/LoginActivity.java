@@ -30,8 +30,8 @@ public class LoginActivity extends AppCompatActivity {
 
         switch (v.getId()) {
             case R.id.loginButton:
-                if (id.getText().toString().equals("jiseong369")) {
-                    if (pw.getText().toString().equals("gksvks12")) {
+                if (id.getText().toString().equals("123")) {
+                    if (pw.getText().toString().equals("123")) {
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         MainActivity.loginStatus = true;
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK); // 메인을 들어가면 메인 전에 실행했던 TASK 를 모두 삭제
