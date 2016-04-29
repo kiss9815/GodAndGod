@@ -25,6 +25,10 @@ public class SignInActivity extends AppCompatActivity {
     public static int male = 0;
     public static int female = 0;
     public static String pwInput = null;
+    public static String fName = null;
+    public static String oName = null;
+    public static String email = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
