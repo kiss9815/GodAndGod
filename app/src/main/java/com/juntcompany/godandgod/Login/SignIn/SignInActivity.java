@@ -22,6 +22,7 @@ public class SignInActivity extends AppCompatActivity {
     public static int birthYear = 1980;
     public static int birthMonth = 1;
     public static int birthDate = 1;
+    public static String pwInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

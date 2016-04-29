@@ -42,7 +42,7 @@ public class SignInFinalFragment extends Fragment {
         TextView email = (TextView) view.findViewById(R.id.emailText);
         TextView name = (TextView) view.findViewById(R.id.nameText);
         TextView birth = (TextView) view.findViewById(R.id.birthText);
-        TextView pw = (TextView) view.findViewById(R.id.passwordText);
+        TextView pw = (TextView) view.findViewById(R.id.pwText);
         TextView religion = (TextView) view.findViewById(R.id.religionText);
         TextView gender = (TextView) view.findViewById(R.id.genderText);
 
@@ -52,6 +52,8 @@ public class SignInFinalFragment extends Fragment {
         policy.setTextColor(Color.BLACK);
         birth.setText(birthday);
         birth.setTextColor(Color.BLACK);
+        pw.setText(SignInActivity.pwInput);
+        pw.setTextColor(Color.BLACK);
 
         ((SignInActivity) getActivity()).showActionBar();
 

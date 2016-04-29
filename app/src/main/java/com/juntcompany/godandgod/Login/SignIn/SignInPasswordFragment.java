@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.juntcompany.godandgod.R;
 
@@ -21,12 +22,14 @@ public class SignInPasswordFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view =inflater.inflate(R.layout.fragment_sign_in_password, container, false);
+        final View view =inflater.inflate(R.layout.fragment_sign_in_password, container, false);
         Button btn = (Button)view.findViewById(R.id.buttonNext);
         SignInActivity.fNum = 6;
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                TextView pw = (TextView) view.findViewById(R.id.signInPwInput);
+                SignInActivity.pwInput = pw.getText().toString();
                 SignInReligionFragment f = new SignInReligionFragment();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, f);
