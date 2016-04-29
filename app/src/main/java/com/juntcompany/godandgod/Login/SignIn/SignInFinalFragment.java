@@ -42,6 +42,7 @@ public class SignInFinalFragment extends Fragment {
                 SignInActivity.pwInput = null;
                 SignInActivity.fName = null;
                 SignInActivity.oName = null;
+                SignInActivity.email = null;
                 Activity sa = SignInActivity.signActvity;
                 sa.finish();
             }
@@ -74,6 +75,8 @@ public class SignInFinalFragment extends Fragment {
         String username = SignInActivity.fName + SignInActivity.oName;
         policy.setText(ok);
         policy.setTextColor(Color.BLACK);
+        email.setText(SignInActivity.email);
+        email.setTextColor(Color.BLACK);
         name.setText(username);
         name.setTextColor(Color.BLACK);
         birth.setText(birthday);

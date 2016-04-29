@@ -10,8 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.juntcompany.godandgod.Manager.PropertyManager;
 import com.juntcompany.godandgod.R;
 public class SignInEmailFragment extends Fragment {
 
@@ -28,12 +30,19 @@ public class SignInEmailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view =inflater.inflate(R.layout.fragment_sign_in_email, container, false);
+        final View view =inflater.inflate(R.layout.fragment_sign_in_email, container, false);
         Button btn = (Button)view.findViewById(R.id.buttonNext);
+        EditText email = (EditText) view.findViewById(R.id.inputEmail);
         SignInActivity.fNum = 3;
+        if(SignInActivity.email != null)
+        {
+            email.setText(SignInActivity.email);
+        }
         btn.setOnClickListener(new View.OnClickListener() {
+            EditText email = (EditText) view.findViewById(R.id.inputEmail);
             @Override
             public void onClick(View v) {
+                SignInActivity.email = email.getText().toString();
                 SignInNameFragment f = new SignInNameFragment();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, f);

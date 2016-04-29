@@ -27,6 +27,7 @@ public class SignInActivity extends AppCompatActivity {
     public static String pwInput = null;
     public static String fName = null;
     public static String oName = null;
+    public static String email = null;
 
 
     @Override
