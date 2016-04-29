@@ -34,7 +34,7 @@ public class SignInActivity extends AppCompatActivity {
 //        View view = getLayoutInflater().inflate(R.layout.toolbar_sign_in, null);
 //        actionBar.setCustomView(view, new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
 
-        Fragment f = new SignChooseFragment();//첫번째 프래그먼트를 설정
+        Fragment f = new SignInChooseFragment();//첫번째 프래그먼트를 설정
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.container, f);
         ft.commit();
@@ -57,7 +57,7 @@ public class SignInActivity extends AppCompatActivity {
                 switch (fNum) {
                     case 1:
                         getSupportActionBar().hide();
-                        SignChooseFragment choose = new SignChooseFragment();
+                        SignInChooseFragment choose = new SignInChooseFragment();
                         SignInActivity.fNum = 0;
                         ft = getSupportFragmentManager().beginTransaction();
                         ft.replace(R.id.container, choose);
@@ -85,28 +85,28 @@ public class SignInActivity extends AppCompatActivity {
                         ft.commit();
                         break;
                     case 5:
-                        SignNameFragment name = new SignNameFragment();
+                        SignInNameFragment name = new SignInNameFragment();
                         SignInActivity.fNum = 4;
                         ft = getSupportFragmentManager().beginTransaction();
                         ft.replace(R.id.container, name);
                         ft.commit();
                         break;
                     case 6:
-                        SignBirthFragment birth = new SignBirthFragment();
+                        SignInBirthFragment birth = new SignInBirthFragment();
                         SignInActivity.fNum = 5;
                         ft = getSupportFragmentManager().beginTransaction();
                         ft.replace(R.id.container, birth);
                         ft.commit();
                         break;
                     case 7:
-                        SignPasswordFragment pw = new SignPasswordFragment();
+                        SignInPasswordFragment pw = new SignInPasswordFragment();
                         SignInActivity.fNum = 6;
                         ft = getSupportFragmentManager().beginTransaction();
                         ft.replace(R.id.container, pw);
                         ft.commit();
                         break;
                     case 8:
-                        SignReligionFragment religion = new SignReligionFragment();
+                        SignInReligionFragment religion = new SignInReligionFragment();
                         SignInActivity.fNum = 7;
                         ft = getSupportFragmentManager().beginTransaction();
                         ft.replace(R.id.container, religion);
@@ -129,7 +129,7 @@ public class SignInActivity extends AppCompatActivity {
         switch (fNum) {
             case 1:
                 getSupportActionBar().hide();
-                SignChooseFragment choose = new SignChooseFragment();
+                SignInChooseFragment choose = new SignInChooseFragment();
                 SignInActivity.fNum = 0;
                 ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, choose);
@@ -157,28 +157,28 @@ public class SignInActivity extends AppCompatActivity {
                 ft.commit();
                 break;
             case 5:
-                SignNameFragment name = new SignNameFragment();
+                SignInNameFragment name = new SignInNameFragment();
                 SignInActivity.fNum = 4;
                 ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, name);
                 ft.commit();
                 break;
             case 6:
-                SignBirthFragment birth = new SignBirthFragment();
+                SignInBirthFragment birth = new SignInBirthFragment();
                 SignInActivity.fNum = 5;
                 ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, birth);
                 ft.commit();
                 break;
             case 7:
-                SignPasswordFragment pw = new SignPasswordFragment();
+                SignInPasswordFragment pw = new SignInPasswordFragment();
                 SignInActivity.fNum = 6;
                 ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, pw);
                 ft.commit();
                 break;
             case 8:
-                SignReligionFragment religion = new SignReligionFragment();
+                SignInReligionFragment religion = new SignInReligionFragment();
                 SignInActivity.fNum = 7;
                 ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, religion);

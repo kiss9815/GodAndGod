@@ -34,7 +34,7 @@ public class SignInEmailFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SignNameFragment f = new SignNameFragment();
+                SignInNameFragment f = new SignInNameFragment();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, f);
                 ft.commit();    //어떤 버튼이 눌리던 백스택에 해당 프래그먼트가 저장됨

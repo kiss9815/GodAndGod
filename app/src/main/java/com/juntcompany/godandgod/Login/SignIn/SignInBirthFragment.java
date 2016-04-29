@@ -12,9 +12,9 @@ import android.widget.Button;
 
 import com.juntcompany.godandgod.R;
 
-public class SignNameFragment extends Fragment {
-    private static final String Title = "이름 입력";
-    public SignNameFragment() {
+public class SignInBirthFragment extends Fragment {
+    private static final String Title = "생일 입력";
+    public SignInBirthFragment() {
         // Required empty public constructor
     }
 
@@ -22,13 +22,13 @@ public class SignNameFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view =inflater.inflate(R.layout.fragment_sign_name, container, false);
+        View view =inflater.inflate(R.layout.fragment_sign_in_birth, container, false);
         Button btn = (Button)view.findViewById(R.id.buttonNext);
-        SignInActivity.fNum = 4;
+        SignInActivity.fNum = 5;
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SignBirthFragment f = new SignBirthFragment();
+                SignInPasswordFragment f = new SignInPasswordFragment();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, f);
                 ft.commit();    //어떤 버튼이 눌리던 백스택에 해당 프래그먼트가 저장됨

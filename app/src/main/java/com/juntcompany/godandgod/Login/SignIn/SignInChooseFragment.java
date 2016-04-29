@@ -16,17 +16,17 @@ import android.widget.Toast;
 
 import com.juntcompany.godandgod.R;
 
-public class SignChooseFragment extends Fragment {
+public class SignInChooseFragment extends Fragment {
     String Title = "회원 가입";
 
-    public SignChooseFragment() {
+    public SignInChooseFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_sign_choose, container, false);
+        View view = inflater.inflate(R.layout.fragment_sign_in_choose, container, false);
         TextView ttn = (TextView) view.findViewById(R.id.nextEmailPhone);//다음페이지
         TextView ttb = (TextView) view.findViewById(R.id.backLoginPage);//이전페이지
         SignInActivity.fNum = 0;
