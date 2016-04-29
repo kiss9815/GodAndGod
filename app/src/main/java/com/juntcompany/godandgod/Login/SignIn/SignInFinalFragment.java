@@ -40,6 +40,8 @@ public class SignInFinalFragment extends Fragment {
                 SignInActivity.male = 0;
                 SignInActivity.female = 0;
                 SignInActivity.pwInput = null;
+                SignInActivity.fName = null;
+                SignInActivity.oName = null;
                 Activity sa = SignInActivity.signActvity;
                 sa.finish();
             }
@@ -69,8 +71,11 @@ public class SignInFinalFragment extends Fragment {
             ok = "동의";
         }
         String birthday = SignInActivity.birthYear + "년 " + SignInActivity.birthMonth + "월" + SignInActivity.birthDate + "일";
+        String username = SignInActivity.fName + SignInActivity.oName;
         policy.setText(ok);
         policy.setTextColor(Color.BLACK);
+        name.setText(username);
+        name.setTextColor(Color.BLACK);
         birth.setText(birthday);
         birth.setTextColor(Color.BLACK);
         pw.setText(SignInActivity.pwInput);

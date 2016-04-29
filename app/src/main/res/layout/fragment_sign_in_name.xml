@@ -1,16 +1,89 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.juntcompany.godandgod.Login.SignIn.SignNameFragment">
-
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="50dp"
+        android:layout_marginTop="98dp"
+        android:gravity="center"
+        android:text="이름이 무엇인가요?"
+        android:textColor="#000000"
+        android:textSize="23dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TableLayout
+        android:id="@+id/tableLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="친구들이 회원님을 알아볼 수 있도록"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="17dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:gravity="center"
+            android:text="실명을 사용하세요."
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+    </TableLayout>
+
     <Button
+        android:id="@+id/buttonNext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonNext"/>
-</FrameLayout>
+        android:background="#6495ed"
+        android:text="다음 페이지로"
+        android:textColor="#FFFFFF"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textSize="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="107dp"
+        android:layout_gravity="center_horizontal|top" />
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:inputType="textPersonName"
+        android:hint="성"
+        android:ems="10"
+        android:id="@+id/familyName"
+        android:layout_marginLeft="50dp"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/buttonNext"
+        android:layout_alignStart="@+id/buttonNext" />
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:inputType="textPersonName"
+        android:hint="이름"
+        android:layout_marginRight="50dp"
+        android:ems="10"
+        android:id="@+id/otherName"
+        android:layout_alignTop="@+id/familyName"
+        android:layout_alignRight="@+id/buttonNext"
+        android:layout_alignEnd="@+id/buttonNext" />
+</RelativeLayout>
