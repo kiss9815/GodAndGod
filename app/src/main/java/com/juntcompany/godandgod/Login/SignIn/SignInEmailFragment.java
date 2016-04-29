@@ -51,29 +51,9 @@ public class SignInEmailFragment extends Fragment {
         });
         ((SignInActivity) getActivity()).setActionTitle(Title);
 
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                SignInPhoneFragment f = new SignInPhoneFragment();
-//                SignInActivity.fNum = getActivity().getSupportFragmentManager().getBackStackEntryCount();
-//                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-//                ft.replace(R.id.container, f);
-//                ft.addToBackStack("" + fNum);
-//                ft.commit();    //어떤 버튼이 눌리던 백스택에 해당 프래그먼트가 저장됨
-//            }
-//        });
 
         return view;
     }
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        ActionBar actionBar = ((SignInActivity) getActivity()).getSupportActionBar();
-//        View view = actionBar.getCustomView();
-//        TextView textView = (TextView)view.findViewById(R.id.toolbar_text);
-//        textView.setText(Title);
-//
-//    }
 
 
 }

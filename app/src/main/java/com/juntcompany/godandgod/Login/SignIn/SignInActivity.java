@@ -39,12 +39,6 @@ public class SignInActivity extends AppCompatActivity {
         //setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        ////
-//        ActionBar actionBar = getSupportActionBar();
-//        actionBar.setDisplayShowTitleEnabled(false);
-//        actionBar.setDisplayShowCustomEnabled(true);
-//        View view = getLayoutInflater().inflate(R.layout.toolbar_sign_in, null);
-//        actionBar.setCustomView(view, new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
 
         Fragment f = new SignInChooseFragment();//첫번째 프래그먼트를 설정
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();

@@ -48,14 +48,5 @@ public class SignInPhoneFragment extends Fragment {
         ((SignInActivity) getActivity()).setActionTitle(Title);
         return view;
     }
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        ActionBar actionBar = ((SignInActivity) getActivity()).getSupportActionBar();
-//        View view = actionBar.getCustomView();
-//        TextView textView = (TextView)view.findViewById(R.id.toolbar_text);
-//        textView.setText(Title);
-//
-//    }
 
 }
