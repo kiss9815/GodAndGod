@@ -35,7 +35,7 @@
         android:layout_below="@+id/textView4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_margintop="">
+        android:layout_margintop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
