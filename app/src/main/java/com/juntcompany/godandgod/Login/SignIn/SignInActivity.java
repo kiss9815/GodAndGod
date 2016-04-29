@@ -19,6 +19,10 @@ public class SignInActivity extends AppCompatActivity {
     public static Activity signActvity;
     public static int fNum = 0;
     public static int personalStatue;
+    public static int birthYear = 1980;
+    public static int birthMonth = 1;
+    public static int birthDate = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +52,9 @@ public class SignInActivity extends AppCompatActivity {
 
     public void showActionBar(){
         getSupportActionBar().show();
+    }//숨겨진 액션바를 드러내기 위한 메소드
+    public void hideActionBar(){
+        getSupportActionBar().hide();
     }//숨겨진 액션바를 드러내기 위한 메소드
 
     @Override

@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.NumberPicker;
 
 import com.juntcompany.godandgod.R;
 
@@ -22,12 +23,34 @@ public class SignInBirthFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view =inflater.inflate(R.layout.fragment_sign_in_birth, container, false);
+        final View view =inflater.inflate(R.layout.fragment_sign_in_birth, container, false);
         Button btn = (Button)view.findViewById(R.id.buttonNext);
         SignInActivity.fNum = 5;
+
+        NumberPicker year = (NumberPicker) view.findViewById(R.id.year);
+        NumberPicker month = (NumberPicker) view.findViewById(R.id.month);
+        NumberPicker date = (NumberPicker) view.findViewById(R.id.date);
+
+        year.setMaxValue(2100);
+        year.setMinValue(1900);
+        month.setMaxValue(12);
+        month.setMinValue(1);
+        date.setMaxValue(31);
+        date.setMinValue(1);
+        year.setValue(SignInActivity.birthYear);
+        month.setValue(SignInActivity.birthMonth);
+        date.setValue(SignInActivity.birthDate);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                NumberPicker year = (NumberPicker) view.findViewById(R.id.year);
+                NumberPicker month = (NumberPicker) view.findViewById(R.id.month);
+                NumberPicker date = (NumberPicker) view.findViewById(R.id.date);
+                SignInActivity.birthYear = year.getValue();
+                SignInActivity.birthMonth = month.getValue();
+                SignInActivity.birthDate = date.getValue();
+
                 SignInPasswordFragment f = new SignInPasswordFragment();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, f);

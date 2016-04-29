@@ -26,14 +26,16 @@ public class SignInGenderFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view =inflater.inflate(R.layout.fragment_sign_in_gender, container, false);
+        View view =inflater.inflate(R.layout.fragment_sign_in_religion, container, false);
         Button btn = (Button)view.findViewById(R.id.buttonNext);
         SignInActivity.fNum = 8;
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Activity sa = SignInActivity.signActvity;
-                sa.finish();
+                SignInFinalFragment f = new SignInFinalFragment();
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.container, f);
+                ft.commit();    //어떤 버튼이 눌리던 백스택에 해당 프래그먼트가 저장됨
             }
         });
 
