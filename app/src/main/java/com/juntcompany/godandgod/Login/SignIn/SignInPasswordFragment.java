@@ -32,12 +32,22 @@ public class SignInPasswordFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView pw = (TextView) view.findViewById(R.id.signInPwInput);
-                SignInActivity.pwInput = pw.getText().toString();
-                SignInReligionFragment f = new SignInReligionFragment();
-                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.container, f);
-                ft.commit();    //어떤 버튼이 눌리던 백스택에 해당 프래그먼트가 저장됨
+                if (SignInActivity.resultpage == false) {
+                    TextView pw = (TextView) view.findViewById(R.id.signInPwInput);
+                    SignInActivity.pwInput = pw.getText().toString();
+                    SignInReligionFragment f = new SignInReligionFragment();
+                    FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.container, f);
+                    ft.commit();    //어떤 버튼이 눌리던 백스택에 해당 프래그먼트가 저장됨
+                }
+                else if (SignInActivity.resultpage == true) {
+                    TextView pw = (TextView) view.findViewById(R.id.signInPwInput);
+                    SignInActivity.pwInput = pw.getText().toString();
+                    SignInFinalFragment f = new SignInFinalFragment();
+                    FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.container, f);
+                    ft.commit();    //어떤 버튼이 눌리던 백스택에 해당 프래그먼트가 저장됨
+                }
             }
         });
 

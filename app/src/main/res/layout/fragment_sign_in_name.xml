@@ -66,6 +66,12 @@
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/buttonNext"
         android:layout_alignStart="@+id/buttonNext" />
+    <Button
+        style="@style/clearButton"
+        android:id="@+id/parentClear"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/familyName"
+        android:layout_alignEnd="@+id/familyName" />
     <EditText
         android:layout_width="150dp"
         android:layout_height="60dp"
@@ -77,4 +83,10 @@
         android:layout_alignTop="@+id/familyName"
         android:layout_alignRight="@+id/buttonNext"
         android:layout_alignEnd="@+id/buttonNext" />
+    <Button
+        style="@style/clearButton"
+        android:id="@+id/nameClear"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/otherName"
+        android:layout_alignEnd="@+id/otherName" />
 </RelativeLayout>

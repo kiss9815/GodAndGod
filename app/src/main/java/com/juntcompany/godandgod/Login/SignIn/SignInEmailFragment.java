@@ -32,7 +32,9 @@ public class SignInEmailFragment extends Fragment {
 
         final View view =inflater.inflate(R.layout.fragment_sign_in_email, container, false);
         Button btn = (Button)view.findViewById(R.id.buttonNext);
+        Button btclear = (Button)view.findViewById(R.id.emailClear);
         EditText email = (EditText) view.findViewById(R.id.inputEmail);
+
         SignInActivity.fNum = 4;
         if(SignInActivity.email != null)
         {
@@ -42,11 +44,27 @@ public class SignInEmailFragment extends Fragment {
             EditText email = (EditText) view.findViewById(R.id.inputEmail);
             @Override
             public void onClick(View v) {
-                SignInActivity.email = email.getText().toString();
-                SignInNameFragment f = new SignInNameFragment();
-                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.container, f);
-                ft.commit();    //어떤 버튼이 눌리던 백스택에 해당 프래그먼트가 저장됨
+                if(SignInActivity.resultpage == false) {
+                    SignInActivity.email = email.getText().toString();
+                    SignInNameFragment f = new SignInNameFragment();
+                    FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.container, f);
+                    ft.commit();    //어떤 버튼이 눌리던 백스택에 해당 프래그먼트가 저장됨
+                }
+                else if(SignInActivity.resultpage == true) {
+                    SignInActivity.email = email.getText().toString();
+                    SignInFinalFragment f = new SignInFinalFragment();
+                    FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.container, f);
+                    ft.commit();
+                }
+            }
+        });
+        btclear.setOnClickListener(new View.OnClickListener() {
+            EditText email = (EditText) view.findViewById(R.id.inputEmail);
+            @Override
+            public void onClick(View v) {
+                email.setText("");
             }
         });
         ((SignInActivity) getActivity()).setActionTitle(Title);

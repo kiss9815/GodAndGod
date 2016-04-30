@@ -50,8 +50,6 @@ public class SignInGenderFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 malecheck.setChecked(true);
-                SignInActivity.male = 1;
-                SignInActivity.female = 0;
             }
         });
         female.setOnClickListener(new View.OnClickListener() {
@@ -59,8 +57,6 @@ public class SignInGenderFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 femalecheck.setChecked(true);
-                SignInActivity.male = 0;
-                SignInActivity.female = 1;
             }
         });
 

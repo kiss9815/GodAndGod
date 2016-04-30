@@ -6,7 +6,32 @@
     android:background="#dcdcdc"
     tools:context="com.juntcompany.godandgod.Login.SignIn.SignInPolicyFragment">
 
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:gravity="left|center_vertical"
+        android:textColor="#000000"
+        android:text="GODnGOD를 사용하려면 약관을 확인하세요."
+        android:textSize="17dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="15dp"
+        android:gravity="left|center_vertical"
+        android:text="가입하면 GODnGOD 약관에 동의하고 읽고 이해하신 것으로"
+        android:textSize="13dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="14dp"
+        android:layout_marginLeft="15dp"
+        android:gravity="left|center_vertical"
+        android:text="간주합니다."
+        android:textSize="13dp"
+        android:textStyle="bold"/>
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,8 +43,7 @@
             android:layout_height="50dp"
             android:layout_marginLeft="8dp"
             android:gravity="left|center_vertical"
-            android:textColor="#000000"
-            android:text="이용 약관"
+            android:text="서비스 약관"
             android:textSize="25dp" />
 
         <View
@@ -30,10 +54,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp"
+            android:layout_margin="10dp"
             android:textSize="14dp"
             android:textColor="#000000"
-            android:text="@string/personal"/>
+            android:text="@string/terms"/>
 
         <Button
             android:id="@+id/agree"
@@ -42,7 +66,7 @@
             android:textColor="#000000"
             android:background="#dcdcdc"
             android:layout_margin="5dp"
-            android:text="이용 약관에 동의하시려면 누르세요." />
+            android:text="동의" />
     </TableLayout>
 
     <Button

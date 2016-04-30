@@ -29,6 +29,11 @@ public class SignInActivity extends AppCompatActivity {
     public static String fName = null;
     public static String oName = null;
     public static String email = null;
+    public static int christianStatue = 0;
+    public static int catholicStatue = 0;
+    public static int buddhismStatue = 0;
+    public static int othersReligionStatue = 0;
+    public static boolean resultpage = false;
 
 
     @Override
