@@ -37,7 +37,7 @@ public class SignInNameFragment extends Fragment {
         }
 
 
-        SignInActivity.fNum = 4;
+        SignInActivity.fNum = 5;
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

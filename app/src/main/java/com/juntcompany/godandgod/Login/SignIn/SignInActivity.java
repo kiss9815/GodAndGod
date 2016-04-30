@@ -18,7 +18,8 @@ import com.juntcompany.godandgod.R;
 public class SignInActivity extends AppCompatActivity {
     public static Activity signActvity;
     public static int fNum = 0;
-    public static int personalStatue = 0;
+    public static int termsStatue = 0;
+    public static int policyStatue = 0;
     public static int birthYear = 1980;
     public static int birthMonth = 1;
     public static int birthDate = 1;
@@ -73,52 +74,66 @@ public class SignInActivity extends AppCompatActivity {
                         ft.commit();
                         break;
                     case 2:
-                        SignInPolicyFragment policy = new SignInPolicyFragment();
+                        SignInTermsFragment terms = new SignInTermsFragment();
                         SignInActivity.fNum = 1;
+                        ft = getSupportFragmentManager().beginTransaction();
+                        ft.replace(R.id.container, terms);
+                        ft.commit();
+                        break;
+                    case 3:
+                        SignInPolicyFragment policy = new SignInPolicyFragment();
+                        SignInActivity.fNum = 2;
                         ft = getSupportFragmentManager().beginTransaction();
                         ft.replace(R.id.container, policy);
                         ft.commit();
                         break;
-                    case 3:
+                    case 4:
                         SignInPhoneFragment phone = new SignInPhoneFragment();
-                        SignInActivity.fNum = 2;
+                        SignInActivity.fNum = 3;
                         ft = getSupportFragmentManager().beginTransaction();
                         ft.replace(R.id.container, phone);
                         ft.commit();
                         break;
-                    case 4:
+                    case 5:
                         SignInEmailFragment email = new SignInEmailFragment();
-                        SignInActivity.fNum = 3;
+                        SignInActivity.fNum = 4;
                         ft = getSupportFragmentManager().beginTransaction();
                         ft.replace(R.id.container, email);
                         ft.commit();
                         break;
-                    case 5:
+                    case 6:
                         SignInNameFragment name = new SignInNameFragment();
-                        SignInActivity.fNum = 4;
+                        SignInActivity.fNum = 5;
                         ft = getSupportFragmentManager().beginTransaction();
                         ft.replace(R.id.container, name);
                         ft.commit();
                         break;
-                    case 6:
+                    case 7:
                         SignInBirthFragment birth = new SignInBirthFragment();
-                        SignInActivity.fNum = 5;
+                        SignInActivity.fNum = 6;
                         ft = getSupportFragmentManager().beginTransaction();
                         ft.replace(R.id.container, birth);
                         ft.commit();
                         break;
-                    case 7:
+                    case 8:
                         SignInPasswordFragment pw = new SignInPasswordFragment();
-                        SignInActivity.fNum = 6;
+                        SignInActivity.fNum = 7;
                         ft = getSupportFragmentManager().beginTransaction();
                         ft.replace(R.id.container, pw);
                         ft.commit();
                         break;
-                    case 8:
+                    case 9:
                         SignInReligionFragment religion = new SignInReligionFragment();
-                        SignInActivity.fNum = 7;
+                        SignInActivity.fNum = 8;
                         ft = getSupportFragmentManager().beginTransaction();
                         ft.replace(R.id.container, religion);
+                        ft.commit();
+                        break;
+                    case 10:
+                        SignInGenderFragment result = new SignInGenderFragment();
+                        SignInActivity.fNum = 9;
+                        ft = getSupportFragmentManager().beginTransaction();
+                        ft.replace(R.id.container, result);
                         ft.commit();
                         break;
                     default:
@@ -145,59 +160,72 @@ public class SignInActivity extends AppCompatActivity {
                 ft.commit();
                 break;
             case 2:
-                SignInPolicyFragment policy = new SignInPolicyFragment();
+                SignInTermsFragment terms = new SignInTermsFragment();
                 SignInActivity.fNum = 1;
+                ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.container, terms);
+                ft.commit();
+                break;
+            case 3:
+                SignInPolicyFragment policy = new SignInPolicyFragment();
+                SignInActivity.fNum = 2;
                 ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, policy);
                 ft.commit();
                 break;
-            case 3:
+            case 4:
                 SignInPhoneFragment phone = new SignInPhoneFragment();
-                SignInActivity.fNum = 2;
+                SignInActivity.fNum = 3;
                 ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, phone);
                 ft.commit();
                 break;
-            case 4:
+            case 5:
                 SignInEmailFragment email = new SignInEmailFragment();
-                SignInActivity.fNum = 3;
+                SignInActivity.fNum = 4;
                 ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, email);
                 ft.commit();
                 break;
-            case 5:
+            case 6:
                 SignInNameFragment name = new SignInNameFragment();
-                SignInActivity.fNum = 4;
+                SignInActivity.fNum = 5;
                 ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, name);
                 ft.commit();
                 break;
-            case 6:
+            case 7:
                 SignInBirthFragment birth = new SignInBirthFragment();
-                SignInActivity.fNum = 5;
+                SignInActivity.fNum = 6;
                 ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, birth);
                 ft.commit();
                 break;
-            case 7:
+            case 8:
                 SignInPasswordFragment pw = new SignInPasswordFragment();
-                SignInActivity.fNum = 6;
+                SignInActivity.fNum = 7;
                 ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, pw);
                 ft.commit();
                 break;
-            case 8:
+            case 9:
                 SignInReligionFragment religion = new SignInReligionFragment();
-                SignInActivity.fNum = 7;
+                SignInActivity.fNum = 8;
                 ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, religion);
+                ft.commit();
+                break;
+            case 10:
+                SignInGenderFragment result = new SignInGenderFragment();
+                SignInActivity.fNum = 9;
+                ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.container, result);
                 ft.commit();
                 break;
             default:
                 SignInActivity.signActvity.finish();
                 break;
         }
-
     }
 }
 

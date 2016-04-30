@@ -33,7 +33,7 @@ public class SignInEmailFragment extends Fragment {
         final View view =inflater.inflate(R.layout.fragment_sign_in_email, container, false);
         Button btn = (Button)view.findViewById(R.id.buttonNext);
         EditText email = (EditText) view.findViewById(R.id.inputEmail);
-        SignInActivity.fNum = 3;
+        SignInActivity.fNum = 4;
         if(SignInActivity.email != null)
         {
             email.setText(SignInActivity.email);

@@ -28,12 +28,13 @@ public class SignInFinalFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_sign_in_final, container, false);
         Button btn = (Button) view.findViewById(R.id.buttonNext);
-        SignInActivity.fNum = 9;
+        SignInActivity.fNum = 10;
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SignInActivity.fNum = 0;
-                SignInActivity.personalStatue = 0;
+                SignInActivity.termsStatue = 0;
+                SignInActivity.policyStatue = 0;
                 SignInActivity.birthYear = 1980;
                 SignInActivity.birthMonth = 1;
                 SignInActivity.birthDate = 1;
@@ -48,6 +49,7 @@ public class SignInFinalFragment extends Fragment {
             }
         });
 
+        TextView terms = (TextView) view.findViewById(R.id.termsText);
         TextView policy = (TextView) view.findViewById(R.id.policyText);
         TextView phone = (TextView) view.findViewById(R.id.phoneText);
         TextView email = (TextView) view.findViewById(R.id.emailText);
@@ -67,12 +69,14 @@ public class SignInFinalFragment extends Fragment {
             sex = "오류";
         }
         String ok = null;
-        if(SignInActivity.personalStatue == 2)
+        if(SignInActivity.policyStatue == 2 || SignInActivity.termsStatue == 2)
         {
             ok = "동의";
         }
         String birthday = SignInActivity.birthYear + "년 " + SignInActivity.birthMonth + "월" + SignInActivity.birthDate + "일";
         String username = SignInActivity.fName + SignInActivity.oName;
+        terms.setText(ok);
+        terms.setTextColor(Color.BLACK);
         policy.setText(ok);
         policy.setTextColor(Color.BLACK);
         email.setText(SignInActivity.email);
@@ -86,7 +90,6 @@ public class SignInFinalFragment extends Fragment {
         gender.setText(sex);
         gender.setTextColor(Color.BLACK);
 
-        ((SignInActivity) getActivity()).hideActionBar();
 
         ((SignInActivity) getActivity()).setActionTitle(Title);
         return view;

@@ -53,18 +53,10 @@
 
     <Button
         android:id="@+id/buttonNext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#6495ed"
-        android:text="다음 페이지로"
-        android:textColor="#FFFFFF"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:textSize="20dp"
+       style="@style/nextButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="107dp"
-        android:layout_gravity="center_horizontal|top" />
+       />
     <EditText
         android:layout_width="250dp"
         android:layout_height="60dp"

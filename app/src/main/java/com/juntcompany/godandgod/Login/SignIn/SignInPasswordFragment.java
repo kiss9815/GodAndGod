@@ -28,7 +28,7 @@ public class SignInPasswordFragment extends Fragment {
         if(SignInActivity.pwInput != null) {
             pw.setText(SignInActivity.pwInput);
         }
-        SignInActivity.fNum = 6;
+        SignInActivity.fNum = 7;
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -19,7 +19,7 @@
             android:layout_marginLeft="8dp"
             android:gravity="left|center_vertical"
             android:textColor="#000000"
-            android:text="개인정보"
+            android:text="이용 약관"
             android:textSize="25dp" />
 
         <View
@@ -42,7 +42,7 @@
             android:textColor="#000000"
             android:background="#dcdcdc"
             android:layout_margin="5dp"
-            android:text="개인정보 취급방침에 동의하시려면 누르세요." />
+            android:text="이용 약관에 동의하시려면 누르세요." />
     </TableLayout>
 
     <Button

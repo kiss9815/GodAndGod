@@ -25,7 +25,7 @@ public class SignInBirthFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View view =inflater.inflate(R.layout.fragment_sign_in_birth, container, false);
         Button btn = (Button)view.findViewById(R.id.buttonNext);
-        SignInActivity.fNum = 5;
+        SignInActivity.fNum = 6;
 
         NumberPicker year = (NumberPicker) view.findViewById(R.id.year);
         NumberPicker month = (NumberPicker) view.findViewById(R.id.month);

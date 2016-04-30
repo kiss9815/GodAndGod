@@ -23,7 +23,7 @@ public class SignInReligionFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_sign_in_religion, container, false);
         Button btn = (Button)view.findViewById(R.id.buttonNext);
-        SignInActivity.fNum = 7;
+        SignInActivity.fNum = 8;
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

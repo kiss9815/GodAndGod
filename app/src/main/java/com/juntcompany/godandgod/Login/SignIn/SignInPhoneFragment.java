@@ -35,7 +35,7 @@ public class SignInPhoneFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_sign_in_phone, container, false);
         Button btn = (Button)view.findViewById(R.id.buttonNext);
-        SignInActivity.fNum = 2;
+        SignInActivity.fNum = 3;
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
