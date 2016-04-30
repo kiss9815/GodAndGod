@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.juntcompany.godandgod.Login.SignIn.SignInActivity;
 import com.juntcompany.godandgod.Main.MainActivity;
 import com.juntcompany.godandgod.Main.backpress;
+import com.juntcompany.godandgod.Manager.PropertyManager;
 import com.juntcompany.godandgod.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -27,6 +30,8 @@ public class LoginActivity extends AppCompatActivity {
     public void loginActivityClick(View v) {
         EditText id = (EditText) findViewById(R.id.idText);
         EditText pw = (EditText) findViewById(R.id.passwordText);
+        CheckBox saveid = (CheckBox) findViewById(R.id.saveId);
+        CheckBox autoLogin = (CheckBox) findViewById(R.id.autoLogin);
 
         switch (v.getId()) {
             case R.id.loginButton:
@@ -34,6 +39,19 @@ public class LoginActivity extends AppCompatActivity {
                     if (pw.getText().toString().equals("123")) {
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         MainActivity.loginStatus = true;
+                        if (saveid.isChecked()) {
+                            PropertyManager.getInstance().setUserId(id.getText().toString());
+                        } else {
+                            PropertyManager.getInstance().setUserId("");
+                        }
+
+                        if (autoLogin.isChecked()) {
+                            PropertyManager.getInstance().setUserId(id.getText().toString());
+                            PropertyManager.getInstance().setPassword(pw.getText().toString());
+                        } else {
+                            PropertyManager.getInstance().setPassword("");
+                        }
+                        MainActivity.logout = false;
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK); // 메인을 들어가면 메인 전에 실행했던 TASK 를 모두 삭제
                         startActivity(intent);
                         finish();
@@ -62,4 +80,32 @@ public class LoginActivity extends AppCompatActivity {
         backPressCloseHandler.onBackPressed();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        EditText idinput = (EditText) findViewById(R.id.idText);
+        CheckBox saveid = (CheckBox) findViewById(R.id.saveId);
+        String id = PropertyManager.getInstance().getUserId();
+        String pw = PropertyManager.getInstance().getPassword();
+        if (id != null && !id.equals("")) {
+            idinput.setText(id);
+            saveid.setChecked(true);
+            if (pw != null && !pw.equals("") && MainActivity.logout == false) {
+                if (id.equals("123")) {
+                    if (pw.equals("123")) {
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        MainActivity.loginStatus = true;
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK); // 메인을 들어가면 메인 전에 실행했던 TASK 를 모두 삭제
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        Toast.makeText(this, "ID 또는 비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        } else {
+            saveid.setChecked(false);
+        }
+
+    }
 }
