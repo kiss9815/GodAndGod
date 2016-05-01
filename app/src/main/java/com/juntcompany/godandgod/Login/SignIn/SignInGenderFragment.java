@@ -36,14 +36,20 @@ public class SignInGenderFragment extends Fragment {
         Button btn = (Button)view.findViewById(R.id.buttonNext);
         TextView male = (TextView)view.findViewById(R.id.male);
         TextView female = (TextView)view.findViewById(R.id.female);
-        SignInActivity.fNum = 8;
+        RadioButton malecheck = (RadioButton) view.findViewById(R.id.maleCheck);
+        RadioButton femalecheck = (RadioButton) view.findViewById(R.id.femaleCheck);
+        SignInActivity.fNum = 9;
+
+        if (SignInActivity.male == 1 && SignInActivity.female == 0) {
+            malecheck.setChecked(true);
+        } else if (SignInActivity.male == 0 && SignInActivity.female == 1) {
+            femalecheck.setChecked(true);
+        }
         male.setOnClickListener(new View.OnClickListener() {
             RadioButton malecheck = (RadioButton) view.findViewById(R.id.maleCheck);
             @Override
             public void onClick(View v) {
                 malecheck.setChecked(true);
-                SignInActivity.male = 1;
-                SignInActivity.female = 0;
             }
         });
         female.setOnClickListener(new View.OnClickListener() {
@@ -51,8 +57,6 @@ public class SignInGenderFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 femalecheck.setChecked(true);
-                SignInActivity.male = 0;
-                SignInActivity.female = 1;
             }
         });
 

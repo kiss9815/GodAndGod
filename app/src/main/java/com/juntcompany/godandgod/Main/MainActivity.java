@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private backpress backPressCloseHandler;
     boolean isEditClicked = false;
     public static boolean loginStatus = false;
+    public static boolean logout = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -188,6 +189,7 @@ public class MainActivity extends AppCompatActivity {
                 else
                 {
                     loginStatus = false;
+                    logout = true;
                 }
                 break;
         }

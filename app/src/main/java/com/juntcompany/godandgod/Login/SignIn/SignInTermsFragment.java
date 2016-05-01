@@ -1,45 +1,38 @@
 package com.juntcompany.godandgod.Login.SignIn;
 
-
-import android.app.Activity;
+import android.content.Context;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.juntcompany.godandgod.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class SignInPolicyFragment extends Fragment {
+public class SignInTermsFragment extends Fragment {
 
-
-    public SignInPolicyFragment() {
+    public SignInTermsFragment() {
         // Required empty public constructor
     }
 
 
-    private static final String Title = "개인정보취급방침";
+
+    private static final String Title = "약관";
 
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View view = inflater.inflate(R.layout.fragment_sign_in_policy, container, false);
+        final View view = inflater.inflate(R.layout.fragment_sign_in_terms, container, false);
         Button agree = (Button) view.findViewById(R.id.agree);
         final Button btn = (Button) view.findViewById(R.id.buttonNext);//다음페이지
-        SignInActivity.fNum = 2;
+        SignInActivity.fNum = 1;
         btn.setVisibility(View.INVISIBLE);
-        if(SignInActivity.policyStatue==2)
+        if(SignInActivity.termsStatue==2)
         {
             agree.setBackgroundColor(Color.parseColor("#2f6656"));
             agree.setTextColor(Color.WHITE);
@@ -50,13 +43,13 @@ public class SignInPolicyFragment extends Fragment {
             Button agree = (Button) view.findViewById(R.id.agree);
             @Override
             public void onClick(View v) {
-                if (SignInActivity.policyStatue == 0) {
-                    SignInActivity.policyStatue = 1;
+                if (SignInActivity.termsStatue == 0) {
+                    SignInActivity.termsStatue = 1;
                     agree.setBackgroundColor(Color.parseColor("#2f6656"));
                     agree.setTextColor(Color.WHITE);
                     btn.setVisibility(View.VISIBLE);
                 } else{
-                    SignInActivity.policyStatue = 0;
+                    SignInActivity.termsStatue = 0;
                     agree.setBackgroundColor(Color.parseColor("#dcdcdc"));
                     agree.setTextColor(Color.BLACK);
                     btn.setVisibility(View.INVISIBLE);
@@ -66,8 +59,8 @@ public class SignInPolicyFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {//다음페이지로
             @Override
             public void onClick(View v) {
-                SignInActivity.policyStatue = 2;
-                SignInPhoneFragment f = new SignInPhoneFragment();
+                SignInActivity.termsStatue = 2;
+                SignInPolicyFragment f = new SignInPolicyFragment();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, f);
                 ft.commit();    //어떤 버튼이 눌리던 백스택에 해당 프래그먼트가 저장됨
@@ -77,6 +70,5 @@ public class SignInPolicyFragment extends Fragment {
         ((SignInActivity) getActivity()).showActionBar();
         return view;
     }
-
 
 }

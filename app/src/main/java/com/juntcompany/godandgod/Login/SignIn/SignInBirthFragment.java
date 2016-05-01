@@ -25,7 +25,7 @@ public class SignInBirthFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View view =inflater.inflate(R.layout.fragment_sign_in_birth, container, false);
         Button btn = (Button)view.findViewById(R.id.buttonNext);
-        SignInActivity.fNum = 5;
+        SignInActivity.fNum = 6;
 
         NumberPicker year = (NumberPicker) view.findViewById(R.id.year);
         NumberPicker month = (NumberPicker) view.findViewById(R.id.month);
@@ -44,17 +44,31 @@ public class SignInBirthFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NumberPicker year = (NumberPicker) view.findViewById(R.id.year);
-                NumberPicker month = (NumberPicker) view.findViewById(R.id.month);
-                NumberPicker date = (NumberPicker) view.findViewById(R.id.date);
-                SignInActivity.birthYear = year.getValue();
-                SignInActivity.birthMonth = month.getValue();
-                SignInActivity.birthDate = date.getValue();
+                if (SignInActivity.resultpage == false) {
+                    NumberPicker year = (NumberPicker) view.findViewById(R.id.year);
+                    NumberPicker month = (NumberPicker) view.findViewById(R.id.month);
+                    NumberPicker date = (NumberPicker) view.findViewById(R.id.date);
+                    SignInActivity.birthYear = year.getValue();
+                    SignInActivity.birthMonth = month.getValue();
+                    SignInActivity.birthDate = date.getValue();
 
-                SignInPasswordFragment f = new SignInPasswordFragment();
-                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.container, f);
-                ft.commit();    //어떤 버튼이 눌리던 백스택에 해당 프래그먼트가 저장됨
+                    SignInPasswordFragment f = new SignInPasswordFragment();
+                    FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.container, f);
+                    ft.commit();    //어떤 버튼이 눌리던 백스택에 해당 프래그먼트가 저장됨
+                } else if (SignInActivity.resultpage == true) {
+                    NumberPicker year = (NumberPicker) view.findViewById(R.id.year);
+                    NumberPicker month = (NumberPicker) view.findViewById(R.id.month);
+                    NumberPicker date = (NumberPicker) view.findViewById(R.id.date);
+                    SignInActivity.birthYear = year.getValue();
+                    SignInActivity.birthMonth = month.getValue();
+                    SignInActivity.birthDate = date.getValue();
+
+                    SignInFinalFragment f = new SignInFinalFragment();
+                    FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.container, f);
+                    ft.commit();    //어떤 버튼이 눌리던 백스택에 해당 프래그먼트가 저장됨
+                }
             }
         });
 

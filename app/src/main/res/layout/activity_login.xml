@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    >
+    android:fitsSystemWindows="true">
 
 
     <ImageView
@@ -19,7 +18,7 @@
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="230dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/imageView"
@@ -61,6 +60,33 @@
             android:onClick="loginActivityClick"
             android:text="Login" />
 
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:gravity="center">
+
+            <CheckBox
+                android:id="@+id/saveId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="7"
+                android:textSize="20dp"
+                android:layout_marginRight="3dp"
+                android:text="아이디 저장" />
+
+            <CheckBox
+                android:id="@+id/autoLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginLeft="3dp"
+                android:layout_column="18"
+                android:text="자동 로그인" />
+        </TableRow>
+
+
     </TableLayout>
 
     <TextView
@@ -80,13 +106,13 @@
         android:id="@+id/signHelp"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:gravity="center_vertical"
         android:onClick="loginActivityClick"
         android:text="계정이 없으신가요? 가입하기"
         android:textColor="#000000"
-        android:textSize="15dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:textSize="15dp" />
 
 
 </RelativeLayout>

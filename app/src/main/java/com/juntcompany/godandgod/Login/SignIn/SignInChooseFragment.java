@@ -33,7 +33,7 @@ public class SignInChooseFragment extends Fragment {
         ttn.setOnClickListener(new View.OnClickListener() {//다음페이지로
             @Override
             public void onClick(View v) {
-                SignInPolicyFragment f = new SignInPolicyFragment();
+                SignInTermsFragment f = new SignInTermsFragment();
                 SignInActivity.fNum = getActivity().getSupportFragmentManager().getBackStackEntryCount();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, f);

@@ -1,58 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#dcdcdc"
+tools:context="com.juntcompany.godandgod.Login.SignIn.SignInPolicyFragment">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="28dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginTop="15dp"
+    android:gravity="left|center_vertical"
+    android:textColor="#000000"
+    android:text="GODnGOD를 사용하려면 개인정보취급방침을"
+    android:textSize="17dp"
+    android:textStyle="bold"/>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="20dp"
+    android:layout_marginLeft="15dp"
+    android:gravity="left|center_vertical"
+    android:textColor="#000000"
+    android:text="확인하세요."
+    android:textSize="17dp"
+    android:textStyle="bold"/>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="30dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginTop="5dp"
+    android:gravity="left|center_vertical"
+    android:text="가입하면 GODnGOD 개인정보취급방침에 동의하고 읽고"
+    android:textSize="13dp"
+    android:textStyle="bold"/>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="14dp"
+    android:layout_marginLeft="15dp"
+    android:gravity="left|center_vertical"
+    android:text="이해하신 것으로간주합니다."
+    android:textSize="13dp"
+    android:textStyle="bold"/>ㅁ
+<TableLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#dcdcdc"
-    tools:context="com.juntcompany.godandgod.Login.SignIn.SignInPolicyFragment">
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    android:background="#FFFFFF">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:gravity="left|center_vertical"
+        android:text="개인정보취급방침"
+        android:textSize="25dp" />
 
-    <TableLayout
-        android:layout_width="match_parent"
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:background="#FFFFFF">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginLeft="8dp"
-            android:gravity="left|center_vertical"
-            android:textColor="#000000"
-            android:text="개인정보"
-            android:textSize="25dp" />
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="#000000" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:textSize="14dp"
-            android:textColor="#000000"
-            android:text="@string/personal"/>
-
-        <Button
-            android:id="@+id/agree"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:textColor="#000000"
-            android:background="#dcdcdc"
-            android:layout_margin="5dp"
-            android:text="개인정보 취급방침에 동의하시려면 누르세요." />
-    </TableLayout>
+        android:layout_margin="10dp"
+        android:textSize="14dp"
+        android:textColor="#000000"
+        android:text="@string/personal"/>
 
     <Button
-        android:id="@+id/nextpage"
+        android:id="@+id/agree"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="#6495ed"
-        android:text="다음 페이지로"
-        android:textColor="#FFFFFF"
-        android:textSize="20dp" />
+        android:textColor="#000000"
+        android:background="#dcdcdc"
+        android:layout_margin="5dp"
+        android:text="동의" />
+</TableLayout>
+
+<Button
+    android:id="@+id/buttonNext"
+    style="@style/nextButton"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"/>
 </TableLayout>
