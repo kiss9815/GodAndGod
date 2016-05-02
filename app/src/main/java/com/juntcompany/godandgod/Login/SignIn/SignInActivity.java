@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView ;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +48,8 @@ public class SignInActivity extends AppCompatActivity {
         //setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
         Fragment f = new SignInChooseFragment();//첫번째 프래그먼트를 설정
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
