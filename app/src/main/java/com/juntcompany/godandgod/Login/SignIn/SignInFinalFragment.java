@@ -42,10 +42,11 @@ public class SignInFinalFragment extends Fragment {
                 SignInActivity.birthDate = 1;
                 SignInActivity.male = 0;
                 SignInActivity.female = 0;
-                SignInActivity.phone = null;
                 SignInActivity.pwInput = null;
                 SignInActivity.fName = null;
                 SignInActivity.oName = null;
+                SignInActivity.phone = null ;
+                SignInActivity.spnation = 0 ;
                 SignInActivity.email = null;
                 SignInActivity.christianStatue = 0;
                 SignInActivity.catholicStatue = 0;
@@ -93,7 +94,10 @@ public class SignInFinalFragment extends Fragment {
 
 
         String nation = null;
-        if(SignInActivity.spnation == 1){
+        if(SignInActivity.spnation == 0){
+            nation = "선택 오류" ;
+        }
+        else if(SignInActivity.spnation == 1){
             nation = "한국" ;
         }
         else if(SignInActivity.spnation == 2){

@@ -145,7 +145,8 @@ public class SignInActivity extends AppCompatActivity {
                         ft.commit();
                         break;
                     default:
-                        SignInActivity.signActvity.finish();
+                        Activity sa = SignInActivity.signActvity;
+                        sa.finish();
                         break;
                 }
                 return true;
@@ -154,6 +155,8 @@ public class SignInActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -231,9 +234,33 @@ public class SignInActivity extends AppCompatActivity {
                 ft.commit();
                 break;
             default:
-                SignInActivity.signActvity.finish();
+                Activity sa = SignInActivity.signActvity;
+                sa.finish();
                 break;
         }
+    }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        SignInActivity.fNum = 0;
+        SignInActivity.termsStatue = 0;
+        SignInActivity.policyStatue = 0;
+        SignInActivity.birthYear = 1980;
+        SignInActivity.birthMonth = 1;
+        SignInActivity.birthDate = 1;
+        SignInActivity.male = 0;
+        SignInActivity.female = 0;
+        SignInActivity.pwInput = null;
+        SignInActivity.fName = null;
+        SignInActivity.oName = null;
+        SignInActivity.phone = null ;
+        SignInActivity.spnation = 0 ;
+        SignInActivity.email = null;
+        SignInActivity.christianStatue = 0;
+        SignInActivity.catholicStatue = 0;
+        SignInActivity.buddhismStatue = 0;
+        SignInActivity.othersReligionStatue = 0;
+        SignInActivity.resultpage = false;
     }
 }
 
