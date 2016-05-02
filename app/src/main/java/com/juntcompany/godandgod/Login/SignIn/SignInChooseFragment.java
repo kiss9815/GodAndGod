@@ -47,7 +47,7 @@ public class SignInChooseFragment extends Fragment {
                 SignInActivity.signActvity.finish();
             }
         });
-//        ((SignInActivity) getActivity()).setActionTitle(Title);
+        ((SignInActivity) getActivity()).setActionTitle(Title);
         return view;
     }
 

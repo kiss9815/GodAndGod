@@ -20,7 +20,6 @@ import com.juntcompany.godandgod.Main.Friend.FriendFragment;
 import com.juntcompany.godandgod.Main.Home.HomeFragment;
 import com.juntcompany.godandgod.Main.Live.LiveFragment;
 import com.juntcompany.godandgod.Main.Love.LoveFragment;
-import com.juntcompany.godandgod.Main.Profile.ProfileFragment;
 import com.juntcompany.godandgod.MainToolbar.ChatFragment;
 import com.juntcompany.godandgod.Main.Search.SearchFragment;
 import com.juntcompany.godandgod.Main.Video.VideoFragment;
@@ -155,6 +154,18 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        Log.d("test", "onPrepareOptionsMenu - 옵션메뉴가 " +
+                "화면에 보여질때 마다 호출됨");
+        if(loginStatus){
+            menu.getItem(0).setTitle("로그아웃");
+        }else{
+            menu.getItem(0).setTitle("로그인");
+        }
+
+        return super.onPrepareOptionsMenu(menu);
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -169,26 +180,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         switch(id) {
-            case R.id.loginAction:
+            case R.id.menuLogin:
                 if(!loginStatus)
                 {
-                    item.setIcon(R.drawable.logout);
                     intent = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(intent);
                 }
                 else
                 {
-                    item.setIcon(R.drawable.logout);
                     loginStatus = false;
                     logout = true;
                 }
-                break;
-            case R.id.profile:
-                ProfileFragment f = new ProfileFragment();
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.container, f)
-                        .commit();
                 break;
         }
         return super.onOptionsItemSelected(item);
