@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         EditText pw = (EditText) findViewById(R.id.passwordText);
         CheckBox saveid = (CheckBox) findViewById(R.id.saveId);
         CheckBox autoLogin = (CheckBox) findViewById(R.id.autoLogin);
-//
+////
         switch (v.getId()) {
             case R.id.loginButton:
                 if (id.getText().toString().equals("123")) {
