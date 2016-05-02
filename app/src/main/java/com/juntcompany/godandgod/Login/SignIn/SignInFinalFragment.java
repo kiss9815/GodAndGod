@@ -2,6 +2,7 @@ package com.juntcompany.godandgod.Login.SignIn;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -41,6 +42,7 @@ public class SignInFinalFragment extends Fragment {
                 SignInActivity.birthDate = 1;
                 SignInActivity.male = 0;
                 SignInActivity.female = 0;
+                SignInActivity.phone = null;
                 SignInActivity.pwInput = null;
                 SignInActivity.fName = null;
                 SignInActivity.oName = null;
@@ -90,8 +92,27 @@ public class SignInFinalFragment extends Fragment {
         }
 
 
+        String nation = null;
+        if(SignInActivity.spnation == 1){
+            nation = "한국" ;
+        }
+        else if(SignInActivity.spnation == 2){
+            nation = "일본";
+        }
+        else if(SignInActivity.spnation == 3){
+            nation = "미국";
+        }
+        else if(SignInActivity.spnation == 4){
+            nation = "중국" ;
+        }
+        else{
+            return null ;
+        }
         String birthday = SignInActivity.birthYear + "년 " + SignInActivity.birthMonth + "월" + SignInActivity.birthDate + "일";
         String username = SignInActivity.fName + SignInActivity.oName;
+        String phoneinfo = nation + " / " + SignInActivity.phone;
+        phone.setText(phoneinfo);
+        phone.setTextColor(Color.BLACK);
         email.setText(SignInActivity.email);
         email.setTextColor(Color.BLACK);
         name.setText(username);
@@ -104,6 +125,17 @@ public class SignInFinalFragment extends Fragment {
         religion.setTextColor(Color.BLACK);
         gender.setText(sex);
         gender.setTextColor(Color.BLACK);
+
+        phone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SignInActivity.resultpage = true;
+                SignInPhoneFragment f = new SignInPhoneFragment();
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.container, f);
+                ft.commit();
+            }
+        });
 
         email.setOnClickListener(new View.OnClickListener() {
             @Override

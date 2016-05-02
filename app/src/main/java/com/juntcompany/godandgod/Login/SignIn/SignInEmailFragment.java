@@ -40,6 +40,7 @@ public class SignInEmailFragment extends Fragment {
         {
             email.setText(SignInActivity.email);
         }
+
         btn.setOnClickListener(new View.OnClickListener() {
             EditText email = (EditText) view.findViewById(R.id.inputEmail);
             @Override
@@ -60,6 +61,7 @@ public class SignInEmailFragment extends Fragment {
                 }
             }
         });
+
         btclear.setOnClickListener(new View.OnClickListener() {
             EditText email = (EditText) view.findViewById(R.id.inputEmail);
             @Override
@@ -67,6 +69,7 @@ public class SignInEmailFragment extends Fragment {
                 email.setText("");
             }
         });
+
         ((SignInActivity) getActivity()).setActionTitle(Title);
 
 
