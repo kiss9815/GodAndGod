@@ -8,23 +8,22 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="98dp"
+        android:layout_marginTop="48dp"
         android:gravity="center"
         android:text="자신의 종교를 선택해주세요."
         android:textColor="#000000"
-        android:textSize="23dp" />
+        android:textSize="23dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TableLayout
         android:id="@+id/tableLayout3"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView3"
-        android:layout_marginTop="30dp">
+        android:layout_alignParentLeft="true">
 
         <TextView
             android:id="@+id/textView2"
@@ -55,17 +54,15 @@
         android:id="@+id/buttonNext"
         style="@style/nextButton"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="48dp" />
+        android:layout_centerHorizontal="true" />
 
     <TableRow
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tableLayout3"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:gravity="center"
-        android:id="@+id/tableRow2">
+        android:id="@+id/tableRow2"
+        android:layout_below="@+id/tableLayout3"
+        android:layout_centerHorizontal="true">
 
 
         <TableLayout

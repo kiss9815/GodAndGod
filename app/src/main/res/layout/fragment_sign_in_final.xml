@@ -14,15 +14,16 @@
         android:gravity="center"
         android:text="입력하신 정보들을 확인해주세요."
         android:textColor="#000000"
-        android:textSize="23dp" />
+        android:textSize="20dp" />
 
     <TableLayout
         android:id="@+id/tableLayout3"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView3"
+        android:layout_gravity="center"
         android:layout_marginTop="3dp">
 
         <TextView
@@ -35,7 +36,7 @@
             android:gravity="center"
             android:text="입력하신 정보가 맞다면 완료 버튼을 눌러주세요."
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="15dp" />
+            android:textSize="12dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -46,7 +47,7 @@
             android:gravity="center"
             android:text="수정하실 부분이 있으면 수정할 곳을 클릭해주세요."
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="15dp"
+            android:textSize="12dp"
             android:textStyle="bold" />
     </TableLayout>
     <TableRow
@@ -61,10 +62,10 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="휴대폰 번호"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="20dp" />
+            android:textSize="19dp" />
 
         <TextView
             android:id="@+id/phoneText"
@@ -74,10 +75,10 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="phone"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="20dp" />
+            android:textSize="19dp" />
     </TableRow>
 
     <View
@@ -97,10 +98,10 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="이메일 주소"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="20dp" />
+            android:textSize="19dp" />
 
         <TextView
             android:id="@+id/emailText"
@@ -110,10 +111,10 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="email"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="20dp" />
+            android:textSize="19dp" />
     </TableRow>
 
     <View
@@ -133,10 +134,10 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="이름"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="20dp" />
+            android:textSize="19dp" />
 
         <TextView
             android:id="@+id/nameText"
@@ -146,10 +147,10 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="name"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="20dp" />
+            android:textSize="19dp" />
     </TableRow>
 
     <View
@@ -169,10 +170,10 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="생일"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="20dp" />
+            android:textSize="19dp" />
 
         <TextView
             android:id="@+id/birthText"
@@ -182,10 +183,10 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="birth"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="20dp" />
+            android:textSize="19dp" />
 
     </TableRow>
 
@@ -206,10 +207,10 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="비밀번호"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="20dp" />
+            android:textSize="19dp" />
 
         <TextView
             android:id="@+id/pwText"
@@ -219,10 +220,10 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="pw"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="20dp" />
+            android:textSize="19dp" />
     </TableRow>
 
     <View
@@ -242,10 +243,10 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="종교"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="20dp" />
+            android:textSize="19dp" />
 
         <TextView
             android:id="@+id/religionText"
@@ -255,10 +256,10 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="religion"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="20dp" />
+            android:textSize="19dp" />
 
     </TableRow>
 
@@ -279,7 +280,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="성별"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="20dp" />
@@ -292,19 +293,23 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="gender"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="20dp" />
     </TableRow>
 
-
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#90909090" />
     <Button
         android:id="@+id/buttonNext"
         style="@style/nextButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="7dp"
+  />
 
 
 </TableLayout>
