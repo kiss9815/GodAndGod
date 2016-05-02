@@ -7,19 +7,13 @@
     <!-- TODO: Update blank fragment layout -->
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/buttonNext"
-        android:layout_gravity="center_horizontal|top"
-        android:background="#6495ed"
+        style="@style/nextButton"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="113dp"
-        android:text="다음 페이지로"
-        android:textColor="#FFFFFF"
-        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+
         />
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -70,17 +64,24 @@
 
     <EditText
         android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:inputType="phone"
         android:hint="010-0000-0000"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/inputPhone"
         android:layout_below="@+id/spinner"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="70dp"
-        android:layout_marginRight="40dp"
+
         />
+    <Button
+        style="@style/clearButton"
+        android:id="@+id/PhoneClear"
+
+
+        android:layout_below="@+id/spinner"
+        android:layout_alignRight="@+id/inputPhone"
+        android:layout_alignEnd="@+id/inputPhone" />
 
     <Spinner
         android:layout_width="250dp"
@@ -98,14 +99,4 @@
         android:entries="@array/nation"/>
 
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tableLayout4"
-        android:id="@+id/recycler"
-        android:gravity="center"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"/>
 </RelativeLayout>
