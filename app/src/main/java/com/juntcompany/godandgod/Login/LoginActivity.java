@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(this, "ID 또는 비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show();
                 }
-
+//
                 break;
             case R.id.loginHelp:
                 intent = new Intent(getApplicationContext(), LoginHelpActivity.class);
