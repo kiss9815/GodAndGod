@@ -26,11 +26,11 @@ public class SignInActivity extends AppCompatActivity {
     public static int birthDate = 1;
     public static int male = 0;
     public static int female = 0;
-    public static String phone = null ;
-    public static int spnation = 0 ;
     public static String pwInput = null;
     public static String fName = null;
     public static String oName = null;
+    public static String phone = null ;
+    public static int spnation = 0 ;
     public static String email = null;
     public static int christianStatue = 0;
     public static int catholicStatue = 0;
