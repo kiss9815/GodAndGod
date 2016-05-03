@@ -4,11 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.juntcompany.godandgod.Login.LoginHelper.HelperActivity;
 import com.juntcompany.godandgod.Login.SignIn.SignInActivity;
 import com.juntcompany.godandgod.Main.MainActivity;
 import com.juntcompany.godandgod.Main.backpress;
@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 break;
             case R.id.loginHelp:
-                intent = new Intent(getApplicationContext(), LoginHelpActivity.class);
+                intent = new Intent(getApplicationContext(), HelperActivity.class);
                 startActivity(intent);
                 break;
             case R.id.signHelp:

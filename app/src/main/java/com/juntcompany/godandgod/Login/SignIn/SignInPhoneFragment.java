@@ -20,6 +20,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.EditText;
+import android.widget.AdapterView.OnItemSelectedListener;
+
 
 import com.juntcompany.godandgod.Manager.PropertyManager;
 import com.juntcompany.godandgod.R;
@@ -93,10 +95,12 @@ public class SignInPhoneFragment extends Fragment {
         ((SignInActivity) getActivity()).getApplicationContext();
         ((SignInActivity) getActivity()).setActionTitle(Title);
 
+        Spinner s = (Spinner) view.findViewById(R.id.spinner);
         String[] str = getResources().getStringArray(R.array.nation);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>
-                (getActivity().getApplication(), android.R.layout.simple_spinner_dropdown_item, str);
-        Spinner s = (Spinner) view.findViewById(R.id.spinner);
+                (getActivity().getApplication(), android.R.layout.simple_list_item_1, str);
+
+
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                         @Override
                                         public void onItemSelected(AdapterView<?> parent, View view,

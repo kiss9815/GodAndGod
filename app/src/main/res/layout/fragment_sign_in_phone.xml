@@ -77,8 +77,6 @@
     <Button
         style="@style/clearButton"
         android:id="@+id/PhoneClear"
-
-
         android:layout_below="@+id/spinner"
         android:layout_alignRight="@+id/inputPhone"
         android:layout_alignEnd="@+id/inputPhone" />
@@ -95,8 +93,9 @@
         android:gravity="center"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="40dp"
+        android:entries="@array/nation"
         android:spinnerMode="dropdown"
-        android:entries="@array/nation"/>
+        />
 
 
 </RelativeLayout>

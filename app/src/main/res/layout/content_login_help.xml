@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Login.LoginHelpActivity"
+    tools:context=".Login.LoginHelper.LoginHelpActivity"
     tools:showIn="@layout/activity_login_help">
 
     <TableLayout
@@ -35,19 +35,6 @@
             android:layout_height="50dp"
             android:gravity="left|center"
             android:text="사용자 이름 또는 이메일을 통해"
-            android:textColor="#000000"
-            android:textSize="15dp" />
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="#90909090" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:gravity="left|center"
-            android:text="SMS를 통해"
             android:textColor="#000000"
             android:textSize="15dp" />
 

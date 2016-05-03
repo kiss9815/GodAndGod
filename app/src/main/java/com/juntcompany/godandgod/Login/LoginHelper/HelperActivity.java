@@ -1,4 +1,4 @@
-package com.juntcompany.godandgod.Login;
+package com.juntcompany.godandgod.Login.LoginHelper;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +7,7 @@ import android.view.MenuItem;
 
 import com.juntcompany.godandgod.R;
 
-public class LoginHelpActivity extends AppCompatActivity {
+public class HelperActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
