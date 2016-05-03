@@ -32,7 +32,7 @@
             android:layout_marginLeft="55dp"
             android:layout_marginRight="55dp"
             android:ems="10"
-            android:hint="id"
+            android:hint="이메일 또는 핸드폰 번호"
             android:inputType="textPersonName" />
 
         <EditText

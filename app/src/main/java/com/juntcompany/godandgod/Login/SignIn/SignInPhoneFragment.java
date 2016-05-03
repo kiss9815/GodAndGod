@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.renderscript.Sampler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.RecyclerView ;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -47,23 +47,22 @@ public class SignInPhoneFragment extends Fragment {
         Button btn = (Button) view.findViewById(R.id.buttonNext);
         Button btclear = (Button) view.findViewById(R.id.PhoneClear);
         EditText phone = (EditText) view.findViewById(R.id.inputPhone);
-        Spinner spnation = (Spinner) view.findViewById(R.id.spinner) ;
+        Spinner spnation = (Spinner) view.findViewById(R.id.spinner);
 
         SignInActivity.fNum = 2;
         spnation.setSelection(0);
 
-        if(SignInActivity.phone != null)
-        {
+        if (SignInActivity.phone != null) {
             phone.setText(SignInActivity.phone);
         }
 
-       if(SignInActivity.spnation != 0)
-        {
-          spnation.setSelection(SignInActivity.spnation);
+        if (SignInActivity.spnation != 0) {
+            spnation.setSelection(SignInActivity.spnation);
         }
 
         btn.setOnClickListener(new View.OnClickListener() {
             EditText phone = (EditText) view.findViewById(R.id.inputPhone);
+
             @Override
             public void onClick(View v) {
                 if (SignInActivity.resultpage == false) {
@@ -72,8 +71,7 @@ public class SignInPhoneFragment extends Fragment {
                     FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                     ft.replace(R.id.container, f);
                     ft.commit();    //어떤 버튼이 눌리던 백스택에 해당 프래그먼트가 저장됨
-                }
-                else if (SignInActivity.resultpage == true) {
+                } else if (SignInActivity.resultpage == true) {
                     SignInActivity.phone = phone.getText().toString();
                     SignInFinalFragment f = new SignInFinalFragment();
                     FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
@@ -85,6 +83,7 @@ public class SignInPhoneFragment extends Fragment {
 
         btclear.setOnClickListener(new View.OnClickListener() {
             EditText phone = (EditText) view.findViewById(R.id.inputPhone);
+
             @Override
             public void onClick(View v) {
                 phone.setText("");
@@ -105,22 +104,21 @@ public class SignInPhoneFragment extends Fragment {
                                         @Override
                                         public void onItemSelected(AdapterView<?> parent, View view,
                                                                    int position, long id) {
-                                            if(position == 1){
+                                            if (position == 1) {
                                                 SignInActivity.spnation = 1;
-                                            }
-                                            else if(position == 2){
+                                            } else if (position == 2) {
                                                 SignInActivity.spnation = 2;
-                                            }
-                                            else if(position == 3){
+                                            } else if (position == 3) {
                                                 SignInActivity.spnation = 3;
-                                            }
-                                            else if(position == 4){
+                                            } else if (position == 4) {
                                                 SignInActivity.spnation = 4;
                                             }
 
                                         }
+
                                         @Override
-                                        public void onNothingSelected(AdapterView<?> parent) {}
+                                        public void onNothingSelected(AdapterView<?> parent) {
+                                        }
 
                                     }
         );
