@@ -187,6 +187,11 @@ public class MainActivity extends AppCompatActivity {
                         .replace(R.id.container, f)
                         .commit();
                 break;
+            case R.id.loginAction:
+                MainActivity.logout = true;
+                intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+                break;
         }
 
     }
@@ -204,17 +209,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         switch (id) {
-            case R.id.loginAction:
-                if (!loginStatus) {
-                    item.setIcon(R.drawable.logout);
-                    intent = new Intent(getApplicationContext(), LoginActivity.class);
-                    startActivity(intent);
-                } else {
-                    item.setIcon(R.drawable.logout);
-                    loginStatus = false;
-                    logout = true;
-                }
-                break;
             case R.id.profile:
                 ProfileFragment f = new ProfileFragment();
                 getSupportFragmentManager()
@@ -223,6 +217,12 @@ public class MainActivity extends AppCompatActivity {
                         .commit();
                 profileNum = 0;
                 break;
+            case R.id.chatNgroup:
+                ChatFragment cf = new ChatFragment();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.container, cf)
+                        .commit();
         }
         return super.onOptionsItemSelected(item);
     }
