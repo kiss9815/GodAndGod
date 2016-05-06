@@ -13,14 +13,19 @@ import com.juntcompany.godandgod.Login.LoginHelper.HelperActivity;
 import com.juntcompany.godandgod.Login.SignIn.SignInChooseFragment;
 import com.juntcompany.godandgod.R;
 
+
+
 public class HelperActivity extends AppCompatActivity {
     Intent intent;
+    public static int fNum = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_help);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Fragment f = new HelperMainFragment();//첫번째 프래그먼트를 설정
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.container, f);
@@ -34,7 +39,7 @@ public class HelperActivity extends AppCompatActivity {
     public void helperclock(View v){
 
         switch (v.getId()){
-            case R.id.serachphone:
+            case R.id.searchphone:
                 intent = new Intent(getApplicationContext(),HelperPhoneFindFragment.class);
                 startActivity(intent);
                 break;
@@ -43,9 +48,20 @@ public class HelperActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        FragmentTransaction ft ;
         switch (item.getItemId()) {
             case android.R.id.home:
-                finish();
+                switch (fNum){
+                    case 1 :
+                        getSupportActionBar().hide();
+                        HelperPhoneFindFragment phonefind = new HelperPhoneFindFragment();
+                        HelperActivity.fNum = 0;
+                        ft = getSupportFragmentManager().beginTransaction();
+                        ft.replace(R.id.container, phonefind);
+                        ft.commit();
+                        break;
+
+                }
                 return true;
 
             default:

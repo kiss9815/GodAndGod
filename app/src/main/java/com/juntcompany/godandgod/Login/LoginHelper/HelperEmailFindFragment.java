@@ -4,40 +4,34 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.juntcompany.godandgod.R;
 
-public class HelperPhoneFindFragment extends Fragment {
 
-    public HelperPhoneFindFragment() {
+public class HelperEmailFindFragment extends Fragment {
+
+    public HelperEmailFindFragment() {
 
     }
 
-    private static final String Title = "로그인 도움말";
-
-
-    public static HelperPhoneFindFragment newInstance(String param1, String param2) {
-        HelperPhoneFindFragment fragment = new HelperPhoneFindFragment();
+    public static HelperEmailFindFragment newInstance(String param1, String param2) {
+        HelperEmailFindFragment fragment = new HelperEmailFindFragment();
         Bundle args = new Bundle();
-
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_helper_phone_find, container, false);
-
+        final View view = inflater.inflate(R.layout.fragment_helper_email_find, container, false);
 
         return view ;
     }
