@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 
 import com.juntcompany.godandgod.R;
 
-public class ProfileTopFragment extends Fragment {
+public class ProfileChargeheartFragment extends Fragment {
 
-    public ProfileTopFragment() {
+    public ProfileChargeheartFragment() {
         // Required empty public constructor
     }
 
@@ -20,7 +20,7 @@ public class ProfileTopFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile_top, container, false);
+        return inflater.inflate(R.layout.fragment_profile_chargeheart, container, false);
     }
 
 }

@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Main.MainActivity">
 
+    <item android:id="@+id/chatNgroup"
+        android:icon="@drawable/chat"
+        android:title=""
+        app:showAsAction="ifRoom"  />
     <item android:id="@+id/profile"
         android:icon="@drawable/profile"
         android:title=""
         app:showAsAction="ifRoom"  />
-    <item android:id="@+id/loginAction"
-        android:icon="@drawable/login"
-        android:title=""
-        app:showAsAction="ifRoom"/>
 </menu>

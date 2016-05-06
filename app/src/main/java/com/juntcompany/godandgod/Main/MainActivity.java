@@ -1,5 +1,6 @@
 package com.juntcompany.godandgod.Main;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -21,12 +22,14 @@ import com.juntcompany.godandgod.Main.Home.HomeFragment;
 import com.juntcompany.godandgod.Main.Live.LiveFragment;
 import com.juntcompany.godandgod.Main.Love.LoveFragment;
 import com.juntcompany.godandgod.Main.Profile.ProfileFragment;
+import com.juntcompany.godandgod.Main.Profile.ProfileSettingFragment;
 import com.juntcompany.godandgod.MainToolbar.ChatFragment;
 import com.juntcompany.godandgod.Main.Search.SearchFragment;
 import com.juntcompany.godandgod.Main.Video.VideoFragment;
 import com.juntcompany.godandgod.R;
 
 public class MainActivity extends AppCompatActivity {
+
     Intent intent;
     TabLayout tabLayout;
     ViewPager pager;
@@ -36,11 +39,12 @@ public class MainActivity extends AppCompatActivity {
     boolean isEditClicked = false;
     public static boolean loginStatus = false;
     public static boolean logout = false;
+    public static int profileNum = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayShowTitleEnabled(false);
@@ -136,15 +140,16 @@ public class MainActivity extends AppCompatActivity {
                 .commit();
 
 
-
         backPressCloseHandler = new backpress(this);
     }
+
     @Override
     public void onBackPressed() {
 
         backPressCloseHandler.onBackPressed();
 
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -155,6 +160,41 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    public void profileOnClick(View v) {
+        ProfileFragment f;
+        switch (v.getId()) {
+            case R.id.myProfile:
+                profileNum = 1;
+                f = new ProfileFragment();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.container, f)
+                        .commit();
+                break;
+            case R.id.chargeHeart:
+                profileNum = 2;
+                f = new ProfileFragment();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.container, f)
+                        .commit();
+                break;
+            case R.id.profileSetting:
+                profileNum = 3;
+                f = new ProfileFragment();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.container, f)
+                        .commit();
+                break;
+            case R.id.loginAction:
+                MainActivity.logout = true;
+                intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+                break;
+        }
+
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -168,28 +208,21 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
 
-        switch(id) {
-            case R.id.loginAction:
-                if(!loginStatus)
-                {
-                    item.setIcon(R.drawable.logout);
-                    intent = new Intent(getApplicationContext(), LoginActivity.class);
-                    startActivity(intent);
-                }
-                else
-                {
-                    item.setIcon(R.drawable.logout);
-                    loginStatus = false;
-                    logout = true;
-                }
-                break;
+        switch (id) {
             case R.id.profile:
                 ProfileFragment f = new ProfileFragment();
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.container, f)
                         .commit();
+                profileNum = 0;
                 break;
+            case R.id.chatNgroup:
+                ChatFragment cf = new ChatFragment();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.container, cf)
+                        .commit();
         }
         return super.onOptionsItemSelected(item);
     }
