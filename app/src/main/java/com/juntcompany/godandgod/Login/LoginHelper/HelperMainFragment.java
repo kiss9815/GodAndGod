@@ -8,27 +8,29 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.juntcompany.godandgod.Login.SignIn.SignInActivity;
 import com.juntcompany.godandgod.R;
 
 
 public class HelperMainFragment extends Fragment {
 
-    private static final String Title = "휴대폰 번호";
+    String Title = "로그인 도움말";
 
     public HelperMainFragment() {
-        // Required empty public constructor
+
     }
-
-
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         final View view = inflater.inflate(R.layout.fragment_helper_main, container, false);
 
+        HelperActivity.fNum = 1;
+        ((HelperActivity) getActivity()).setActionTitle(Title);
         return view ;
     }
+
+
 
 }

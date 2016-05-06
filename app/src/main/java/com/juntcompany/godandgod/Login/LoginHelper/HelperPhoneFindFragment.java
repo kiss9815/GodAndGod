@@ -17,7 +17,7 @@ public class HelperPhoneFindFragment extends Fragment {
 
     }
 
-    private static final String Title = "로그인 도움말";
+    String Title = "휴대폰 번호";
 
 
     public static HelperPhoneFindFragment newInstance(String param1, String param2) {
