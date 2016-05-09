@@ -2,12 +2,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main.Live.LiveFragment">
+    tools:context=".Main.Video.VideoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:text="전체 방송"
+        android:textColor="#000000" />
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="라이브다" />
+        android:layout_below="@id/title">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TableRow android:layout_margin="5dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/gnd" />
+
+
+                <TableLayout
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="9">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="18dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginLeft="2dp"
+                        android:gravity="center_vertical"
+                        android:text="GnD가 만들어지는 과정"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="12dp"
+                        android:gravity="center_vertical"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="18dp"
+                        android:layout_below="@id/groupName"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginLeft="4dp"
+                        android:gravity="center_vertical"
+                        android:text="GnD"
+                        android:textColor="#78b0de"
+                        android:textSize="15dp" />
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/updateChat"
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp"
+                            android:layout_below="@id/groupName"
+                            android:layout_marginBottom="2dp"
+                            android:layout_marginLeft="4dp"
+                            android:gravity="center_vertical"
+                            android:text="15000"
+                            android:textColor="#000000"
+                            android:textSize="12dp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp"
+                            android:layout_below="@id/groupName"
+                            android:layout_marginBottom="2dp"
+                            android:layout_marginLeft="2dp"
+                            android:gravity="center_vertical"
+                            android:text="명 시청중"
+                            android:textColor="#000000"
+                            android:textSize="12dp" />
+                    </TableRow>
+                </TableLayout>
+            </TableRow>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#90909090" />
+
+        </TableLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

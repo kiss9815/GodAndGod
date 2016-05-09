@@ -39,8 +39,8 @@ public class ChatFragment extends Fragment {
         tabLayout.setupWithViewPager(pager);
         tabLayout.removeAllTabs();
 
-        tabLayout.addTab(tabLayout.newTab().setText("첫번째"));
-        tabLayout.addTab(tabLayout.newTab().setText("두번째"));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.message));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.group));
 
         return view;
     }

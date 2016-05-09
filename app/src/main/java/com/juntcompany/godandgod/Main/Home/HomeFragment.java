@@ -60,11 +60,11 @@ public class HomeFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        actionBar = ((MainActivity) getActivity()).getSupportActionBar();
+//        actionBar = ((MainActivity) getActivity()).getSupportActionBar();
 
-        View view = actionBar.getCustomView();
-        Button btn = (Button)view.findViewById(R.id.buttonChat);
-        btn.setVisibility(View.VISIBLE);
+//        View view = actionBar.getCustomView();
+//        Button btn = (Button)view.findViewById(R.id.buttonChat);
+//        btn.setVisibility(View.VISIBLE);
 
 
     }

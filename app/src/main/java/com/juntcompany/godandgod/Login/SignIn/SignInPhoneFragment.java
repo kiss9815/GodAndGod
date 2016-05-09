@@ -49,7 +49,7 @@ public class SignInPhoneFragment extends Fragment {
         EditText phone = (EditText) view.findViewById(R.id.inputPhone);
         Spinner spnation = (Spinner) view.findViewById(R.id.spinner);
 
-        SignInActivity.fNum = 2;
+        SignInActivity.fNum = 3;
         spnation.setSelection(0);
 
         if (SignInActivity.phone != null) {

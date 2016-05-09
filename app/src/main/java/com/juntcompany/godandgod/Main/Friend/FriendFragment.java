@@ -37,8 +37,8 @@ public class FriendFragment extends Fragment {
         actionBar = ((MainActivity) getActivity()).getSupportActionBar();
 
         View view = actionBar.getCustomView();
-        Button btn = (Button)view.findViewById(R.id.buttonChat);
-        btn.setVisibility(View.VISIBLE);
+//        Button btn = (Button)view.findViewById(R.id.buttonChat);
+//        btn.setVisibility(View.VISIBLE);
 
 
 

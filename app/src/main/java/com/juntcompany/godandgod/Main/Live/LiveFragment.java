@@ -38,8 +38,8 @@ public class LiveFragment extends Fragment {
         actionBar = ((MainActivity) getActivity()).getSupportActionBar();
 
         View view = actionBar.getCustomView();
-        Button btn = (Button)view.findViewById(R.id.buttonChat);
-        btn.setVisibility(View.GONE);
+//        Button btn = (Button)view.findViewById(R.id.buttonChat);
+//        btn.setVisibility(View.GONE);
 
         Button buttonStar = new Button(getContext());
         buttonStar.setBackgroundResource(android.R.drawable.btn_star);

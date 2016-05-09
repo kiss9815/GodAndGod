@@ -11,24 +11,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:background="@drawable/search"
-        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="3dp"
         android:layout_marginRight="3dp"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginTop="3dp"
+        android:background="@drawable/search" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/searchtool"
-        android:layout_toRightOf="@+id/searchtool"
-        android:text="검색"
-        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="3dp"
         android:layout_marginRight="3dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@+id/searchtool"
+        android:layout_toRightOf="@+id/searchtool"
+        android:background="@null"
+        android:hint="검색"
         android:textColor="#FFFFFF"
+        android:textCursorDrawable="@null"
+        android:textColorHint="#DDDDDD"
         android:textSize="16dp" />
 
     <View

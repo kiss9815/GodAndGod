@@ -20,7 +20,7 @@
         <item name="android:layout_marginLeft">15dp</item>
         <item name="android:layout_marginRight">15dp</item>
         <item name="android:layout_marginBottom">40dp</item>
-        <item name="android:background">#2f6656</item>
+        <item name="android:background">@drawable/buttonstyle1</item>
         <item name="android:text">다음</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">20dp</item>
@@ -30,6 +30,13 @@
         <item name="android:layout_height">40dp</item>
         <item name="android:background">@android:color/transparent</item>
         <item name="android:text">x</item>
+    </style>
+
+    <style name="searchButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@null</item>
+        <item name="android:minHeight">48dp</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

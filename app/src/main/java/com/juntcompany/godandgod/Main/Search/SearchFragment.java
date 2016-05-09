@@ -40,8 +40,8 @@ public class SearchFragment extends Fragment {
          actionBar = ((MainActivity) getActivity()).getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         View view = actionBar.getCustomView();
-        Button btn = (Button)view.findViewById(R.id.buttonChat);
-        btn.setVisibility(View.GONE);
+//        Button btn = (Button)view.findViewById(R.id.buttonChat);
+//        btn.setVisibility(View.GONE);
 
 
     }
