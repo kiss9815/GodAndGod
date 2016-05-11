@@ -20,6 +20,7 @@ public class HelperActivity extends AppCompatActivity {
     Intent intent;
     public static Activity helperActvity;
     public static int fNum = 0;
+    public static int fphone = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +50,14 @@ public class HelperActivity extends AppCompatActivity {
 
 
     public void helperclock(View v){
-
+        FragmentTransaction ft ;
         switch (v.getId()){
             case R.id.searchphone:
-                intent = new Intent(getApplicationContext(),HelperPhoneFindFragment.class);
-                startActivity(intent);
+                HelperPhoneFindFragment phonedfind  = new HelperPhoneFindFragment();
+                HelperActivity.fNum = 2;
+                ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.container, phonedfind);
+                ft.commit();
                 break;
         }
     }
@@ -76,6 +80,13 @@ public class HelperActivity extends AppCompatActivity {
                         ft.replace(R.id.container, main);
                         ft.commit();
                         break;
+                    case 3 :
+                        HelperPhoneFindFragment phonefind = new HelperPhoneFindFragment();
+                        HelperActivity.fNum = 2;
+                        ft = getSupportFragmentManager().beginTransaction();
+                        ft.replace(R.id.container, phonefind);
+                        ft.commit();
+                        break;
                 }
 
                 return true;
@@ -91,13 +102,25 @@ public class HelperActivity extends AppCompatActivity {
         switch (fNum) {
             case 1:
                 getSupportActionBar().hide();
+                Activity ss = HelperActivity.helperActvity;
+                ss.finish();
+                break;
+            case 2:
                 HelperMainFragment main = new HelperMainFragment();
-                HelperActivity.fNum = 0;
+                HelperActivity.fNum = 1;
                 ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, main);
                 ft.commit();
                 break;
+            case 3:
+                HelperPhoneFindFragment phonefind = new HelperPhoneFindFragment();
+                HelperActivity.fNum = 2;
+                ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.container, phonefind);
+                ft.commit();
+                break;
             default:
+
                 Activity sa1 = HelperActivity.helperActvity;
                 sa1.finish();
                 break;
