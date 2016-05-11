@@ -1,73 +1,13 @@
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainToolbar.ChatGroupFragment">
+    >
 
-    <ScrollView
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-            <TableRow android:layout_margin="5dp">
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="60dp"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/gnd" />
-
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="60dp"
-                    android:layout_margin="5dp"
-                    android:layout_weight="9">
-
-                    <TextView
-                        android:id="@+id/groupName"
-                        android:layout_width="100dp"
-                        android:layout_height="23dp"
-                        android:layout_marginBottom="4dp"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center_vertical"
-                        android:text="GnD"
-                        android:textColor="#000000"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="29dp"
-                        android:layout_below="@id/groupName"
-                        android:layout_marginBottom="4dp"
-                        android:layout_marginLeft="4dp"
-                        android:gravity="center_vertical"
-                        android:text="테스트 중입니다."
-                        android:textColor="#000000"
-                        android:textSize="20dp"
-                        android:id="@+id/updateChat" />
-                    <TextView
-                        android:id="@+id/updateChatTime"
-                        android:layout_width="100dp"
-                        android:layout_height="23dp"
-                        android:gravity="center_vertical"
-                        android:text="GnD"
-                        android:textColor="#000000"
-                        android:textSize="20dp"
-                        android:layout_above="@+id/updateChat"
-                        android:layout_alignRight="@+id/updateChat"
-                        android:layout_alignEnd="@+id/updateChat" />
-                </RelativeLayout>
-            </TableRow>
-
-        </TableLayout>
-
-    </ScrollView>
-
-</TableLayout>
+</RelativeLayout>

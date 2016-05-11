@@ -2,6 +2,7 @@ package com.juntcompany.godandgod.Main.Home;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.juntcompany.godandgod.R;
@@ -10,14 +11,14 @@ import com.juntcompany.godandgod.R;
  * Created by EOM on 2016-04-29.
  */
 public class HomePostHeaderViewHolder extends RecyclerView.ViewHolder{
-    TextView textView;
+    ImageView imageView;
 
     public HomePostHeaderViewHolder(View itemView) {
         super(itemView);
-        textView = (TextView)itemView.findViewById(R.id.text);
+        imageView = (ImageView)itemView.findViewById(R.id.userPicture);
+        imageView.setBackgroundResource(R.drawable.emptyheart);
     }
 
     public void setDate(String title){
-        textView.setText(title);
     }
 }

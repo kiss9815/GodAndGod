@@ -1,21 +1,23 @@
-package com.juntcompany.godandgod.Main.Home;
+package com.juntcompany.godandgod.Main.Live;
 
-import android.preference.PreferenceActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.juntcompany.godandgod.Data.Post;
+import com.juntcompany.godandgod.Main.Video.VideoPostHeaderViewHolder;
+import com.juntcompany.godandgod.Main.Video.VideoPostViewHolder;
 import com.juntcompany.godandgod.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by EOM on 2016-04-29.
+ * Created by Jiseong on 2016-05-10.
  */
-public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+public class LiveAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
 
     List<Post> items = new ArrayList<Post>();
@@ -38,12 +40,12 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         switch (viewType) {
             case VIEW_TYPE_HEADER: {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_home_post_header, parent, false);
-                return new HomePostHeaderViewHolder(view);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_live_post_header, parent, false);
+                return new LivePostHeaderViewHolder(view);
             }
             default:
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_home_post, parent, false);
-                return new HomePostViewHolder(view);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_live_post, parent, false);
+                return new LivePostViewHolder(view);
         }
 
     }
@@ -52,7 +54,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (position > 0) {
             int index = position - 1; // 헤더는 아이템이 하나므로
-            ((HomePostViewHolder) holder).setData(items.get(index));
+            ((LivePostViewHolder) holder).setData(items.get(index));
         }
     }
 

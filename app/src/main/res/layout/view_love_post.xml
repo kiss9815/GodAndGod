@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Main.Love.LoveFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TableRow android:layout_margin="2dp">
+
+                <ImageView
+                    android:id="@+id/imageUserPicture"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                   />
+
+
+                <TableLayout
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="9">
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/userName"
+                            android:layout_width="match_parent"
+                            android:layout_height="18dp"
+                            android:layout_marginBottom="2dp"
+                            android:layout_marginLeft="4dp"
+                            android:gravity="center_vertical"
+                            android:text="GnD"
+                            android:textColor="#000000"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/updateStatue"
+                            android:layout_width="match_parent"
+                            android:layout_height="18dp"
+                            android:layout_marginBottom="2dp"
+                            android:layout_marginLeft="2dp"
+                            android:gravity="center_vertical"
+                            android:text="님이 회원님의 게시물을 좋아합니다."
+                            android:textColor="#000000"
+                            android:textSize="15dp" />
+                    </TableRow>
+
+                    <TextView
+                        android:id="@+id/updateContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="18dp"
+                        android:layout_below="@id/userName"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginLeft="4dp"
+                        android:gravity="center_vertical"
+                        android:text="테스트 중입니다."
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/updateTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="18dp"
+                        android:layout_below="@id/userName"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginLeft="4dp"
+                        android:gravity="center_vertical"
+                        android:text="2시간 전"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+                </TableLayout>
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+</RelativeLayout>

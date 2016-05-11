@@ -1,4 +1,4 @@
-package com.juntcompany.godandgod.Main.Live;
+package com.juntcompany.godandgod.MainToolbar.ChatMessage;
 
 
 import android.os.Bundle;
@@ -9,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.juntcompany.godandgod.Data.Post;
 import com.juntcompany.godandgod.Main.MainActivity;
@@ -18,46 +17,50 @@ import com.juntcompany.godandgod.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LiveFragment extends Fragment {
+
+public class ChatMessageFragment extends Fragment {
 
 
-    public LiveFragment() {
+    public ChatMessageFragment() {
         // Required empty public constructor
-        setHasOptionsMenu(true);
     }
 
-    RecyclerView recyclerView;
-    LiveAdapter mAdapter;
 
+    RecyclerView recyclerView;
+    ChatMessageAdapter mAdapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_live, container, false);
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
-        mAdapter = new LiveAdapter();
+        //추가
+        View view = inflater.inflate(R.layout.fragment_chat_message, container, false);
+        recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
+        mAdapter = new ChatMessageAdapter();
         recyclerView.setAdapter(mAdapter);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(layoutManager);
 
         initData();
         return view;
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_live, container, false);
+
+
+
+        //추가
+        // return inflater.inflate(R.layout.fragment_love, container, false);
     }
 
     private void initData(){
         for(int i=0; i<10; i++) {
             Post post = new Post();
-            post.postLivePicture = getResources().getDrawable(R.drawable.gnd);
-            post.postLiveName = "생)GnD가 만들어지는 Live";
-            post.postLiveUser = "GnD";
-            post.postLiveViewCount = "10000";
+            post.postChatMessageRoomPicture = getResources().getDrawable(R.drawable.heart);
+            post.postChatMessageRoomName = "GnD";
+            post.postChatMessageRoomContent = "열심히 합시당.";
+            post.postChatMessageUpdateTime = "2시간 전";
             mAdapter.add(post);
         }
 
     }
+
 
 
     ActionBar actionBar;
@@ -69,13 +72,9 @@ public class LiveFragment extends Fragment {
 
         View view = actionBar.getCustomView();
 //        Button btn = (Button)view.findViewById(R.id.buttonChat);
-//        btn.setVisibility(View.GONE);
-
-//        Button buttonStar = new Button(getContext());
-//        buttonStar.setBackgroundResource(android.R.drawable.btn_star);
+//        btn.setVisibility(View.VISIBLE);
 
 
     }
-
 
 }
