@@ -1,33 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
 
 
     <ImageView
+        android:id="@+id/homeUserPicture"
         android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/imageUserPicture"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="글쓴 사람"
-        android:id="@+id/textUserName"
-        android:layout_toRightOf="@+id/imageUserPicture"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="시간"
-        android:id="@+id/textTime"
-        android:layout_below="@+id/textUserName"
-        android:layout_toRightOf="@+id/imageUserPicture"/>
+        android:layout_height="50dp" />
 
     <TextView
+        android:id="@+id/homeUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@+id/homeUserPicture"
+        android:text="글쓴 사람"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/homeTextTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/homeUserName"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/homeUserPicture"
+        android:text="시간"
+        android:textSize="13dp" />
+
+    <TextView
+        android:id="@+id/homeContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/homeUserPicture"
         android:text="글 내용"
-        android:layout_below="@id/imageUserPicture"
-        android:id="@+id/textPostContent"
-        />
+        android:textColor="#000000" />
 
+    <TableRow
+        android:id="@+id/statusTable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/homeContent"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="하트 "
+            android:textSize="13dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/homeUserLikeNum"
+            android:text="4"
+            android:textColor="#000000"
+            android:textSize="13dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="개"
+            android:textSize="13dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="댓글 "
+            android:textSize="13dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:textColor="#000000"
+            android:id="@+id/homeUserCommentNum"
+            android:textSize="13dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="개"
+            android:textSize="13dp" />
+    </TableRow>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/statusTable"
+        android:layout_marginTop="5dp"
+        android:background="#90909090" />
+
+    <TableRow
+        android:id="@+id/remessageTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line"
+        android:layout_marginTop="10dp">
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:id="@+id/likeBox"
+           >
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/fillheart"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="하트"
+                android:textSize="15dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:id="@+id/commentBox"
+            >
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/message"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="댓글쓰기"
+                android:textSize="15dp" />
+        </TableRow>
+    </TableRow>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_marginTop="13dp"
+        android:layout_height="5dp"
+        android:layout_below="@id/remessageTable"
+        android:background="#90909090" />
 </RelativeLayout>

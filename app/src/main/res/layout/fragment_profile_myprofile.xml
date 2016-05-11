@@ -2,159 +2,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.juntcompany.godandgod.Main.Profile.ProfileMyprofileFragment">
+    tools:context=".Main.Profile.MyProfile.ProfileMyprofileFragment">
 
-    <ScrollView
+
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/hearticon"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/heart" />
-
-            <TextView
-                android:id="@+id/myName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/hearticon"
-                android:layout_centerHorizontal="true"
-                android:text="GodNGod"
-                android:textColor="#000000"
-                android:textSize="40dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/myIntroduce"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/myName"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginTop="5dp"
-                android:text="스타트업 팀빌딩 중이에요. 대전에 있는 개발자 소개 부탁드립니다."
-                android:textAlignment="center"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/changeIntroduce"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_below="@id/myIntroduce"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="6dp"
-                android:gravity="left|center"
-                android:text="내 소개하기"
-                android:textColor="#78b0de"
-                android:textSize="15dp"
-                android:textStyle="bold" />
-
-            <TableLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/changeIntroduce"
-                android:layout_centerHorizontal="true">
-
-                <TableRow>
-
-                    <TableRow>
-
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_gravity="center"
-                            android:background="@drawable/fillheart" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:layout_marginLeft="6dp"
-                            android:gravity="left|center"
-                            android:text="기독교"
-                            android:textSize="15dp"
-                            android:textStyle="bold" />
-                    </TableRow>
-                </TableRow>
-
-                <TableRow>
-
-                    <TableRow android:layout_marginTop="5dp">
-
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_gravity="center"
-                            android:background="@drawable/star" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:layout_marginLeft="6dp"
-                            android:gravity="left|center"
-                            android:text="100만"
-                            android:textSize="15dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:gravity="left|center"
-                            android:text="명이 즐겨찾기로 등록함"
-                            android:textSize="15dp"
-                            android:textStyle="bold" />
-                    </TableRow>
-                </TableRow>
-
-                <TableRow>
-
-                    <TableRow
-                        android:layout_marginTop="5dp">
-
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_gravity="center"
-                            android:background="@drawable/friend" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:layout_marginLeft="6dp"
-                            android:gravity="left|center"
-                            android:text="친구"
-                            android:textSize="15dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:gravity="left|center"
-                            android:text="500"
-                            android:textSize="15dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:gravity="left|center"
-                            android:text="명"
-                            android:textSize="15dp"
-                            android:textStyle="bold" />
-                    </TableRow>
-                </TableRow>
-            </TableLayout>
-
-        </RelativeLayout>
-    </ScrollView>
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerView"
+        ></android.support.v7.widget.RecyclerView>
 
 
 </RelativeLayout>

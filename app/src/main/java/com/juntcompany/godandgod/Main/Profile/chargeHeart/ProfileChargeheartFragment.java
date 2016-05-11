@@ -1,4 +1,4 @@
-package com.juntcompany.godandgod.Main.Profile;
+package com.juntcompany.godandgod.Main.Profile.chargeHeart;
 
 import android.content.Context;
 import android.net.Uri;
@@ -10,19 +10,17 @@ import android.view.ViewGroup;
 
 import com.juntcompany.godandgod.R;
 
-public class ProfileMyprofileFragment extends Fragment {
+public class ProfileChargeheartFragment extends Fragment {
 
-    public ProfileMyprofileFragment() {
+    public ProfileChargeheartFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile_myprofile, container, false);
+        return inflater.inflate(R.layout.fragment_profile_chargeheart, container, false);
     }
-
 
 }

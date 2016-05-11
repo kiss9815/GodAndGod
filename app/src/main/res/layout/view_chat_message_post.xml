@@ -1,0 +1,70 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainToolbar.ChatGroup.ChatGroupFragment">
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TableRow android:layout_margin="5dp">
+
+            <ImageView
+                android:id="@+id/ChatMessageRoomPicture"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1" />
+
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:layout_weight="9">
+
+                <TextView
+                    android:id="@+id/ChatMessageRoomName"
+                    android:layout_width="100dp"
+                    android:layout_height="23dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:text="GnD"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/ChatMessageRoomContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:layout_below="@id/ChatMessageRoomName"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:gravity="center_vertical"
+                    android:text="테스트 중입니다."
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/ChatMessageUpdateTime"
+                    android:layout_width="100dp"
+                    android:layout_height="23dp"
+                    android:layout_above="@+id/ChatMessageRoomContent"
+                    android:layout_alignEnd="@+id/ChatMessageRoomContent"
+                    android:layout_alignRight="@+id/ChatMessageRoomContent"
+                    android:gravity="center_vertical"
+                    android:text="오후 10:10"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+        </TableRow>
+
+    </TableLayout>
+
+
+</TableLayout>

@@ -28,28 +28,32 @@ public class HomeFragment extends Fragment {
 
     RecyclerView recyclerView;
     HomeAdapter mAdapter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         mAdapter = new HomeAdapter();
         recyclerView.setAdapter(mAdapter);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
 
         initData();
         return view;
     }
 
-    private void initData(){
-        for(int i=0; i<10; i++) {
+    private void initData() {
+        for (int i = 0; i < 10; i++) {
             Post post = new Post();
-            post.postUserName = "가라이름 : " + i;
-            post.postUserPicture = getResources().getDrawable(R.mipmap.ic_launcher);
-            post.postContent = "가라내용asdfasdfasdasdfasdfasdfasdfasdfaseveveveveveveveveveve : " + (i*1000);
+            post.postHomeUserPicture = getResources().getDrawable(R.mipmap.ic_launcher);
+            post.postHomeUserName = "GnD";
+            post.postHomeTextTime = "2시간 전";
+            post.postHomeContent = "열심히 일하는 중이다";
+            post.postHomeUserLikeNum = "10000";
+            post.postHomeUserCommentNum = "100000";
             mAdapter.add(post);
         }
 
@@ -60,11 +64,11 @@ public class HomeFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        actionBar = ((MainActivity) getActivity()).getSupportActionBar();
+//        actionBar = ((MainActivity) getActivity()).getSupportActionBar();
 
-        View view = actionBar.getCustomView();
-        Button btn = (Button)view.findViewById(R.id.buttonChat);
-        btn.setVisibility(View.VISIBLE);
+//        View view = actionBar.getCustomView();
+//        Button btn = (Button)view.findViewById(R.id.buttonChat);
+//        btn.setVisibility(View.VISIBLE);
 
 
     }

@@ -4,10 +4,13 @@
     android:layout_height="match_parent"
     tools:context=".Main.Video.VideoFragment">
 
+
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="비디오다" />
+        android:id="@+id/recyclerView"
+        ></android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>

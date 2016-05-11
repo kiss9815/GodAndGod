@@ -5,6 +5,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.juntcompany.godandgod.Main.Home.HomeFragment;
+import com.juntcompany.godandgod.MainToolbar.ChatGroup.ChatGroupFragment;
+import com.juntcompany.godandgod.MainToolbar.ChatMessage.ChatMessageFragment;
 
 /**
  * Created by EOM on 2016-04-25.

@@ -1,0 +1,135 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Main.Video.VideoFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TableRow android:layout_margin="5dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:id="@+id/updateVideoPic"
+                   />
+
+
+                <TableLayout
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="9">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="18dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginLeft="2dp"
+                        android:gravity="center_vertical"
+                        android:text="GnD가 만들어지는 과정"
+                        android:textColor="#000000"
+                        android:id="@+id/updateVideoName"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="12dp"
+                        android:gravity="center_vertical"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="18dp"
+                        android:layout_below="@id/updateVideoName"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginLeft="4dp"
+                        android:gravity="center_vertical"
+                        android:text="GnD"
+                        android:textColor="#78b0de"
+                        android:id="@+id/updateVideoUser"
+                        android:textSize="15dp" />
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/updateChat"
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp"
+                            android:layout_below="@id/updateVideoUser"
+                            android:layout_marginBottom="2dp"
+                            android:layout_marginLeft="4dp"
+                            android:gravity="center_vertical"
+                            android:text="조회수"
+                            android:textColor="#000000"
+                            android:textSize="12dp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp"
+                            android:layout_below="@id/updateVideoUser"
+                            android:layout_marginBottom="2dp"
+                            android:layout_marginLeft="4dp"
+                            android:gravity="center_vertical"
+                            android:id="@+id/viewCount"
+                            android:text="10만"
+                            android:textColor="#000000"
+                            android:textSize="12dp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp"
+                            android:layout_below="@id/updateVideoUser"
+                            android:layout_marginBottom="2dp"
+                            android:layout_marginLeft="4dp"
+                            android:gravity="center_vertical"
+                            android:text="*"
+                            android:textColor="#000000"
+                            android:textSize="12dp" />
+                        <TextView
+                            android:id="@+id/updateTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp"
+                            android:layout_below="@id/updateVideoUser"
+                            android:layout_marginBottom="2dp"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:text="2"
+                            android:textColor="#000000"
+                            android:textSize="12dp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp"
+                            android:layout_below="@id/updateVideoUser"
+                            android:layout_marginBottom="2dp"
+                            android:layout_marginLeft="1dp"
+                            android:gravity="center_vertical"
+                            android:text="시간 전"
+                            android:textColor="#000000"
+                            android:textSize="12dp" />
+                    </TableRow>
+                </TableLayout>
+            </TableRow>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#90909090" />
+
+        </TableLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
+

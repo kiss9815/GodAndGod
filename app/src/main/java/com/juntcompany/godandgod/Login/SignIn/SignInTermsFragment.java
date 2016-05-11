@@ -34,7 +34,7 @@ public class SignInTermsFragment extends Fragment {
         btn.setVisibility(View.INVISIBLE);
         if(SignInActivity.termsStatue==2)
         {
-            agree.setBackgroundColor(Color.parseColor("#2f6656"));
+            agree.setBackgroundResource(R.drawable.buttonstyle1);
             agree.setTextColor(Color.WHITE);
             btn.setVisibility(View.VISIBLE);
         }
@@ -45,12 +45,12 @@ public class SignInTermsFragment extends Fragment {
             public void onClick(View v) {
                 if (SignInActivity.termsStatue == 0) {
                     SignInActivity.termsStatue = 1;
-                    agree.setBackgroundColor(Color.parseColor("#2f6656"));
+                    agree.setBackgroundResource(R.drawable.buttonstyle1);
                     agree.setTextColor(Color.WHITE);
                     btn.setVisibility(View.VISIBLE);
                 } else{
                     SignInActivity.termsStatue = 0;
-                    agree.setBackgroundColor(Color.parseColor("#dcdcdc"));
+                    agree.setBackgroundResource(R.drawable.buttonstyle2);
                     agree.setTextColor(Color.BLACK);
                     btn.setVisibility(View.INVISIBLE);
                 }

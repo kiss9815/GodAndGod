@@ -64,7 +64,7 @@
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:textColor="#000000"
-            android:background="#dcdcdc"
+            android:background="@drawable/buttonstyle2"
             android:layout_margin="5dp"
             android:text="동의" />
     </TableLayout>

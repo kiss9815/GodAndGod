@@ -13,26 +13,31 @@ import com.juntcompany.godandgod.R;
  */
 public class HomePostViewHolder extends RecyclerView.ViewHolder {
 
-
-    TextView textUserName;
-    TextView textPostContent;
-    TextView textTime;
-    ImageView imageUserPicture;
+    ImageView homeUserPicture;
+    TextView homeUserName;
+    TextView homeTextTime;
+    TextView homeContent;
+    TextView homeUserLikeNum;
+    TextView homeUserCommentNum;
 
     public HomePostViewHolder(View itemView) {
         super(itemView);
 
-        textUserName = (TextView)itemView.findViewById(R.id.textUserName);
-        textPostContent = (TextView)itemView.findViewById(R.id.textPostContent);
-        imageUserPicture = (ImageView)itemView.findViewById(R.id.imageUserPicture);
-        textTime =(TextView)itemView.findViewById(R.id.textTime);
+        homeUserPicture = (ImageView)itemView.findViewById(R.id.homeUserPicture);
+        homeUserName = (TextView)itemView.findViewById(R.id.homeUserName);
+        homeTextTime = (TextView)itemView.findViewById(R.id.homeTextTime);
+        homeContent =(TextView)itemView.findViewById(R.id.homeContent);
+        homeUserLikeNum = (TextView)itemView.findViewById(R.id.homeUserLikeNum);
+        homeUserCommentNum = (TextView)itemView.findViewById(R.id.homeUserCommentNum);
     }
 
     public void setData(Post post){
-        textUserName.setText(post.postUserName);
-        textPostContent.setText(post.postContent);
-        textTime.setText(post.postUpdateTime);
-        imageUserPicture.setImageDrawable(post.postUserPicture);
+        homeUserPicture.setImageDrawable(post.postHomeUserPicture);
+        homeUserName.setText(post.postHomeUserName);
+        homeTextTime.setText(post.postHomeTextTime);
+        homeContent.setText(post.postHomeContent);
+        homeUserLikeNum.setText(post.postHomeUserLikeNum);
+        homeUserCommentNum.setText(post.postHomeUserCommentNum);
 
     }
 
