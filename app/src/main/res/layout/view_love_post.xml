@@ -17,10 +17,9 @@
 
                 <ImageView
                     android:id="@+id/imageUserPicture"
-                    android:layout_width="0dp"
+                    android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="5dp"
-                    android:layout_weight="1"
                    />
 
 

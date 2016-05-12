@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Main.Love.LoveFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp">
+
+        <ImageView
+            android:id="@+id/friendPushFriendPicture"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp" />
+
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/friendPushFriendPicture"
+
+            android:layout_toRightOf="@+id/friendPushFriendPicture"
+            android:gravity="center_vertical">
+
+
+            <TextView
+                android:id="@+id/friendPushFriendName"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginLeft="4dp"
+                android:gravity="center_vertical"
+                android:text="GnD"
+                android:textColor="#000000"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/friendPushFriendReligion"
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:layout_marginLeft="4dp"
+                android:gravity="center_vertical"
+                android:text="종교"
+                android:textSize="15dp" />
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:gravity="center_vertical">
+
+                <Button
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/buttonstyle1"
+                    android:text="확인"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/buttonstyle2"
+                    android:text="삭제"
+                    android:textColor="#000000" />
+            </TableRow>
+        </TableLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

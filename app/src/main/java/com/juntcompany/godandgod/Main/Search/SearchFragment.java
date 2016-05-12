@@ -32,12 +32,14 @@ public class SearchFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
 
         return view;
-}
+    }
+
     ActionBar actionBar;
+
     @Override
     public void onResume() {
         super.onResume();
-         actionBar = ((MainActivity) getActivity()).getSupportActionBar();
+        actionBar = ((MainActivity) getActivity()).getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         View view = actionBar.getCustomView();
 //        Button btn = (Button)view.findViewById(R.id.buttonChat);
@@ -48,7 +50,7 @@ public class SearchFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case android.R.id.home: {
                 getFragmentManager().popBackStack();
                 actionBar.setDisplayHomeAsUpEnabled(false);

@@ -1,6 +1,7 @@
-package com.juntcompany.godandgod.MainToolbar.ChatMessage;
+package com.juntcompany.godandgod.Main.Friend.FriendList;
 
-
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
@@ -11,31 +12,27 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.juntcompany.godandgod.Data.Post;
+import com.juntcompany.godandgod.Main.Love.LoveAdapter;
 import com.juntcompany.godandgod.Main.MainActivity;
 import com.juntcompany.godandgod.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-
-public class ChatMessageFragment extends Fragment {
+public class FriendListFragment extends Fragment {
 
 
-    public ChatMessageFragment() {
+    public FriendListFragment() {
         // Required empty public constructor
     }
 
 
     RecyclerView recyclerView;
-    ChatMessageAdapter mAdapter;
+    FriendListAdapter mAdapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         //추가
-        View view = inflater.inflate(R.layout.fragment_chat_message, container, false);
+        View view = inflater.inflate(R.layout.fragment_friend_list, container, false);
         recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
-
-        mAdapter = new ChatMessageAdapter();
+        mAdapter = new FriendListAdapter();
         recyclerView.setAdapter(mAdapter);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
@@ -53,10 +50,10 @@ public class ChatMessageFragment extends Fragment {
     private void initData(){
         for(int i=0; i<10; i++) {
             Post post = new Post();
-            post.postChatMessageRoomPicture = getResources().getDrawable(R.drawable.heart);
-            post.postChatMessageRoomName = "GnD";
-            post.postChatMessageRoomContent = "열심히 합시당.";
-            post.postChatMessageUpdateTime = "2시간 전";
+            post.postFriendListFriendPicture = getResources().getDrawable(R.drawable.emptyheart);
+            post.postFriendListFriendName = "가나다";
+            post.postFriendListFriendArea = "서울";
+            post.postFriendListFriendReligion = "가가";
             mAdapter.add(post);
         }
 

@@ -1,6 +1,7 @@
-package com.juntcompany.godandgod.MainToolbar.ChatMessage;
+package com.juntcompany.godandgod.Main.Friend.FriendRequest;
 
-
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
@@ -14,28 +15,23 @@ import com.juntcompany.godandgod.Data.Post;
 import com.juntcompany.godandgod.Main.MainActivity;
 import com.juntcompany.godandgod.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-
-public class ChatMessageFragment extends Fragment {
+public class FriendRequestFragment extends Fragment {
 
 
-    public ChatMessageFragment() {
+    public FriendRequestFragment() {
         // Required empty public constructor
     }
 
 
     RecyclerView recyclerView;
-    ChatMessageAdapter mAdapter;
+    FriendRequestAdapter mAdapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         //추가
-        View view = inflater.inflate(R.layout.fragment_chat_message, container, false);
+        View view = inflater.inflate(R.layout.fragment_friend_request, container, false);
         recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
-
-        mAdapter = new ChatMessageAdapter();
+        mAdapter = new FriendRequestAdapter();
         recyclerView.setAdapter(mAdapter);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
@@ -51,12 +47,15 @@ public class ChatMessageFragment extends Fragment {
     }
 
     private void initData(){
-        for(int i=0; i<10; i++) {
+        for(int i=0; i<20; i++) {
             Post post = new Post();
-            post.postChatMessageRoomPicture = getResources().getDrawable(R.drawable.heart);
-            post.postChatMessageRoomName = "GnD";
-            post.postChatMessageRoomContent = "열심히 합시당.";
-            post.postChatMessageUpdateTime = "2시간 전";
+            post.postFriendRequestFriendPicture = getResources().getDrawable(R.drawable.emptyheart);
+            post.postFriendRequestFriendName = "요청";
+            post.postFriendRequestFriendReligion = "종교";
+            post.postFriendPushFriendPicture = getResources().getDrawable(R.drawable.fillheart);
+            post.postFriendPushFriendName = "추천";
+            post.postFriendPushFriendReligion = "종교";
+
             mAdapter.add(post);
         }
 
