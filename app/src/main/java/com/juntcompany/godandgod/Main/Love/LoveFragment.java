@@ -53,7 +53,7 @@ public class LoveFragment extends Fragment {
     private void initData(){
         for(int i=0; i<10; i++) {
             Post post = new Post();
-            post.postLoveUserPicture = getResources().getDrawable(R.drawable.gnd);
+            post.postLoveUserPicture = getResources().getDrawable(R.drawable.titleicon);
             post.postLoveUserName = "GnD";
             post.postLoveStatue = "님이 회원님의 게시물을 좋아합니다.";
             post.postLoveContent = "테스트 중입니다.";

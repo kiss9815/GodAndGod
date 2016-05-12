@@ -23,7 +23,7 @@
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="15dp"
-                android:background="@drawable/gnd" />
+                android:background="@drawable/titleicon" />
 
             <TableLayout
                 android:layout_gravity="center"

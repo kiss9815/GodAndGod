@@ -67,4 +67,9 @@ public class Post {
     public Drawable postFriendPushFriendPicture;
     public String postFriendPushFriendName;
     public String postFriendPushFriendReligion;
+
+
+    public Drawable postSearchUserPicture;
+    public String postSearchUserName;
+    public String postSearchUserReligion;
 }

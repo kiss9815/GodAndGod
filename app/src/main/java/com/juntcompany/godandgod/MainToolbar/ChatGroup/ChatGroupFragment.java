@@ -49,7 +49,7 @@ public class ChatGroupFragment extends Fragment {
     private void initData(){
         for(int i=0; i<1; i++) {
             Post post = new Post();
-            post.postChatLeftGroupPicture = getResources().getDrawable(R.drawable.gnd);
+            post.postChatLeftGroupPicture = getResources().getDrawable(R.drawable.titleicon);
             post.postChatLeftGroupName = "GnD";
             post.postChatLeftGroupUser = "김세종 외 1명";
             post.postChatRightGroupPicture = getResources().getDrawable(R.drawable.groupnew);
