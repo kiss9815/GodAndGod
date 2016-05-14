@@ -116,7 +116,9 @@
             <TableRow>
 
                 <TableRow
-                    android:layout_marginTop="5dp">
+                    android:id="@+id/goFriendList"
+                    android:layout_marginTop="5dp"
+                    android:onClick="myProfileClick">
 
                     <ImageView
                         android:layout_width="30dp"

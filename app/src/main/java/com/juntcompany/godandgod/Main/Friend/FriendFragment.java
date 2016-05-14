@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TabHost;
 
 import com.juntcompany.godandgod.Main.MainActivity;
 import com.juntcompany.godandgod.MainToolbar.ChatPagerAdapter;
@@ -44,7 +45,6 @@ public class FriendFragment extends Fragment {
 
         tabLayout.addTab(tabLayout.newTab().setText("친구 요청"));
         tabLayout.addTab(tabLayout.newTab().setText("친구 목록"));
-
         return view;
     }
 

@@ -46,7 +46,9 @@ public class MainActivity extends AppCompatActivity {
     public static boolean loginStatus = false;
     public static boolean logout = false;
     public static int profileNum = 0;
-    public static Activity mainActivity;
+    public static Activity main;
+    public static int tapNprofileFriend = 0;//taplayout 0, profile 1
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setDisplayShowTitleEnabled(false);
 //
 
-
+        main = MainActivity.this;
         View titleView = getLayoutInflater().inflate(R.layout.toolbar_main, null);
         final RelativeLayout searchLayout = (RelativeLayout) titleView.findViewById(R.id.searchActivityMove);
         actionBar.setCustomView(titleView);
@@ -120,10 +122,10 @@ public class MainActivity extends AppCompatActivity {
             Button f2 = (Button) findViewById(R.id.function2);
             Button f3 = (Button) findViewById(R.id.function3);
             TextView searchTitle = (TextView) findViewById(R.id.searchTitle);
-
+            View underLine = (View) findViewById(R.id.underLine);
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                View underLine = (View) findViewById(R.id.underLine);
+
                 int position = tab.getPosition();
                 Fragment f = new Fragment();
                 switch (position) {
@@ -290,6 +292,37 @@ public class MainActivity extends AppCompatActivity {
             case R.id.function3:
                 profileNum = 0;
                 f = new ProfileFragment();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.container, f)
+                        .commit();
+                break;
+        }
+
+    }
+
+
+    public void myProfileClick(View v) {
+        Button f1 = (Button) findViewById(R.id.function1);
+        Button f2 = (Button) findViewById(R.id.function2);
+        Button f3 = (Button) findViewById(R.id.function3);
+        TextView searchTitle = (TextView) findViewById(R.id.searchTitle);
+        View underLine = (View) findViewById(R.id.underLine);
+        View titleView = getLayoutInflater().inflate(R.layout.toolbar_main, null);
+        final ActionBar actionBar = getSupportActionBar();
+        final RelativeLayout searchLayout = (RelativeLayout) titleView.findViewById(R.id.searchActivityMove);
+        switch (v.getId()) {
+            case R.id.goFriendList:
+                f = new FriendFragment();
+                actionBar.setDisplayShowCustomEnabled(true);
+                actionBar.setDisplayShowTitleEnabled(false);
+                f2.setBackgroundResource(R.drawable.chat);
+                f1.setVisibility(View.INVISIBLE);
+                f2.setVisibility(View.VISIBLE);
+                f3.setVisibility(View.VISIBLE);
+                searchLayout.setVisibility(View.VISIBLE);
+                searchTitle.setText("검색");
+                underLine.setVisibility(View.VISIBLE);
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.container, f)

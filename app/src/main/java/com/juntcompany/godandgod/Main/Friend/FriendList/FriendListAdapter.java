@@ -32,13 +32,11 @@ public class FriendListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         notifyDataSetChanged();
     }
 
-    private static final int VIEW_TYPE_HEADER = 0;
-    private static final int VIEW_TYPE_ITEM = 100;
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         switch (viewType) {
-            case VIEW_TYPE_HEADER: {
+            case FriendListFragment.VIEW_TYPE_HEADER: {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_friend_list_post_header, parent, false);
                 return new FriendListPostHeaderViewHolder(view);
             }
@@ -60,9 +58,9 @@ public class FriendListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     @Override
     public int getItemViewType(int position) {
         if (position < 1) {
-            return VIEW_TYPE_HEADER;
+            return FriendListFragment.VIEW_TYPE_HEADER;
         }
-        return VIEW_TYPE_ITEM;
+        return FriendListFragment.VIEW_TYPE_ITEM;
     }
 
     @Override
