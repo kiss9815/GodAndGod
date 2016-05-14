@@ -1,4 +1,4 @@
-package com.juntcompany.godandgod.Main.Friend.FriendRequest;
+package com.juntcompany.godandgod.Main.Friend.FriendRequest.FriendRequestBottom;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

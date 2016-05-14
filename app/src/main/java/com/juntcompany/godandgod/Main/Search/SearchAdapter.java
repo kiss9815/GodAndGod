@@ -6,10 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.juntcompany.godandgod.Data.Post;
-import com.juntcompany.godandgod.Main.Friend.FriendRequest.FriendRequestPostBottomHeaderViewHolder;
-import com.juntcompany.godandgod.Main.Friend.FriendRequest.FriendRequestPostBottomViewHolder;
-import com.juntcompany.godandgod.Main.Friend.FriendRequest.FriendRequestPostTopHeaderViewHolder;
-import com.juntcompany.godandgod.Main.Friend.FriendRequest.FriendRequestPostTopViewHolder;
 import com.juntcompany.godandgod.R;
 
 import java.util.ArrayList;

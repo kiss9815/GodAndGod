@@ -7,8 +7,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.juntcompany.godandgod.Main.Friend.FriendList.FriendListFragment;
 import com.juntcompany.godandgod.Main.Friend.FriendRequest.FriendRequestFragment;
 import com.juntcompany.godandgod.Main.Home.HomeFragment;
-import com.juntcompany.godandgod.MainToolbar.ChatGroup.ChatGroupFragment;
-import com.juntcompany.godandgod.MainToolbar.ChatMessage.ChatMessageFragment;
 
 /**
  * Created by Jiseong on 2016-05-12.

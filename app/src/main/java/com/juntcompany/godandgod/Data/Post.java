@@ -59,11 +59,12 @@ public class Post {
 
 
 
-
+    public String postFriendRequestTopHeader;
     public Drawable postFriendRequestFriendPicture;
     public String postFriendRequestFriendName;
     public String postFriendRequestFriendReligion;
 
+    public String postFriendRequestBottomHeader;
     public Drawable postFriendPushFriendPicture;
     public String postFriendPushFriendName;
     public String postFriendPushFriendReligion;
