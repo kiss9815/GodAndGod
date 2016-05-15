@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.juntcompany.godandgod.Main.MyStory.MyStoryActivity">
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/titleicon"
+        android:id="@+id/myProfileUserPicture"/>
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/fillheart"
+        android:id="@+id/hintImage"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/myProfileUserPicture"
+        android:layout_toEndOf="@+id/myProfileUserPicture" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@+id/myProfileUserPicture"
+        android:layout_marginLeft="5dp"
+        android:hint="     무슨 이야기를 나누고 싶나요?"
+        android:gravity="top"
+        android:id="@+id/myStoryInput"
+        android:background="@null"/>
+</RelativeLayout>

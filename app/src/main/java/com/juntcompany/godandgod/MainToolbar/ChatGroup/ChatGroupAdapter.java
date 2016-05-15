@@ -30,13 +30,12 @@ public class ChatGroupAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         notifyDataSetChanged();
     }
 
-    private static final int VIEW_TYPE_HEADER = 0;
-    private static final int VIEW_TYPE_ITEM = 100;
+
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         switch (viewType) {
-            case VIEW_TYPE_HEADER: {
+            case ChatGroupFragment.VIEW_TYPE_HEADER: {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_chat_group_post_header, parent, false);
                 return new ChatGroupPostHeaderViewHolder(view);
             }
@@ -58,9 +57,9 @@ public class ChatGroupAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     @Override
     public int getItemViewType(int position) {
         if (position < 1) {
-            return VIEW_TYPE_HEADER;
+            return ChatGroupFragment.VIEW_TYPE_HEADER;
         }
-        return VIEW_TYPE_ITEM;
+        return ChatGroupFragment.VIEW_TYPE_ITEM;
     }
 
     @Override

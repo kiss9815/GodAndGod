@@ -73,4 +73,16 @@ public class Post {
     public Drawable postSearchUserPicture;
     public String postSearchUserName;
     public String postSearchUserReligion;
+
+    public Drawable postCreateGroupInputUserPic;
+    public String postCreateGroupInputUserName;
+
+    public Drawable postInputFriendPic;
+    public String postInputFriendName;
+
+
+    public Drawable postChatGroupChattingRoomYouPic;
+    public String postChatGroupChattingRoomYouName;
+    public String postChatGroupChattingRoomYouText;
+    public String postChatGroupChattingRoomMeText;
 }

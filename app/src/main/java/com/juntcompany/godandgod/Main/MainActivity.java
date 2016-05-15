@@ -28,6 +28,7 @@ import com.juntcompany.godandgod.Main.Friend.FriendFragment;
 import com.juntcompany.godandgod.Main.Home.HomeFragment;
 import com.juntcompany.godandgod.Main.Live.LiveFragment;
 import com.juntcompany.godandgod.Main.Love.LoveFragment;
+import com.juntcompany.godandgod.Main.MyStory.MyStoryActivity;
 import com.juntcompany.godandgod.Main.Profile.ProfileFragment;
 import com.juntcompany.godandgod.Main.Search.SearchActivity;
 import com.juntcompany.godandgod.Main.Video.VideoFragment;
@@ -236,6 +237,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void profileOnClick(View v) {
+
         ProfileFragment f;
         switch (v.getId()) {
             case R.id.myProfile:
@@ -272,6 +274,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ToolbarOnClick(View v) {
+        Button f1 = (Button) findViewById(R.id.function1);
+        Button f2 = (Button) findViewById(R.id.function2);
+        Button f3 = (Button) findViewById(R.id.function3);
+        TextView searchTitle = (TextView) findViewById(R.id.searchTitle);
+        View underLine = (View) findViewById(R.id.underLine);
+        final ActionBar actionBar = getSupportActionBar();
+        View titleView = getLayoutInflater().inflate(R.layout.toolbar_main, null);
+        final RelativeLayout searchLayout = (RelativeLayout) titleView.findViewById(R.id.searchActivityMove);
         ProfileFragment f;
         switch (v.getId()) {
             case R.id.function1:
@@ -290,6 +300,15 @@ public class MainActivity extends AppCompatActivity {
                         .commit();
                 break;
             case R.id.function3:
+                actionBar.setDisplayShowCustomEnabled(true);
+                actionBar.setDisplayShowTitleEnabled(false);
+                f2.setBackgroundResource(R.drawable.chat);
+                f1.setVisibility(View.INVISIBLE);
+                f2.setVisibility(View.VISIBLE);
+                f3.setVisibility(View.VISIBLE);
+                searchLayout.setVisibility(View.VISIBLE);
+                searchTitle.setText("검색");
+                underLine.setVisibility(View.VISIBLE);
                 profileNum = 0;
                 f = new ProfileFragment();
                 getSupportFragmentManager()
@@ -349,6 +368,19 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    public void homeClick(View v) {
+        switch (v.getId()) {
+            case R.id.writeMyStory:
+                Intent intent = new Intent(getApplicationContext(), MyStoryActivity.class);
+                startActivity(intent);
+                break;
+        }
+
+    }
+
+
+
 
 
     @Override

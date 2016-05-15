@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/createGroupInputUser">
+
+        <ImageView
+            android:id="@+id/inputFriendPic"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/heart" />
+
+        <TextView
+            android:id="@+id/inputFriendName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="김하트"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </TableRow>
+
+    <CheckBox
+        android:id="@+id/checkFriendInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+</RelativeLayout>
