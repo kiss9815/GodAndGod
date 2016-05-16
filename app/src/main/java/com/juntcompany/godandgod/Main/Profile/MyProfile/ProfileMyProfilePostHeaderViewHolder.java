@@ -27,7 +27,7 @@ public class ProfileMyProfilePostHeaderViewHolder extends RecyclerView.ViewHolde
         MyProfileReligion =(TextView)itemView.findViewById(R.id.myProfileReligion);
         MyProfileFavoriteNum = (TextView)itemView.findViewById(R.id.myProfileFavoriteNum);
         MyProfileFriendNum = (TextView)itemView.findViewById(R.id.myProfileFriendNum);
-        myProfileUserPicture.setBackgroundResource(R.drawable.gnd);
+        myProfileUserPicture.setBackgroundResource(R.drawable.titleicon);
         myProfileUserName.setText("GnG");
         myProfileComment.setText("열심히 프로필 작업중");
         MyProfileReligion.setText("기독교");

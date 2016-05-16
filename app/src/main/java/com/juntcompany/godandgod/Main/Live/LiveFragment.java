@@ -50,7 +50,7 @@ public class LiveFragment extends Fragment {
     private void initData(){
         for(int i=0; i<10; i++) {
             Post post = new Post();
-            post.postLivePicture = getResources().getDrawable(R.drawable.gnd);
+            post.postLivePicture = getResources().getDrawable(R.drawable.titleicon);
             post.postLiveName = "생)GnD가 만들어지는 Live";
             post.postLiveUser = "GnD";
             post.postLiveViewCount = "10000";

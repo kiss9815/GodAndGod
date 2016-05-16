@@ -1,49 +1,39 @@
 package com.juntcompany.godandgod.Main;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.SearchManager;
-import android.app.SearchableInfo;
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Color;
-import android.os.Build;
+import android.graphics.Movie;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
-import android.text.Layout;
-import android.util.Log;
-import android.view.MenuInflater;
-import android.view.View;
+import android.support.v7.widget.RecyclerView;
+import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.inputmethod.InputMethodManager;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.juntcompany.godandgod.Login.LoginActivity;
+import com.juntcompany.godandgod.Login.LoginHelper.HelperActivity;
 import com.juntcompany.godandgod.Main.Friend.FriendFragment;
 import com.juntcompany.godandgod.Main.Home.HomeFragment;
 import com.juntcompany.godandgod.Main.Live.LiveFragment;
 import com.juntcompany.godandgod.Main.Love.LoveFragment;
+import com.juntcompany.godandgod.Main.MyStory.MyStoryActivity;
 import com.juntcompany.godandgod.Main.Profile.ProfileFragment;
-import com.juntcompany.godandgod.Main.Profile.ProfileSettingFragment;
 import com.juntcompany.godandgod.Main.Search.SearchActivity;
-import com.juntcompany.godandgod.MainToolbar.ChatFragment;
-import com.juntcompany.godandgod.Main.Search.SearchFragment;
 import com.juntcompany.godandgod.Main.Video.VideoFragment;
+import com.juntcompany.godandgod.MainToolbar.ChatFragment;
 import com.juntcompany.godandgod.R;
-
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -57,8 +47,9 @@ public class MainActivity extends AppCompatActivity {
     public static boolean loginStatus = false;
     public static boolean logout = false;
     public static int profileNum = 0;
-    public SearchView mSearchView;
-    public MenuItem searchItem;
+    public static Activity main;
+    public static int tapNprofileFriend = 0;//taplayout 0, profile 1
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,9 +60,9 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setDisplayShowTitleEnabled(false);
 //
 
-
+        main = MainActivity.this;
         View titleView = getLayoutInflater().inflate(R.layout.toolbar_main, null);
-        RelativeLayout searchLayout = (RelativeLayout) titleView.findViewById(R.id.searchActivityMove);
+        final RelativeLayout searchLayout = (RelativeLayout) titleView.findViewById(R.id.searchActivityMove);
         actionBar.setCustomView(titleView);
         searchLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
 //                        .commit();
 //            }
 //        });
+        Button f1 = (Button) findViewById(R.id.function1);
+        f1.setVisibility(View.INVISIBLE);
 
 
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
@@ -126,8 +119,14 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.timeline));
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            Button f1 = (Button) findViewById(R.id.function1);
+            Button f2 = (Button) findViewById(R.id.function2);
+            Button f3 = (Button) findViewById(R.id.function3);
+            TextView searchTitle = (TextView) findViewById(R.id.searchTitle);
+            View underLine = (View) findViewById(R.id.underLine);
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+
                 int position = tab.getPosition();
                 Fragment f = new Fragment();
                 switch (position) {
@@ -135,27 +134,60 @@ public class MainActivity extends AppCompatActivity {
                         f = new HomeFragment();
                         actionBar.setDisplayShowCustomEnabled(true);
                         actionBar.setDisplayShowTitleEnabled(false);
+                        f2.setBackgroundResource(R.drawable.chat);
+                        f1.setVisibility(View.INVISIBLE);
+                        f2.setVisibility(View.VISIBLE);
+                        f3.setVisibility(View.VISIBLE);
+                        searchLayout.setVisibility(View.VISIBLE);
+                        searchTitle.setText("검색");
+                        underLine.setVisibility(View.VISIBLE);
                         break;
                     case 1:
                         f = new FriendFragment();
                         actionBar.setDisplayShowCustomEnabled(true);
                         actionBar.setDisplayShowTitleEnabled(false);
+                        f2.setBackgroundResource(R.drawable.chat);
+                        f1.setVisibility(View.INVISIBLE);
+                        f2.setVisibility(View.VISIBLE);
+                        f3.setVisibility(View.VISIBLE);
+                        searchLayout.setVisibility(View.VISIBLE);
+                        searchTitle.setText("검색");
+                        underLine.setVisibility(View.VISIBLE);
                         break;
                     case 2:
                         f = new LiveFragment();
                         actionBar.setDisplayShowCustomEnabled(true);
                         actionBar.setDisplayShowTitleEnabled(false);
+                        f2.setBackgroundResource(R.drawable.whitestar);
+                        searchTitle.setText("라이브 검색");
+                        f1.setBackgroundResource(R.drawable.refresh);
+                        f1.setVisibility(View.VISIBLE);
+                        f2.setVisibility(View.VISIBLE);
+                        f3.setVisibility(View.VISIBLE);
+                        searchLayout.setVisibility(View.VISIBLE);
+                        underLine.setVisibility(View.VISIBLE);
                         break;
                     case 3:
                         f = new VideoFragment();
                         actionBar.setDisplayShowCustomEnabled(true);
                         actionBar.setDisplayShowTitleEnabled(false);
+                        f1.setVisibility(View.INVISIBLE);
+                        f2.setVisibility(View.INVISIBLE);
+                        f3.setVisibility(View.VISIBLE);
+                        searchTitle.setText("동영상 검색");
+                        searchLayout.setVisibility(View.VISIBLE);
+                        underLine.setVisibility(View.VISIBLE);
                         break;
                     case 4:
                         f = new LoveFragment();
                         actionBar.setDisplayShowTitleEnabled(true);
-                        actionBar.setDisplayShowCustomEnabled(false);
+                        actionBar.setDisplayShowCustomEnabled(true);
                         actionBar.setTitle("게시물 활동");
+                        f1.setVisibility(View.INVISIBLE);
+                        f2.setVisibility(View.INVISIBLE);
+                        f3.setVisibility(View.VISIBLE);
+                        searchLayout.setVisibility(View.INVISIBLE);
+                        underLine.setVisibility(View.INVISIBLE);
                         break;
                 }
                 getSupportFragmentManager()
@@ -183,6 +215,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         backPressCloseHandler = new backpress(this);
+
     }
 
 
@@ -204,6 +237,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void profileOnClick(View v) {
+
         ProfileFragment f;
         switch (v.getId()) {
             case R.id.myProfile:
@@ -239,36 +273,170 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        // 메뉴의 항목을 선택(클릭)했을 때 호출되는 콜백메서드
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        Log.d("test", "onOptionsItemSelected - 메뉴항목을 클릭했을 때 호출됨");
-
-        int id = item.getItemId();
-
-
-        switch (id) {
-            case R.id.profile:
-                ProfileFragment f = new ProfileFragment();
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.container, f)
-                        .commit();
-                profileNum = 0;
-                break;
-            case R.id.chatNgroup:
+    public void ToolbarOnClick(View v) {
+        Button f1 = (Button) findViewById(R.id.function1);
+        Button f2 = (Button) findViewById(R.id.function2);
+        Button f3 = (Button) findViewById(R.id.function3);
+        TextView searchTitle = (TextView) findViewById(R.id.searchTitle);
+        View underLine = (View) findViewById(R.id.underLine);
+        final ActionBar actionBar = getSupportActionBar();
+        View titleView = getLayoutInflater().inflate(R.layout.toolbar_main, null);
+        final RelativeLayout searchLayout = (RelativeLayout) titleView.findViewById(R.id.searchActivityMove);
+        ProfileFragment f;
+        switch (v.getId()) {
+            case R.id.function1:
                 ChatFragment cf = new ChatFragment();
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.container, cf)
                         .commit();
+
+                break;
+            case R.id.function2:
+                cf = new ChatFragment();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.container, cf)
+                        .commit();
+                break;
+            case R.id.function3:
+                actionBar.setDisplayShowCustomEnabled(true);
+                actionBar.setDisplayShowTitleEnabled(false);
+                f2.setBackgroundResource(R.drawable.chat);
+                f1.setVisibility(View.INVISIBLE);
+                f2.setVisibility(View.VISIBLE);
+                f3.setVisibility(View.VISIBLE);
+                searchLayout.setVisibility(View.VISIBLE);
+                searchTitle.setText("검색");
+                underLine.setVisibility(View.VISIBLE);
+                profileNum = 0;
+                f = new ProfileFragment();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.container, f)
+                        .commit();
+                break;
         }
+
+    }
+
+
+    public void myProfileClick(View v) {
+        Button f1 = (Button) findViewById(R.id.function1);
+        Button f2 = (Button) findViewById(R.id.function2);
+        Button f3 = (Button) findViewById(R.id.function3);
+        TextView searchTitle = (TextView) findViewById(R.id.searchTitle);
+        View underLine = (View) findViewById(R.id.underLine);
+        View titleView = getLayoutInflater().inflate(R.layout.toolbar_main, null);
+        final ActionBar actionBar = getSupportActionBar();
+        final RelativeLayout searchLayout = (RelativeLayout) titleView.findViewById(R.id.searchActivityMove);
+        switch (v.getId()) {
+            case R.id.goFriendList:
+                f = new FriendFragment();
+                actionBar.setDisplayShowCustomEnabled(true);
+                actionBar.setDisplayShowTitleEnabled(false);
+                f2.setBackgroundResource(R.drawable.chat);
+                f1.setVisibility(View.INVISIBLE);
+                f2.setVisibility(View.VISIBLE);
+                f3.setVisibility(View.VISIBLE);
+                searchLayout.setVisibility(View.VISIBLE);
+                searchTitle.setText("검색");
+                underLine.setVisibility(View.VISIBLE);
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.container, f)
+                        .commit();
+                break;
+        }
+
+    }
+
+    public void ProfileSettingClick(View v) {
+        switch (v.getId()) {
+            case R.id.changePw:
+                Intent intent = new Intent(getApplicationContext(), HelperActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.findFriendEmail:
+                intent = new Intent(getApplicationContext(), SearchActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.findFriendPhone:
+                intent = new Intent(getApplicationContext(), SearchActivity.class);
+                startActivity(intent);
+                break;
+        }
+
+    }
+
+    public void homeClick(View v) {
+        switch (v.getId()) {
+            case R.id.writeMyStory:
+                Intent intent = new Intent(getApplicationContext(), MyStoryActivity.class);
+                startActivity(intent);
+                break;
+        }
+
+    }
+
+
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
         return super.onOptionsItemSelected(item);
     }
 
 
+    public interface ClickListener {
+        void onClick(View view, int position);
+
+        void onLongClick(View view, int position);
+    }
+
+    public static class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
+
+        private GestureDetector gestureDetector;
+        private MainActivity.ClickListener clickListener;
+
+        public RecyclerTouchListener(Context context, final RecyclerView recyclerView, final MainActivity.ClickListener clickListener) {
+            this.clickListener = clickListener;
+            gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
+                @Override
+                public boolean onSingleTapUp(MotionEvent e) {
+                    return true;
+                }
+
+                @Override
+                public void onLongPress(MotionEvent e) {
+//                    View child = recyclerView.findChildViewUnder(e.getX(), e.getY());
+//                    if (child != null && clickListener != null) {
+//                        clickListener.onLongClick(child, recyclerView.getChildPosition(child));
+//                    }
+                }
+            });
+        }
+
+        @Override
+        public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
+
+            View child = rv.findChildViewUnder(e.getX(), e.getY());
+            if (child != null && clickListener != null && gestureDetector.onTouchEvent(e)) {
+                clickListener.onClick(child, rv.getChildPosition(child));
+            }
+            return false;
+        }
+
+        @Override
+        public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+        }
+
+
+        @Override
+        public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+        }
+    }
 }

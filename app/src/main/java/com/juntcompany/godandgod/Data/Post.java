@@ -44,4 +44,45 @@ public class Post {
     public String postChatMessageRoomContent;
     public String postChatMessageUpdateTime;
 
+    public Drawable postChatLeftGroupPicture;
+    public String postChatLeftGroupName;
+    public String postChatLeftGroupUser;
+    public Drawable postChatRightGroupPicture;
+    public String postChatRightGroupName;
+    public String postChatRightGroupUser;
+
+
+    public Drawable postFriendListFriendPicture;
+    public String postFriendListFriendName;
+    public String postFriendListFriendArea;
+    public String postFriendListFriendReligion;
+
+
+
+    public String postFriendRequestTopHeader;
+    public Drawable postFriendRequestFriendPicture;
+    public String postFriendRequestFriendName;
+    public String postFriendRequestFriendReligion;
+
+    public String postFriendRequestBottomHeader;
+    public Drawable postFriendPushFriendPicture;
+    public String postFriendPushFriendName;
+    public String postFriendPushFriendReligion;
+
+
+    public Drawable postSearchUserPicture;
+    public String postSearchUserName;
+    public String postSearchUserReligion;
+
+    public Drawable postCreateGroupInputUserPic;
+    public String postCreateGroupInputUserName;
+
+    public Drawable postInputFriendPic;
+    public String postInputFriendName;
+
+
+    public Drawable postChatGroupChattingRoomYouPic;
+    public String postChatGroupChattingRoomYouName;
+    public String postChatGroupChattingRoomYouText;
+    public String postChatGroupChattingRoomMeText;
 }

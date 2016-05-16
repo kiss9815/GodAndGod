@@ -13,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"
         android:layout_marginTop="100dp"
-        android:background="@drawable/gnd" />
+        android:background="@drawable/titleicon" />
 
     <TableLayout
         android:id="@+id/tableLayout"

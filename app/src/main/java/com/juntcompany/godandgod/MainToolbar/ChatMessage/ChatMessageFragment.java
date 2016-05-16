@@ -34,6 +34,7 @@ public class ChatMessageFragment extends Fragment {
         //추가
         View view = inflater.inflate(R.layout.fragment_chat_message, container, false);
         recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
+
         mAdapter = new ChatMessageAdapter();
         recyclerView.setAdapter(mAdapter);
 

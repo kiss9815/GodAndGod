@@ -66,6 +66,6 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return items.size() + 1; // 헤더 포지션 1 더함
+        return items.size() + 2; // 헤더 포지션 1 더함
     }
 }

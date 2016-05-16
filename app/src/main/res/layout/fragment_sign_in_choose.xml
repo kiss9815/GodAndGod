@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="105dp"
-        android:background="@drawable/gnd" />
+        android:background="@drawable/titleicon" />
 
     <TableLayout
         android:layout_width="match_parent"

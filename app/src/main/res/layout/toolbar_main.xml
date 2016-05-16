@@ -1,39 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/searchActivityMove"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:id="@+id/searchActivityMove"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/searchtool"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:background="@drawable/search"
-        android:layout_marginTop="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_marginBottom="5dp"/>
+        <ImageView
+            android:id="@+id/searchtool"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/search" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/searchtool"
-        android:layout_toRightOf="@+id/searchtool"
-        android:text="검색"
-        android:layout_marginTop="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_marginBottom="5dp"
-        android:textColor="#FFFFFF"
-        android:textSize="16dp" />
+        <TextView
+            android:id="@+id/searchTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/searchtool"
+            android:layout_toRightOf="@+id/searchtool"
+            android:text="검색"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp" />
 
+
+    </RelativeLayout>
     <View
+        android:id="@+id/underLine"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_below="@id/searchtool"
+        android:layout_below="@id/searchActivityMove"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/function1"
         android:background="#FFFFFF" />
+    <Button
+        android:id="@+id/function3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/profile"
+        android:onClick="ToolbarOnClick" />
+
+    <Button
+        android:id="@+id/function2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_toLeftOf="@+id/function3"
+        android:background="@drawable/chat"
+        android:onClick="ToolbarOnClick" />
+
+    <Button
+        android:id="@+id/function1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_toLeftOf="@+id/function2"
+        android:background="@drawable/profile"
+        android:onClick="ToolbarOnClick" />
 </RelativeLayout>
