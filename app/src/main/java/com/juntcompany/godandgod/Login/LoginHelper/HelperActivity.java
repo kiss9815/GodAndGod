@@ -6,14 +6,10 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import com.juntcompany.godandgod.Login.SignIn.SignInActivity;
-import com.juntcompany.godandgod.Login.LoginHelper.HelperActivity;
-import com.juntcompany.godandgod.Login.SignIn.SignInChooseFragment;
-import com.juntcompany.godandgod.R;
 
+import com.juntcompany.godandgod.R;
 
 
 public class HelperActivity extends AppCompatActivity {
@@ -37,23 +33,24 @@ public class HelperActivity extends AppCompatActivity {
         //getSupportActionBar().hide();
     }
 
-    public void setActionTitle(String Title){
+    public void setActionTitle(String Title) {
         getSupportActionBar().setTitle(Title);
     }
 
-    public void showActionBar(){
+    public void showActionBar() {
         getSupportActionBar().show();
     }//숨겨진 액션바를 드러내기 위한 메소드
-    public void hideActionBar(){
+
+    public void hideActionBar() {
         getSupportActionBar().hide();
     }//숨겨진 액션바를 드러내기 위한 메소드
 
 
-    public void helperclock(View v){
-        FragmentTransaction ft ;
-        switch (v.getId()){
+    public void helperclock(View v) {
+        FragmentTransaction ft;
+        switch (v.getId()) {
             case R.id.searchphone:
-                HelperPhoneFindFragment phonedfind  = new HelperPhoneFindFragment();
+                HelperPhoneFindFragment phonedfind = new HelperPhoneFindFragment();
                 HelperActivity.fNum = 2;
                 ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, phonedfind);
@@ -64,23 +61,23 @@ public class HelperActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        FragmentTransaction ft ;
+        FragmentTransaction ft;
         switch (item.getItemId()) {
             case android.R.id.home:
-                switch (fNum){
-                    case 1 :
+                switch (fNum) {
+                    case 1:
                         getSupportActionBar().hide();
                         Activity ss = HelperActivity.helperActvity;
                         ss.finish();
                         break;
-                    case 2 :
+                    case 2:
                         HelperMainFragment main = new HelperMainFragment();
                         HelperActivity.fNum = 1;
                         ft = getSupportFragmentManager().beginTransaction();
                         ft.replace(R.id.container, main);
                         ft.commit();
                         break;
-                    case 3 :
+                    case 3:
                         HelperPhoneFindFragment phonefind = new HelperPhoneFindFragment();
                         HelperActivity.fNum = 2;
                         ft = getSupportFragmentManager().beginTransaction();

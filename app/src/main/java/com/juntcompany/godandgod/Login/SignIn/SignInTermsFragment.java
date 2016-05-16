@@ -20,7 +20,6 @@ public class SignInTermsFragment extends Fragment {
     }
 
 
-
     private static final String Title = "약관";
 
     @Override
