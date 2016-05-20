@@ -2,18 +2,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#043623"
     tools:context="com.juntcompany.godandgod.Login.SignIn.SignInPolicyFragment">
 
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="200dp"
+        android:layout_width="260dp"
         android:layout_height="150dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="105dp"
         android:layout_marginBottom="50dp"
-        android:background="@drawable/titleicon" />
+        android:background="@drawable/gnd" />
 
     <TableLayout
         android:id="@+id/tableLayout3"
@@ -34,7 +35,7 @@
             android:gravity="center"
             android:text="환영합니다!"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="25dp" />
 
         <TextView
@@ -48,7 +49,7 @@
             android:gravity="center"
             android:text="친구들의 종교에 대해 알아보고"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="18dp" />
 
         <TextView
@@ -59,7 +60,7 @@
             android:gravity="center"
             android:text="함께 하려면 가입하세요."
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="18dp" />
     </TableLayout>
 

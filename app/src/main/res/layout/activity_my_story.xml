@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,26 +9,72 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.juntcompany.godandgod.Main.MyStory.MyStoryActivity">
+
     <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="@drawable/titleicon"
-        android:id="@+id/myProfileUserPicture"/>
-    <ImageView
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:background="@drawable/fillheart"
-        android:id="@+id/hintImage"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/myProfileUserPicture"
-        android:layout_toEndOf="@+id/myProfileUserPicture" />
-    <EditText
+        android:id="@+id/myProfileUserPicture"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/titleicon" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_toEndOf="@+id/myProfileUserPicture"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@+id/myProfileUserPicture">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/myStoryPicture"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="5dp"
+                android:gravity="top"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/hintImage"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/fillheart"
+                android:layout_marginStart="6dp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/myStoryPicture"
+                android:layout_toEndOf="@+id/myStoryPicture" />
+
+            <EditText
+                android:id="@+id/myStoryInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/myStoryPicture"
+                android:layout_marginBottom="60dp"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="          무슨 이야기를 나누고 싶나요?" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/addpicBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/camera"
+      ></Button>
+
+    <Button
+        android:id="@+id/addUserBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
         android:layout_marginLeft="5dp"
-        android:hint="     무슨 이야기를 나누고 싶나요?"
-        android:gravity="top"
-        android:id="@+id/myStoryInput"
-        android:background="@null"/>
+        android:layout_toEndOf="@+id/addpicBtn"
+        android:layout_toRightOf="@+id/addpicBtn"
+        android:background="@drawable/useradd"
+       ></Button>
 </RelativeLayout>
