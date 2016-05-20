@@ -8,7 +8,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.juntcompany.godandgod.Dialog.DialogActivity;
 import com.juntcompany.godandgod.Login.LoginHelper.HelperActivity;
 import com.juntcompany.godandgod.Login.SignIn.SignInActivity;
 import com.juntcompany.godandgod.Main.MainActivity;

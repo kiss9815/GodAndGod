@@ -4,15 +4,11 @@ import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.juntcompany.godandgod.R;
-
-public class DialogActivity extends Activity {
+public class NoEqualCodeActivity extends Activity {
+    public static Activity dialogActivity2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dialog);
-
-
     }
 }

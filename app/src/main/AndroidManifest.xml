@@ -36,7 +36,12 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".MainToolbar.ChatGroup.ChatGroupCreate.ChatGroupCreateActivity" />
         <activity android:name=".MainToolbar.ChatGroup.ChatGroupChattingRoom.ChatGroupChattingRoomActivity" />
-        <activity android:name=".Main.MyStory.MyStoryActivity"></activity>
+        <activity android:name=".Main.MyStory.MyStoryActivity" />
+        <activity
+            android:name=".Dialog.EqualDialogActivity"
+            android:label="@string/title_activity_sign_in"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity android:name=".Dialog.NoEqualCodeActivity"></activity>
     </application>
 
 </manifest>

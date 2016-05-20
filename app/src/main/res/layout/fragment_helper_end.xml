@@ -12,21 +12,182 @@
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="해당 계정이 회원님 계정인지 확인하는"
+        android:textColor="#000000"
         android:textSize="17dp"
-        android:textStyle="bold"
-        android:textColor="#000000"/>
+        android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView8"
         android:gravity="center"
         android:text="코드가 발송됩니다."
-        android:textSize="17dp"
-        android:textStyle="bold"
         android:textColor="#000000"
-        android:layout_below="@+id/textView8"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:textSize="17dp"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/buttonstyle1"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        android:text="다음"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_above="@+id/buttonNext"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/inputFriendPic"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/heart" />
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:text="김세종 팀장님"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/Name"
+                    android:text="계정 사용자" />
+            </TableLayout>
+
+
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#90909090" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TableLayout
+                android:layout_width="250dp"
+                android:layout_height="70dp"
+                android:id="@+id/SmsFindLayout"
+                android:gravity="center"
+                android:layout_margin="10dp" >
+
+                <TextView
+                    android:id="@+id/Sms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SMS로 확인"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/phoneNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                     />
+            </TableLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#90909090"
+                android:id="@+id/underLine"
+                android:layout_below="@+id/SmsFindLayout"/>
+
+
+            <TableLayout
+                android:layout_width="250dp"
+                android:layout_height="70dp"
+                android:layout_below="@+id/underLine"
+                android:id="@+id/emailFindLayout"
+                android:gravity="center"
+                android:layout_margin="10dp" >
+
+                <TextView
+                    android:id="@+id/EmailFind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이메로 확인"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/EmailAddr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*****" />
+
+
+
+            </TableLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#90909090"
+                android:layout_below="@+id/emailFindLayout"/>
+            <RadioGroup
+                android:id="@+id/genderGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true">
+
+                <RadioButton
+                    android:id="@+id/findPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="#90909090" />
+                <RadioButton
+                    android:id="@+id/findEmaill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="#90909090" />
+            </RadioGroup>
+        </RelativeLayout>
+
+    </TableLayout>
 
 
 </RelativeLayout>

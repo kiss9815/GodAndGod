@@ -16,30 +16,30 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.juntcompany.godandgod.Login.SignIn.SignInActivity;
-import com.juntcompany.godandgod.Login.SignIn.SignInEmailFragment;
-import com.juntcompany.godandgod.Login.SignIn.SignInFinalFragment;
+import com.juntcompany.godandgod.Dialog.EqualDialogActivity;
 import com.juntcompany.godandgod.R;
 
 public class HelperPhoneFindFragment extends Fragment {
-    Intent intent ;
+
+    String Title = "휴대폰 번호";
+    public static String phoneCheck;
 
     public HelperPhoneFindFragment() {
 
     }
 
-    String Title = "휴대폰 번호";
 
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_helper_phone_find, container, false);
         final Button btn = (Button) view.findViewById(R.id.nextfind);
+
         btn.setVisibility(View.INVISIBLE);
         HelperActivity.fNum = 2;
 
-        final EditText phoneText = (EditText) view.findViewById(R.id.HelperPhoneInput);
 
+        final EditText phoneText = (EditText) view.findViewById(R.id.HelperPhoneInput);
 
         phoneText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -58,9 +58,9 @@ public class HelperPhoneFindFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable arg0) {
-// TODO Auto-generated method stub
 
             }
+
         });
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -68,29 +68,33 @@ public class HelperPhoneFindFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                if (SignInActivity.resultpage == false) {
-                    SignInActivity.phone = phonefind.getText().toString();
-                    SignInEmailFragment f = new SignInEmailFragment();
-                    FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                    ft.replace(R.id.container, f);
-                    ft.commit();    //어떤 버튼이 눌리던 백스택에 해당 프래그먼트가 저장됨
-                } else if (SignInActivity.resultpage == true) {
-                    SignInActivity.phone = phonefind.getText().toString();
-                    SignInFinalFragment f = new SignInFinalFragment();
-                    FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                    ft.replace(R.id.container, f);
-                    ft.commit();
+                switch (v.getId()) {
+                    case R.id.nextfind:
+                        if (phonefind.getText().toString().equals("0123456789")) {
+                            HelperActivity.phonenumber = phonefind.getText().toString();
+                            HelperEndFragment f = new HelperEndFragment();
+                            FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                            ft.replace(R.id.container, f);
+                            ft.commit();    //어떤 버튼이 눌리던 백스택에 해당 프래그먼트가 저장됨
+                        } else {
+                            HelperActivity.phonenumber = "";
+                            EditText p = (EditText) view.findViewById(R.id.HelperPhoneInput);
+                            p.setText(HelperActivity.phonenumber);
+                            startActivity(new Intent(HelperActivity.helperActvity.getApplicationContext(), EqualDialogActivity.class));
+
+                        }
+                        break;
                 }
             }
         });
 
 
+        //스피너
         ((HelperActivity) getActivity()).setActionTitle(Title);
         Spinner s = (Spinner) view.findViewById(R.id.helperspinner);
         String[] str = getResources().getStringArray(R.array.nation);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>
                 (getActivity().getApplication(), android.R.layout.simple_list_item_1, str);
-
 
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                         @Override
@@ -129,6 +133,7 @@ public class HelperPhoneFindFragment extends Fragment {
                                     }
         );
         return view;
+
     }
 
 

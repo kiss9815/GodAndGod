@@ -41,7 +41,7 @@ tools:context="com.juntcompany.godandgod.Login.SignIn.SignInPolicyFragment">
     android:gravity="left|center_vertical"
     android:text="이해하신 것으로간주합니다."
     android:textSize="13dp"
-    android:textStyle="bold"/>ㅁ
+    android:textStyle="bold"/>
 <TableLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

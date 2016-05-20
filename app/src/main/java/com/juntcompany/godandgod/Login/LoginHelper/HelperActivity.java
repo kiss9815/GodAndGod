@@ -1,6 +1,7 @@
 package com.juntcompany.godandgod.Login.LoginHelper;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,15 +9,24 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import com.juntcompany.godandgod.Login.SignIn.SignInActivity;
+import com.juntcompany.godandgod.Main.MainActivity;
+import com.juntcompany.godandgod.Manager.PropertyManager;
 import com.juntcompany.godandgod.R;
 
 
 public class HelperActivity extends AppCompatActivity {
+    public static String phonenumber = null;
     Intent intent;
     public static Activity helperActvity;
     public static int fNum = 0;
     public static int fphone = 0;
+    public static int Sms = 0;
+    public static int Em = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +94,20 @@ public class HelperActivity extends AppCompatActivity {
                         ft.replace(R.id.container, phonefind);
                         ft.commit();
                         break;
+                    case 4:
+                        HelperEndFragment phoneend = new HelperEndFragment();
+                        HelperActivity.fNum = 3;
+                        ft = getSupportFragmentManager().beginTransaction();
+                        ft.replace(R.id.container, phoneend);
+                        ft.commit();
+                        break;
+                    case 5:
+                        HelperCodeInputFragment codein = new HelperCodeInputFragment();
+                        HelperActivity.fNum = 4;
+                        ft = getSupportFragmentManager().beginTransaction();
+                        ft.replace(R.id.container, codein);
+                        ft.commit();
+                        break;
                 }
 
                 return true;
@@ -116,8 +140,21 @@ public class HelperActivity extends AppCompatActivity {
                 ft.replace(R.id.container, phonefind);
                 ft.commit();
                 break;
+            case 4:
+                HelperEndFragment phoneend = new HelperEndFragment();
+                HelperActivity.fNum = 3;
+                ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.container, phoneend);
+                ft.commit();
+                break;
+            case 5:
+                HelperCodeInputFragment codein = new HelperCodeInputFragment();
+                HelperActivity.fNum = 4;
+                ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.container, codein);
+                ft.commit();
+                break;
             default:
-
                 Activity sa1 = HelperActivity.helperActvity;
                 sa1.finish();
                 break;

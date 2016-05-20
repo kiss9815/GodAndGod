@@ -40,7 +40,7 @@ public class SignInGenderFragment extends Fragment {
         RadioButton femalecheck = (RadioButton) view.findViewById(R.id.femaleCheck);
         SignInActivity.fNum = 9;
 
-        if (SignInActivity.male == 1 && SignInActivity.female == 0) {
+               if (SignInActivity.male == 1 && SignInActivity.female == 0) {
             malecheck.setChecked(true);
         } else if (SignInActivity.male == 0 && SignInActivity.female == 1) {
             femalecheck.setChecked(true);
