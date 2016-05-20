@@ -32,7 +32,7 @@
             android:layout_marginTop="3dp"
             android:layout_toEndOf="@+id/searchtool"
             android:layout_toRightOf="@+id/searchtool"
-            android:text="검색"
+            android:text="라이브 검색"
             android:textColor="#FFFFFF"
             android:textSize="16dp" />
 
@@ -44,7 +44,7 @@
         android:layout_height="2dp"
         android:layout_below="@id/searchActivityMove"
         android:layout_marginRight="5dp"
-        android:layout_toLeftOf="@+id/function2"
+        android:layout_toLeftOf="@+id/function1"
         android:background="#FFFFFF" />
     <Button
         android:id="@+id/function3"
@@ -67,7 +67,18 @@
         android:layout_marginRight="4dp"
         android:layout_marginTop="4dp"
         android:layout_toLeftOf="@+id/function3"
-        android:background="@drawable/chat"
+        android:background="@drawable/refresh"
         android:onClick="ToolbarOnClick" />
 
+    <Button
+        android:id="@+id/function1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_toLeftOf="@+id/function2"
+        android:background="@drawable/whitestar"
+        android:onClick="ToolbarOnClick" />
 </RelativeLayout>

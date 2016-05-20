@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -100,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
         Button f1 = (Button) findViewById(R.id.function1);
-        f1.setVisibility(View.INVISIBLE);
 
 
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
@@ -119,11 +119,8 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.timeline));
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            Button f1 = (Button) findViewById(R.id.function1);
-            Button f2 = (Button) findViewById(R.id.function2);
-            Button f3 = (Button) findViewById(R.id.function3);
-            TextView searchTitle = (TextView) findViewById(R.id.searchTitle);
-            View underLine = (View) findViewById(R.id.underLine);
+            final ActionBar actionBar = getSupportActionBar();
+            View titleView;
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
 
@@ -132,62 +129,33 @@ public class MainActivity extends AppCompatActivity {
                 switch (position) {
                     case 0:
                         f = new HomeFragment();
+                        titleView = getLayoutInflater().inflate(R.layout.toolbar_main, null);
                         actionBar.setDisplayShowCustomEnabled(true);
-                        actionBar.setDisplayShowTitleEnabled(false);
-                        f2.setBackgroundResource(R.drawable.chat);
-                        f1.setVisibility(View.INVISIBLE);
-                        f2.setVisibility(View.VISIBLE);
-                        f3.setVisibility(View.VISIBLE);
-                        searchLayout.setVisibility(View.VISIBLE);
-                        searchTitle.setText("검색");
-                        underLine.setVisibility(View.VISIBLE);
+                        actionBar.setCustomView(titleView);
                         break;
                     case 1:
                         f = new FriendFragment();
+                        titleView = getLayoutInflater().inflate(R.layout.toolbar_main, null);
                         actionBar.setDisplayShowCustomEnabled(true);
-                        actionBar.setDisplayShowTitleEnabled(false);
-                        f2.setBackgroundResource(R.drawable.chat);
-                        f1.setVisibility(View.INVISIBLE);
-                        f2.setVisibility(View.VISIBLE);
-                        f3.setVisibility(View.VISIBLE);
-                        searchLayout.setVisibility(View.VISIBLE);
-                        searchTitle.setText("검색");
-                        underLine.setVisibility(View.VISIBLE);
+                        actionBar.setCustomView(titleView);
                         break;
                     case 2:
                         f = new LiveFragment();
+                        titleView = getLayoutInflater().inflate(R.layout.toolbar_live, null);
                         actionBar.setDisplayShowCustomEnabled(true);
-                        actionBar.setDisplayShowTitleEnabled(false);
-                        f2.setBackgroundResource(R.drawable.whitestar);
-                        searchTitle.setText("라이브 검색");
-                        f1.setBackgroundResource(R.drawable.refresh);
-                        f1.setVisibility(View.VISIBLE);
-                        f2.setVisibility(View.VISIBLE);
-                        f3.setVisibility(View.VISIBLE);
-                        searchLayout.setVisibility(View.VISIBLE);
-                        underLine.setVisibility(View.VISIBLE);
+                        actionBar.setCustomView(titleView);
                         break;
                     case 3:
                         f = new VideoFragment();
+                        titleView = getLayoutInflater().inflate(R.layout.toolbar_video, null);
                         actionBar.setDisplayShowCustomEnabled(true);
-                        actionBar.setDisplayShowTitleEnabled(false);
-                        f1.setVisibility(View.INVISIBLE);
-                        f2.setVisibility(View.INVISIBLE);
-                        f3.setVisibility(View.VISIBLE);
-                        searchTitle.setText("동영상 검색");
-                        searchLayout.setVisibility(View.VISIBLE);
-                        underLine.setVisibility(View.VISIBLE);
+                        actionBar.setCustomView(titleView);
                         break;
                     case 4:
                         f = new LoveFragment();
-                        actionBar.setDisplayShowTitleEnabled(true);
+                        titleView = getLayoutInflater().inflate(R.layout.toolbar_timeline, null);
                         actionBar.setDisplayShowCustomEnabled(true);
-                        actionBar.setTitle("게시물 활동");
-                        f1.setVisibility(View.INVISIBLE);
-                        f2.setVisibility(View.INVISIBLE);
-                        f3.setVisibility(View.VISIBLE);
-                        searchLayout.setVisibility(View.INVISIBLE);
-                        underLine.setVisibility(View.INVISIBLE);
+                        actionBar.setCustomView(titleView);
                         break;
                 }
                 getSupportFragmentManager()
@@ -274,14 +242,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ToolbarOnClick(View v) {
-        Button f1 = (Button) findViewById(R.id.function1);
-        Button f2 = (Button) findViewById(R.id.function2);
-        Button f3 = (Button) findViewById(R.id.function3);
-        TextView searchTitle = (TextView) findViewById(R.id.searchTitle);
-        View underLine = (View) findViewById(R.id.underLine);
-        final ActionBar actionBar = getSupportActionBar();
-        View titleView = getLayoutInflater().inflate(R.layout.toolbar_main, null);
-        final RelativeLayout searchLayout = (RelativeLayout) titleView.findViewById(R.id.searchActivityMove);
+
+
         ProfileFragment f;
         switch (v.getId()) {
             case R.id.function1:
@@ -300,15 +262,10 @@ public class MainActivity extends AppCompatActivity {
                         .commit();
                 break;
             case R.id.function3:
+                final ActionBar actionBar = getSupportActionBar();
+                View titleView = getLayoutInflater().inflate(R.layout.toolbar_main, null);
                 actionBar.setDisplayShowCustomEnabled(true);
-                actionBar.setDisplayShowTitleEnabled(false);
-                f2.setBackgroundResource(R.drawable.chat);
-                f1.setVisibility(View.INVISIBLE);
-                f2.setVisibility(View.VISIBLE);
-                f3.setVisibility(View.VISIBLE);
-                searchLayout.setVisibility(View.VISIBLE);
-                searchTitle.setText("검색");
-                underLine.setVisibility(View.VISIBLE);
+                actionBar.setCustomView(titleView);
                 profileNum = 0;
                 f = new ProfileFragment();
                 getSupportFragmentManager()
@@ -321,35 +278,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void myProfileClick(View v) {
-        Button f1 = (Button) findViewById(R.id.function1);
-        Button f2 = (Button) findViewById(R.id.function2);
-        Button f3 = (Button) findViewById(R.id.function3);
-        TextView searchTitle = (TextView) findViewById(R.id.searchTitle);
-        View underLine = (View) findViewById(R.id.underLine);
-        View titleView = getLayoutInflater().inflate(R.layout.toolbar_main, null);
-        final ActionBar actionBar = getSupportActionBar();
-        final RelativeLayout searchLayout = (RelativeLayout) titleView.findViewById(R.id.searchActivityMove);
-        switch (v.getId()) {
-            case R.id.goFriendList:
-                f = new FriendFragment();
-                actionBar.setDisplayShowCustomEnabled(true);
-                actionBar.setDisplayShowTitleEnabled(false);
-                f2.setBackgroundResource(R.drawable.chat);
-                f1.setVisibility(View.INVISIBLE);
-                f2.setVisibility(View.VISIBLE);
-                f3.setVisibility(View.VISIBLE);
-                searchLayout.setVisibility(View.VISIBLE);
-                searchTitle.setText("검색");
-                underLine.setVisibility(View.VISIBLE);
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.container, f)
-                        .commit();
-                break;
-        }
-
-    }
 
     public void ProfileSettingClick(View v) {
         switch (v.getId()) {
