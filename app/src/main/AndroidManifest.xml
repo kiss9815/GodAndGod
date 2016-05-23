@@ -41,7 +41,12 @@
             android:name=".Dialog.EqualDialogActivity"
             android:label="@string/title_activity_sign_in"
             android:theme="@android:style/Theme.Dialog" />
-        <activity android:name=".Dialog.NoEqualCodeActivity"></activity>
+        <activity
+            android:name=".Dialog.NoEqualCodeActivity"
+            android:theme="@android:style/Theme.Dialog"
+            >
+
+        </activity>
     </application>
 
 </manifest>

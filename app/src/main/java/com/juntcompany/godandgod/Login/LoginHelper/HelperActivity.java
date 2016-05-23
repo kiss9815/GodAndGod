@@ -21,12 +21,18 @@ import com.juntcompany.godandgod.R;
 
 public class HelperActivity extends AppCompatActivity {
     public static String phonenumber = null;
-    Intent intent;
+    public static String Emailaddr = null;
+    public static String codenumber = null;
+
     public static Activity helperActvity;
     public static int fNum = 0;
     public static int fphone = 0;
     public static int Sms = 0;
     public static int Em = 0;
+
+    public static int helpStatue = 0;//0 = phone, 1= email
+
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +70,13 @@ public class HelperActivity extends AppCompatActivity {
                 HelperActivity.fNum = 2;
                 ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, phonedfind);
+                ft.commit();
+                break;
+            case R.id.serachemail:
+                HelperEmailFindFragment emailfind = new HelperEmailFindFragment();
+                HelperActivity.fNum = 6;
+                ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.container, emailfind);
                 ft.commit();
                 break;
         }
@@ -106,6 +119,20 @@ public class HelperActivity extends AppCompatActivity {
                         HelperActivity.fNum = 4;
                         ft = getSupportFragmentManager().beginTransaction();
                         ft.replace(R.id.container, codein);
+                        ft.commit();
+                        break;
+                    case 6:
+                        HelperNewPasswordFragment newpassword = new HelperNewPasswordFragment();
+                        HelperActivity.fNum = 5;
+                        ft = getSupportFragmentManager().beginTransaction();
+                        ft.replace(R.id.container, newpassword);
+                        ft.commit();
+                        break;
+                    case 7:
+                        main = new HelperMainFragment();
+                        HelperActivity.fNum = 1;
+                        ft = getSupportFragmentManager().beginTransaction();
+                        ft.replace(R.id.container, main);
                         ft.commit();
                         break;
                 }
@@ -152,6 +179,20 @@ public class HelperActivity extends AppCompatActivity {
                 HelperActivity.fNum = 4;
                 ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.container, codein);
+                ft.commit();
+                break;
+            case 6:
+                HelperNewPasswordFragment newpassword = new HelperNewPasswordFragment();
+                HelperActivity.fNum = 5;
+                ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.container, newpassword);
+                ft.commit();
+                break;
+            case 7:
+                main = new HelperMainFragment();
+                HelperActivity.fNum = 1;
+                ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.container, main);
                 ft.commit();
                 break;
             default:

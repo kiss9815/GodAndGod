@@ -24,6 +24,7 @@
             android:background="#000000" />
 
         <TextView
+            android:onClick="helperclock"
             android:id="@+id/serachemail"
             android:layout_width="match_parent"
             android:layout_height="50dp"

@@ -36,6 +36,7 @@ public class HelperPhoneFindFragment extends Fragment {
         final Button btn = (Button) view.findViewById(R.id.nextfind);
 
         btn.setVisibility(View.INVISIBLE);
+        HelperActivity.helpStatue = 0;
         HelperActivity.fNum = 2;
 
 
@@ -49,9 +50,9 @@ public class HelperPhoneFindFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
-                if (phoneText.getText().length() == 10) {
+                if (phoneText.getText().length() == 1) {
                     btn.setVisibility(View.VISIBLE);
-                } else if (phoneText.getText().length() <= 10) {
+                } else if (phoneText.getText().length() <= 1) {
                     btn.setVisibility(View.INVISIBLE);
                 }
             }

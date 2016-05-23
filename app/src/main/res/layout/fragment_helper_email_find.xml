@@ -1,13 +1,75 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.juntcompany.godandgod.Login.LoginHelper.HelperEmailFindFragment">
-
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:gravity="left"
+        android:layout_marginLeft="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이메일 주소"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:id="@+id/textView"
+        />
+    <View
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="6dp"
+        android:layout_below="@id/textView"
+        android:background="#000000"
+        android:id="@+id/view"/>
 
-</FrameLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view"
+        android:layout_marginTop="12dp"
+        android:hint="이메일 주소"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="20dp"
+        android:background="@null"
+        android:id="@+id/InputEmailAddr"
+        android:inputType="textEmailAddress"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="6dp"
+        android:layout_height="1dp"
+        android:id="@+id/view2"
+        android:layout_below="@id/InputEmailAddr"
+        android:background="#000000"
+       />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_below="@+id/view2"
+        android:layout_marginTop="12dp"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:text="계정을 검색하려면 회원가입 이메일주소를 입력하세요."
+        />
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/buttonNext"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/buttonstyle1"
+        android:text="다음"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        />
+</RelativeLayout>

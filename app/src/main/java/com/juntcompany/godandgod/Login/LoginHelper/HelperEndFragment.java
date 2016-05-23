@@ -36,8 +36,6 @@ public class HelperEndFragment extends Fragment {
 
     }
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,7 +46,9 @@ public class HelperEndFragment extends Fragment {
         RadioButton phonecheck = (RadioButton) view.findViewById(R.id.findPhone);
         RadioButton emailcheck = (RadioButton) view.findViewById(R.id.findEmaill);
         TextView smsfind = (TextView) view.findViewById(R.id.phoneNum);
+        TextView emfind = (TextView) view.findViewById(R.id.EmailAddr);
         smsfind.setText(HelperActivity.phonenumber);
+        emfind.setText(HelperActivity.Emailaddr);
         HelperActivity.fNum = 3;
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +69,10 @@ public class HelperEndFragment extends Fragment {
                 {
                     HelperActivity.Sms = 0;
                     HelperActivity.Em = 1;
+                    HelperCodeInputFragment f = new HelperCodeInputFragment();
+                    FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.container, f);
+                    ft.commit();
                 }
 
                 //HelperMainFragment f = new HelperMainFragment();
