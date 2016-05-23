@@ -21,5 +21,5 @@ public class FriendRequestPostTopHeaderViewHolder extends RecyclerView.ViewHolde
 
     public void setData(Post post){
         friendRequestTopHeader.setText(post.postFriendRequestTopHeader);
-    }
+    }//
 }
