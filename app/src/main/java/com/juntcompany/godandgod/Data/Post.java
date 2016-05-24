@@ -81,8 +81,4 @@ public class Post {
     public String postInputFriendName;
 
 
-    public Drawable postChatGroupChattingRoomYouPic;
-    public String postChatGroupChattingRoomYouName;
-    public String postChatGroupChattingRoomYouText;
-    public String postChatGroupChattingRoomMeText;
 }
