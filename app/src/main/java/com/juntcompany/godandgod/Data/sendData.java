@@ -13,6 +13,7 @@ public class sendData extends Post {
     public static Drawable postHomeUserPicture;
     public String postHomeUserName;
     public String postHomeTextTime;
+    public Drawable postHomeContentPic;
     public String postHomeContent;
     public String postHomeUserLikeNum;
     public String postHomeUserCommentNum;

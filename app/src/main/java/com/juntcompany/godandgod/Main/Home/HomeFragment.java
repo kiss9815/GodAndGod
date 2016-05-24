@@ -25,7 +25,6 @@ import com.juntcompany.godandgod.R;
  */
 public class HomeFragment extends Fragment {
 
-
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -43,7 +42,6 @@ public class HomeFragment extends Fragment {
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         mAdapter = new HomeAdapter();
         recyclerView.setAdapter(mAdapter);
-
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         ImageView myPic = (ImageView)view.findViewById(R.id.userPicture);

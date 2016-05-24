@@ -20,7 +20,7 @@ import java.util.List;
 public class ChatGroupCreateMiddleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
 
-    List<Post> items = new ArrayList<Post>();
+    public  static List<Post> items = new ArrayList<Post>();
 
     public void add(Post post) {
         items.add(post);

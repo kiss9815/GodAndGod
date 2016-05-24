@@ -2,6 +2,7 @@ package com.juntcompany.godandgod.MainToolbar.ChatGroup.ChatGroupCreate.ChatGrou
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,11 +17,13 @@ public class ChatGroupCreateBottomPostViewHolder extends RecyclerView.ViewHolder
 
     ImageView inputFriendPic;
     TextView inputFriendName;
+    CheckBox checkUser;
 
     public ChatGroupCreateBottomPostViewHolder(View itemView) {
         super(itemView);
         inputFriendPic = (ImageView) itemView.findViewById(R.id.inputFriendPic);
         inputFriendName = (TextView) itemView.findViewById(R.id.inputFriendName);
+        checkUser = (CheckBox) itemView.findViewById(R.id.checkFriendInput);
     }
 
     public void setData(Post post) {

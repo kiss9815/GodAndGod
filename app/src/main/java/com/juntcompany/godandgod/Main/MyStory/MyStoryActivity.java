@@ -1,11 +1,15 @@
 package com.juntcompany.godandgod.Main.MyStory;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.design.widget.TabLayout;
@@ -49,7 +53,8 @@ public class MyStoryActivity extends AppCompatActivity {
     int picAdd = 0;
     private int TAKE_CAMERA = 1; // 카메라 리턴 코드값 설정
     private int TAKE_GALLERY = 2; // 앨범선택에 대한 리턴 코드값 설정
-
+    Drawable inputBitmap;
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -160,6 +165,7 @@ public class MyStoryActivity extends AppCompatActivity {
                 sendData sendData = new sendData();
                 sendData.postHomeUserName = "GnD";
                 sendData.postHomeTextTime = "2시간 전";
+                sendData.postHomeContentPic = inputBitmap;
                 sendData.postHomeContent = myStoryInput.getText().toString();
                 sendData.postHomeUserLikeNum = "10000";
                 sendData.postHomeUserCommentNum = "100000";
@@ -213,7 +219,7 @@ public class MyStoryActivity extends AppCompatActivity {
                         ImageView Iv = (ImageView) findViewById(R.id.myStoryPicture);
 
                         Iv.setImageBitmap(BitmapFactory.decodeByteArray(imageByte, 0, imageByte.length));
-
+                        inputBitmap = new BitmapDrawable(getResources(), BitmapFactory.decodeByteArray(imageByte, 0, imageByte.length));
 
                         int len;
 
