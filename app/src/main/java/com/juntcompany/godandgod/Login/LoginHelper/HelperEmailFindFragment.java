@@ -14,7 +14,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.juntcompany.godandgod.Dialog.ChatAllContentDeleteDialog;
+import com.juntcompany.godandgod.Dialog.ChatDeleteDialog;
+import com.juntcompany.godandgod.Dialog.CommentStatueDialog;
 import com.juntcompany.godandgod.Dialog.EqualDialogActivity;
+import com.juntcompany.godandgod.Dialog.FriendDeleteDialog;
+import com.juntcompany.godandgod.Dialog.NoFriendResultDialog;
 import com.juntcompany.godandgod.R;
 
 
@@ -78,10 +83,10 @@ public class HelperEmailFindFragment extends Fragment {
                             ft.replace(R.id.container, f);
                             ft.commit();    //어떤 버튼이 눌리던 백스택에 해당 프래그먼트가 저장됨
                         } else {
-                            HelperActivity.Emailaddr = "";
-                            EditText p = (EditText) view.findViewById(R.id.InputEmailAddr);
-                            p.setText(HelperActivity.Emailaddr);
-                            startActivity(new Intent(HelperActivity.helperActvity.getApplicationContext(), EqualDialogActivity.class));
+                      //      HelperActivity.Emailaddr = "";
+                         //   EditText p = (EditText) view.findViewById(R.id.InputEmailAddr);
+                        //    p.setText(HelperActivity.Emailaddr);
+                            startActivity(new Intent(HelperActivity.helperActvity.getApplicationContext(), ChatAllContentDeleteDialog.class));
                         }
             }
         });

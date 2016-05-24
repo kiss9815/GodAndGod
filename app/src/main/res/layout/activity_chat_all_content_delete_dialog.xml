@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="1dp"
+    android:background="#FFFFFF"
+    tools:context="com.juntcompany.godandgod.Dialog.ChatAllContentDeleteDialog">
+
+    <TextView
+        android:id="@+id/allchattext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="대화 전체의 내용을 삭제하시겠습니까?"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/allchattext2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/allchattext"
+        android:textSize="14dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="대화의 전체 내용을 삭제하면 다시 볼 수\n 없습니다."
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/allchattext2"
+        android:layout_marginRight="20dp"
+        android:text="대화 삭제"
+        android:textColor="#043623" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/allchattext2"
+        android:layout_toLeftOf="@+id/textView10"
+        android:layout_toStartOf="@+id/textView10"
+        android:layout_marginRight="30dp"
+        android:text="취소"
+        android:textColor="#043623"
+        android:layout_marginBottom="15dp"/>
+</RelativeLayout>

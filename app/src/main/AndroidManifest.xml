@@ -43,10 +43,24 @@
             android:theme="@android:style/Theme.Dialog" />
         <activity
             android:name=".Dialog.NoEqualCodeActivity"
-            android:theme="@android:style/Theme.Dialog"
-            >
-
-        </activity>
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name=".Dialog.CommentStatueDialog"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity android:name=".Dialog.MyStoryContentCancelDialog" />
+        <activity android:name=".Dialog.FriendRealDeleteDialog" />
+        <activity
+            android:name=".Dialog.NoFriendResultDialog"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity android:name=".Dialog.ChatAllContentDeleteDialog"
+            android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name=".Dialog.MyProfileUpdateDialog" />
+        <activity
+            android:name=".Dialog.FriendDeleteDialog"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name=".Dialog.ChatDeleteDialog"
+            android:theme="@android:style/Theme.Dialog"></activity>
     </application>
 
 </manifest>

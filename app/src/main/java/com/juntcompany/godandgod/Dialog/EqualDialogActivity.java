@@ -14,7 +14,7 @@ import com.juntcompany.godandgod.R;
 
 public class EqualDialogActivity extends Activity {
     public static Activity dialogActivity;
-    public static Activity helperActvity;
+   // public static Activity helperActvity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

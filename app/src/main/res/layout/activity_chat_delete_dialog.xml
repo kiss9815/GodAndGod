@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="1dp"
+    android:background="#FFFFFF"
+    tools:context="com.juntcompany.godandgod.Dialog.ChatDeleteDialog">
+    <TextView
+        android:id="@+id/chattext"
+        android:layout_width="match_parent"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:layout_height="40dp"
+        android:text="알람 끊기"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/chattext"
+        android:background="#909090"
+        android:id="@+id/view"/>
+
+    <TextView
+        android:layout_below="@+id/view"
+        android:id="@+id/chattext2"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+
+        android:textSize="16dp"
+        android:gravity="center"
+        android:layout_height="40dp"
+        android:text="대화 삭제"/>
+</RelativeLayout>

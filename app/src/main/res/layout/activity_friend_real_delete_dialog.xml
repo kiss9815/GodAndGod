@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="1dp"
+    android:background="#FFFFFF"
+    tools:context="com.juntcompany.godandgod.Dialog.FriendRealDeleteDialog">
+
+    <TextView
+        android:id="@+id/textFdelete"
+        android:layout_marginTop="20dp"
+        android:layout_width="180dp"
+        android:layout_marginLeft="20dp"
+        android:layout_height="wrap_content"
+        android:text="정말 친구를 끊으시겠습니까? 이 친구와 소통할수 없습니다."
+        android:gravity="center"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="6dp"
+        android:layout_below="@id/textFdelete"
+        android:background="#000000"
+        android:id="@+id/view"/>
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view"
+        android:layout_margin="10dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="취소"
+        android:layout_gravity="center"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="확인"
+            />
+
+    </TableRow>
+
+
+</RelativeLayout>
