@@ -27,7 +27,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.juntcompany.godandgod.Data.Post;
+import com.juntcompany.godandgod.Data.sendData;
 import com.juntcompany.godandgod.Main.Friend.FriendFragment;
+import com.juntcompany.godandgod.Main.Home.HomeAdapter;
 import com.juntcompany.godandgod.Main.Home.HomeFragment;
 import com.juntcompany.godandgod.Main.Live.LiveFragment;
 import com.juntcompany.godandgod.Main.Love.LoveFragment;
@@ -47,7 +50,6 @@ public class MyStoryActivity extends AppCompatActivity {
     private int TAKE_CAMERA = 1; // 카메라 리턴 코드값 설정
     private int TAKE_GALLERY = 2; // 앨범선택에 대한 리턴 코드값 설정
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,9 +62,11 @@ public class MyStoryActivity extends AppCompatActivity {
         View titleView = getLayoutInflater().inflate(R.layout.toolbar_writestory, null);
         actionBar.setCustomView(titleView);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-
+        final TextView InputOkStory = (TextView) findViewById(R.id.inputStoryOk);
         Button picAddBtn = (Button) findViewById(R.id.addpicBtn);
         Button userAddBtn = (Button) findViewById(R.id.addUserBtn);
+        ImageView myProfileUserPicture = (ImageView) findViewById(R.id.myProfileUserPicture);
+        myProfileUserPicture.setBackground(sendData.postHomeUserPicture);
         picAddBtn.setOnClickListener(new View.OnClickListener() {
             ImageView pictureAdd = (ImageView) findViewById(R.id.myStoryPicture);
 
@@ -112,9 +116,11 @@ public class MyStoryActivity extends AppCompatActivity {
                 myStory.setHint("");
             }
         });
+
+
         myStory.addTextChangedListener(new TextWatcher() {
             ImageView hintImage = (ImageView) findViewById(R.id.hintImage);
-            TextView InputOkStory = (TextView) findViewById(R.id.inputStoryOk);
+
             EditText myStory = (EditText) findViewById(R.id.myStoryInput);
 
             @Override
@@ -142,6 +148,23 @@ public class MyStoryActivity extends AppCompatActivity {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 // 입력하기 전에
+            }
+        });
+
+        InputOkStory.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                EditText myStoryInput = (EditText)findViewById(R.id.myStoryInput);
+
+                sendData sendData = new sendData();
+                sendData.postHomeUserName = "GnD";
+                sendData.postHomeTextTime = "2시간 전";
+                sendData.postHomeContent = myStoryInput.getText().toString();
+                sendData.postHomeUserLikeNum = "10000";
+                sendData.postHomeUserCommentNum = "100000";
+                HomeFragment.mAdapter.add(sendData);
+                finish();
             }
         });
     }

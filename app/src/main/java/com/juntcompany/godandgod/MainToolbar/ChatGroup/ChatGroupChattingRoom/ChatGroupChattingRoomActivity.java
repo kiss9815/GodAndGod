@@ -8,11 +8,15 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TableRow;
 
 import com.juntcompany.godandgod.Data.Post;
+import com.juntcompany.godandgod.Data.receiveData;
+import com.juntcompany.godandgod.Data.sendData;
 import com.juntcompany.godandgod.Main.MainActivity;
 import com.juntcompany.godandgod.MainToolbar.ChatGroup.ChatGroupCreate.ChatGroupCreateBottom.ChatGroupCreateBottomAdapter;
 import com.juntcompany.godandgod.R;
@@ -23,7 +27,7 @@ public class ChatGroupChattingRoomActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ChatGroupChattingRoomAdapter mAdapter;
 
-    public static int VIEW_TYPE_ITEM = 10;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,59 +40,39 @@ public class ChatGroupChattingRoomActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
 
-//        recyclerView.addOnItemTouchListener(new MainActivity.RecyclerTouchListener(context, recyclerView, new MainActivity.ClickListener() {
-//            @Override
-//            public void onClick(View view, int position) {
-//                final TableRow createInputUserDelete = (TableRow) view.findViewById(R.id.createGroupInputUser);
-//                final CheckBox input = (CheckBox) view.findViewById(R.id.checkFriendInput);
-//                itemPosition = position;
-//                createInputUserDelete.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//
-//                        if (input.isChecked()) {
-//                            input.setChecked(false);
-//                        } else {
-//                            input.setChecked(true);
-//                        }
-//                    }
-//                });
-//                Log.e("recycler", String.valueOf(position));
-//
-//
-//            }
-//
-//            @Override
-//            public void onLongClick(View view, int position) {
-//
-//            }
-//        }));
+        Button chat = (Button) findViewById(R.id.chatOk);
+        Button pictureAdd = (Button) findViewById(R.id.pictureAdd);
+        final EditText inputChat = (EditText) findViewById(R.id.inputChat);
+        pictureAdd.setOnClickListener(new View.OnClickListener() {
+            String chatContent;
 
+            @Override
+            public void onClick(View v) {
+                chatContent = inputChat.getText().toString();
+                receiveData receiveData = new receiveData();
+                receiveData.postChatGroupChattingRoomYouPic = getResources().getDrawable(R.drawable.heart);
+                receiveData.postChatGroupChattingRoomYouName = "상대방";
+                receiveData.postChatGroupChattingRoomYouText = chatContent;
+                mAdapter.add(receiveData);
+                inputChat.setText("");
+            }
+        });
+        chat.setOnClickListener(new View.OnClickListener() {
+            String chatContent;
 
-        initData();
+            @Override
+            public void onClick(View v) {
+                chatContent = inputChat.getText().toString();
+                sendData sendData = new sendData();
+                sendData.postChatGroupChattingRoomMePic = getResources().getDrawable(R.drawable.titleicon);
+                sendData.postChatGroupChattingRoomMeName = "나";
+                sendData.postChatGroupChattingRoomMeText = chatContent;
+                mAdapter.add(sendData);
+                inputChat.setText("");
+            }
+        });
+
     }
 
-    private void initData() {
-        TableRow you = (TableRow)findViewById(R.id.chatGroupChattingRoomYou);
-        RelativeLayout me = (RelativeLayout)findViewById(R.id.chatGroupChattingRoomMe);
-        for (int i = 0; i < 20; i++) {
-            Post post = new Post();
-            if(i%2 == 0)
-            {
-                post.postChatGroupChattingRoomYouPic = getResources().getDrawable(R.drawable.heart);
-                post.postChatGroupChattingRoomYouName = "너"+i;
-                post.postChatGroupChattingRoomYouText = "가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하" + i;
-//                me.setVisibility(View.GONE);
-            }
-            else
-            {
-                post.postChatGroupChattingRoomMeText = "가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하" + i;
-            }
-
-
-            mAdapter.add(post);
-        }
-
-    }
 
 }

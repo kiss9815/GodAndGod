@@ -33,7 +33,7 @@ public class ChatGroupFragment extends Fragment {
     Context context;
     int itemPosition;
     RecyclerView recyclerView;
-    ChatGroupAdapter mAdapter;
+   public static ChatGroupAdapter mAdapter;
 
     public static final int VIEW_TYPE_HEADER = 0;
     public static final int VIEW_TYPE_ITEM = 100;
@@ -96,7 +96,6 @@ public class ChatGroupFragment extends Fragment {
         }));
 
 
-        initData();
         return view;
 
 
@@ -105,7 +104,6 @@ public class ChatGroupFragment extends Fragment {
     }
 
     private void initData() {
-        for (int i = 0; i < 1; i++) {
             Post post = new Post();
             post.postChatLeftGroupPicture = getResources().getDrawable(R.drawable.titleicon);
             post.postChatLeftGroupName = "GnD";
@@ -114,7 +112,6 @@ public class ChatGroupFragment extends Fragment {
             post.postChatRightGroupName = "새 그룹";
             post.postChatRightGroupUser = "그룹 만들기";
             mAdapter.add(post);
-        }
 
     }
 

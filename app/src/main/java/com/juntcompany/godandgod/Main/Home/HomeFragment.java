@@ -1,7 +1,9 @@
 package com.juntcompany.godandgod.Main.Home;
 
 
+import android.annotation.TargetApi;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
@@ -11,8 +13,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.juntcompany.godandgod.Data.Post;
+import com.juntcompany.godandgod.Data.sendData;
 import com.juntcompany.godandgod.Main.MainActivity;
 import com.juntcompany.godandgod.R;
 
@@ -27,8 +31,10 @@ public class HomeFragment extends Fragment {
     }
 
     RecyclerView recyclerView;
-    HomeAdapter mAdapter;
+   public static HomeAdapter mAdapter;
 
+
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -40,35 +46,16 @@ public class HomeFragment extends Fragment {
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
+        ImageView myPic = (ImageView)view.findViewById(R.id.userPicture);
+        myPic.setBackground(MainActivity.HomeUserPicture);
 
-        initData();
         return view;
     }
 
-    private void initData() {
-        for (int i = 0; i < 10; i++) {
-            Post post = new Post();
-            post.postHomeUserPicture = getResources().getDrawable(R.mipmap.ic_launcher);
-            post.postHomeUserName = "GnD";
-            post.postHomeTextTime = "2시간 전";
-            post.postHomeContent = "열심히 일하는 중이다";
-            post.postHomeUserLikeNum = "10000";
-            post.postHomeUserCommentNum = "100000";
-            mAdapter.add(post);
-        }
-
-    }
-
-    ActionBar actionBar;
 
     @Override
     public void onResume() {
         super.onResume();
-//        actionBar = ((MainActivity) getActivity()).getSupportActionBar();
-
-//        View view = actionBar.getCustomView();
-//        Button btn = (Button)view.findViewById(R.id.buttonChat);
-//        btn.setVisibility(View.VISIBLE);
 
 
     }

@@ -7,12 +7,6 @@ import android.graphics.drawable.Drawable;
  */
 public class Post {
 
-    public Drawable postHomeUserPicture;
-    public String postHomeUserName;
-    public String postHomeTextTime;
-    public String postHomeContent;
-    public String postHomeUserLikeNum;
-    public String postHomeUserCommentNum;
 
     public Drawable postMyProfileUserPicture;
     public String postMyProfileUserName;
@@ -81,8 +75,4 @@ public class Post {
     public String postInputFriendName;
 
 
-    public Drawable postChatGroupChattingRoomYouPic;
-    public String postChatGroupChattingRoomYouName;
-    public String postChatGroupChattingRoomYouText;
-    public String postChatGroupChattingRoomMeText;
 }

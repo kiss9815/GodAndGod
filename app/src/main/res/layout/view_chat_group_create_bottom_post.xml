@@ -13,7 +13,7 @@
             android:id="@+id/inputFriendPic"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@drawable/heart" />
+            />
 
         <TextView
             android:id="@+id/inputFriendName"
