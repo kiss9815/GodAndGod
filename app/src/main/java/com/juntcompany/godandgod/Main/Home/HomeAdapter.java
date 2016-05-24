@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.juntcompany.godandgod.Data.Post;
+import com.juntcompany.godandgod.Data.sendData;
 import com.juntcompany.godandgod.R;
 
 import java.util.ArrayList;
@@ -31,41 +32,27 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         notifyDataSetChanged();
     }
 
-    private static final int VIEW_TYPE_HEADER = 0;
-    private static final int VIEW_TYPE_ITEM = 100;
+    private static final int VIEW_TYPE_ITEM = 0;
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        switch (viewType) {
-            case VIEW_TYPE_HEADER: {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_home_post_header, parent, false);
-                return new HomePostHeaderViewHolder(view);
-            }
-            default:
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_home_post, parent, false);
-                return new HomePostViewHolder(view);
-        }
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_home_post, parent, false);
+        return new HomePostViewHolder(view);
 
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        if (position > 0) {
-            int index = position - 1; // 헤더는 아이템이 하나므로
-            ((HomePostViewHolder) holder).setData(items.get(index));
-        }
+        ((HomePostViewHolder) holder).setData((sendData) items.get(position));
     }
 
     @Override
     public int getItemViewType(int position) {
-        if (position < 1) {
-            return VIEW_TYPE_HEADER;
-        }
         return VIEW_TYPE_ITEM;
     }
 
     @Override
     public int getItemCount() {
-        return items.size() + 2; // 헤더 포지션 1 더함
+        return items.size(); // 헤더 포지션 1 더함
     }
 }

@@ -7,12 +7,6 @@ import android.graphics.drawable.Drawable;
  */
 public class Post {
 
-    public Drawable postHomeUserPicture;
-    public String postHomeUserName;
-    public String postHomeTextTime;
-    public String postHomeContent;
-    public String postHomeUserLikeNum;
-    public String postHomeUserCommentNum;
 
     public Drawable postMyProfileUserPicture;
     public String postMyProfileUserName;

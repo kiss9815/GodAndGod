@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.juntcompany.godandgod.Data.Post;
+import com.juntcompany.godandgod.Data.sendData;
 import com.juntcompany.godandgod.R;
 
 /**
@@ -31,13 +32,13 @@ public class HomePostViewHolder extends RecyclerView.ViewHolder {
         homeUserCommentNum = (TextView)itemView.findViewById(R.id.homeUserCommentNum);
     }
 
-    public void setData(Post post){
-        homeUserPicture.setImageDrawable(post.postHomeUserPicture);
-        homeUserName.setText(post.postHomeUserName);
-        homeTextTime.setText(post.postHomeTextTime);
-        homeContent.setText(post.postHomeContent);
-        homeUserLikeNum.setText(post.postHomeUserLikeNum);
-        homeUserCommentNum.setText(post.postHomeUserCommentNum);
+    public void setData(sendData send){
+        homeUserPicture.setImageDrawable(send.postHomeUserPicture);
+        homeUserName.setText(send.postHomeUserName);
+        homeTextTime.setText(send.postHomeTextTime);
+        homeContent.setText(send.postHomeContent);
+        homeUserLikeNum.setText(send.postHomeUserLikeNum);
+        homeUserCommentNum.setText(send.postHomeUserCommentNum);
 
     }
 

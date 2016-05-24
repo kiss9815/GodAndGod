@@ -15,10 +15,6 @@ public class HomePostHeaderViewHolder extends RecyclerView.ViewHolder{
 
     public HomePostHeaderViewHolder(View itemView) {
         super(itemView);
-        imageView = (ImageView)itemView.findViewById(R.id.userPicture);
-        imageView.setBackgroundResource(R.drawable.emptyheart);
     }
 
-    public void setDate(String title){
-    }
 }

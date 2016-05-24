@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Movie;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -23,6 +24,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.juntcompany.godandgod.Data.sendData;
 import com.juntcompany.godandgod.Login.LoginActivity;
 import com.juntcompany.godandgod.Login.LoginHelper.HelperActivity;
 import com.juntcompany.godandgod.Main.Friend.FriendFragment;
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     public static Activity main;
     public static int tapNprofileFriend = 0;//taplayout 0, profile 1
 
-
+    public static Drawable HomeUserPicture;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayShowTitleEnabled(false);
-//
+
 
         main = MainActivity.this;
         View titleView = getLayoutInflater().inflate(R.layout.toolbar_main, null);
@@ -121,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             final ActionBar actionBar = getSupportActionBar();
             View titleView;
+
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
 
@@ -183,7 +186,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         backPressCloseHandler = new backpress(this);
+        sendData.postHomeUserPicture =getResources().getDrawable(R.drawable.heart);
 
+        HomeUserPicture = getResources().getDrawable(R.drawable.heart);
     }
 
 
