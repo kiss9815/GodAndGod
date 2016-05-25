@@ -8,43 +8,56 @@
 
     <TextView
         android:id="@+id/textFdelete"
-        android:layout_marginTop="20dp"
-        android:layout_width="180dp"
-        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="정말 친구를 끊으시겠습니까? 이 친구와 소통할수 없습니다."
-        android:gravity="center"/>
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="left"
+        android:text="정말 친구를 끊으시겠습니까? \n이 친구와 소통할수 없습니다."
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:textStyle="bold" />
 
     <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_height="1dp"
-        android:layout_marginTop="6dp"
         android:layout_below="@id/textFdelete"
-        android:background="#000000"
-        android:id="@+id/view"/>
+        android:layout_marginTop="6dp"
+        android:background="#000000" />
 
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_below="@+id/view"
-        android:layout_margin="10dp"
-        >
+        android:gravity="center">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="40dp"
             android:text="취소"
-        android:layout_gravity="center"
-            />
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_below="@id/textFdelete"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#000000" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
             android:text="확인"
-            />
+            android:textColor="#000000"
+            android:textStyle="bold" />
 
     </TableRow>
 

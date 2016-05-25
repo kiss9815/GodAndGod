@@ -19,6 +19,8 @@ import com.juntcompany.godandgod.Dialog.ChatDeleteDialog;
 import com.juntcompany.godandgod.Dialog.CommentStatueDialog;
 import com.juntcompany.godandgod.Dialog.EqualDialogActivity;
 import com.juntcompany.godandgod.Dialog.FriendDeleteDialog;
+import com.juntcompany.godandgod.Dialog.FriendRealDeleteDialog;
+import com.juntcompany.godandgod.Dialog.MyProfileUpdateDialog;
 import com.juntcompany.godandgod.Dialog.NoFriendResultDialog;
 import com.juntcompany.godandgod.R;
 
@@ -86,7 +88,7 @@ public class HelperEmailFindFragment extends Fragment {
                       //      HelperActivity.Emailaddr = "";
                          //   EditText p = (EditText) view.findViewById(R.id.InputEmailAddr);
                         //    p.setText(HelperActivity.Emailaddr);
-                            startActivity(new Intent(HelperActivity.helperActvity.getApplicationContext(), ChatAllContentDeleteDialog.class));
+                            startActivity(new Intent(HelperActivity.helperActvity.getApplicationContext(), FriendRealDeleteDialog.class));
                         }
             }
         });
