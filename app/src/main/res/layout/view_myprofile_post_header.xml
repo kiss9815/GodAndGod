@@ -4,10 +4,9 @@
     android:layout_height="wrap_content">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/myProfileBox"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/myProfileUserPicture"
@@ -42,24 +41,13 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/myProfileChangeIntroduce"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_below="@id/myProfileComment"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="6dp"
-            android:gravity="left|center"
-            android:text="내 소개하기"
-            android:textColor="#78b0de"
-            android:textSize="15dp"
-            android:textStyle="bold" />
 
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/myProfileChangeIntroduce"
-            android:layout_centerHorizontal="true">
+            android:layout_below="@id/myProfileComment"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp">
 
             <TableRow>
 
@@ -136,10 +124,10 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/myProfileFriendNum"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:gravity="left|center"
-                        android:id="@+id/myProfileFriendNum"
                         android:text="500"
                         android:textSize="15dp"
                         android:textStyle="bold" />
@@ -153,14 +141,74 @@
                         android:textStyle="bold" />
                 </TableRow>
             </TableRow>
+
+            <TableRow>
+
+                <TableRow>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/religionhome" />
+
+                    <TextView
+                        android:id="@+id/myProfileReligionHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="6dp"
+                        android:gravity="left|center"
+                        android:text="대전GodNGod"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </TableRow>
+            </TableRow>
+
+            <TableRow>
+
+                <TableRow>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/mapspoint" />
+
+                    <TextView
+                        android:id="@+id/myProfileCountry"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="6dp"
+                        android:gravity="left|center"
+                        android:text="대전"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </TableRow>
+            </TableRow>
         </TableLayout>
 
     </RelativeLayout>
-    <TableLayout
+
+    <TextView
+        android:id="@+id/myProfileChangeIntroduce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/myProfileBox"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:text="내 소개하기"
+        android:textAlignment="center"
+        android:textColor="#78b0de"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="15dp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/writeMyStory"
+        android:onClick="homeClick"
+        android:layout_below="@id/myProfileChangeIntroduce">
+
 
         <View
             android:layout_width="fill_parent"
@@ -172,20 +220,21 @@
             <ImageView
                 android:id="@+id/userPicture"
                 android:layout_width="45dp"
-                android:layout_height="45dp"
-                />
+                android:layout_height="45dp" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="7dp"
                 android:layout_toEndOf="@+id/userPicture"
                 android:layout_toRightOf="@+id/userPicture"
-                android:layout_marginLeft="7dp"
                 android:text="무슨 이야기를 나누고 싶나요?"
+
                 android:textSize="15dp" />
         </RelativeLayout>
+
         <View
             android:layout_width="fill_parent"
             android:layout_height="5dp"

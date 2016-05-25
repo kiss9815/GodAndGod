@@ -13,8 +13,7 @@
     <ImageView
         android:id="@+id/myProfileUserPicture"
         android:layout_width="40dp"
-        android:layout_height="40dp"
-        />
+        android:layout_height="40dp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,39 +22,40 @@
         android:layout_marginLeft="8dp"
         android:layout_toRightOf="@+id/myProfileUserPicture">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/myStoryPicture"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginLeft="5dp"
-                android:gravity="top"
-                android:visibility="gone" />
+                android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/hintImage"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:background="@drawable/fillheart"
-                android:layout_marginStart="6dp"
-                android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/myStoryPicture"
-                android:layout_toEndOf="@+id/myStoryPicture" />
+                <ImageView
+                    android:id="@+id/myStoryPicture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="top"
+                    android:visibility="gone" />
 
-            <EditText
-                android:id="@+id/myStoryInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/myStoryPicture"
-                android:layout_marginBottom="60dp"
-                android:background="@null"
-                android:gravity="top"
-                android:hint="          무슨 이야기를 나누고 싶나요?" />
+                <ImageView
+                    android:id="@+id/hintImage"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_toEndOf="@+id/myStoryPicture"
+                    android:layout_toRightOf="@+id/myStoryPicture"
+                    android:background="@drawable/fillheart" />
 
-        </RelativeLayout>
+                <EditText
+                    android:id="@+id/myStoryInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/myStoryPicture"
+                    android:layout_marginBottom="60dp"
+                    android:background="@null"
+                    android:gravity="top"
+                    android:hint="          무슨 이야기를 나누고 싶나요?" />
+
+            </RelativeLayout>
     </ScrollView>
 
 
@@ -64,8 +64,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/camera"
-      ></Button>
+        android:background="@drawable/camera"></Button>
 
     <Button
         android:id="@+id/addUserBtn"
@@ -75,6 +74,5 @@
         android:layout_marginLeft="5dp"
         android:layout_toEndOf="@+id/addpicBtn"
         android:layout_toRightOf="@+id/addpicBtn"
-        android:background="@drawable/useradd"
-       ></Button>
+        android:background="@drawable/useradd"></Button>
 </RelativeLayout>

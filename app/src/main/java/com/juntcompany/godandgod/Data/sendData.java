@@ -17,4 +17,13 @@ public class sendData extends Post {
     public String postHomeContent;
     public String postHomeUserLikeNum;
     public String postHomeUserCommentNum;
+
+
+    public Drawable postMyProfileUserPicture;
+    public String postMyProfileUserName;
+    public String postMyProfileTextTime;
+    public Drawable postMyProfileContentPic;
+    public String postMyProfileContent;
+    public String postMyProfileUserLikeNum;
+    public String postMyProfileUserCommentNum;
 }

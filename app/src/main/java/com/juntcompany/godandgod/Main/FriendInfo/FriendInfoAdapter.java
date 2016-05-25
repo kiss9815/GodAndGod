@@ -1,4 +1,4 @@
-package com.juntcompany.godandgod.Main.Profile.MyProfile;
+package com.juntcompany.godandgod.Main.FriendInfo;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,16 +6,19 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.juntcompany.godandgod.Data.Post;
+import com.juntcompany.godandgod.Data.receiveData;
 import com.juntcompany.godandgod.Data.sendData;
+import com.juntcompany.godandgod.Main.Profile.MyProfile.ProfileMyProfilePostHeaderViewHolder;
+import com.juntcompany.godandgod.Main.Profile.MyProfile.ProfileMyProfilePostViewHolder;
 import com.juntcompany.godandgod.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Jiseong on 2016-05-10.
+ * Created by Jiseong on 2016-05-25.
  */
-public class ProfileMyProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class FriendInfoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
 
     List<Post> items = new ArrayList<Post>();
@@ -38,12 +41,12 @@ public class ProfileMyProfileAdapter extends RecyclerView.Adapter<RecyclerView.V
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         switch (viewType) {
             case VIEW_TYPE_HEADER: {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_myprofile_post_header, parent, false);
-                return new ProfileMyProfilePostHeaderViewHolder(view);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_friendinfo_header, parent, false);
+                return new FriendInfoHeaderViewHolder(view);
             }
             default:
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_myprofile_post, parent, false);
-                return new ProfileMyProfilePostViewHolder(view);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_friendinfo, parent, false);
+                return new FriendInfoViewHolder(view);
         }
 
     }
@@ -52,7 +55,7 @@ public class ProfileMyProfileAdapter extends RecyclerView.Adapter<RecyclerView.V
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (position > 0) {
             int index = position - 1; // 헤더는 아이템이 하나므로
-            ((ProfileMyProfilePostViewHolder) holder).setData((sendData) items.get(index));
+            ((FriendInfoViewHolder) holder).setData((receiveData) items.get(index));
         }
     }
 

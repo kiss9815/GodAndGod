@@ -38,6 +38,9 @@ import com.juntcompany.godandgod.Main.Home.HomeAdapter;
 import com.juntcompany.godandgod.Main.Home.HomeFragment;
 import com.juntcompany.godandgod.Main.Live.LiveFragment;
 import com.juntcompany.godandgod.Main.Love.LoveFragment;
+import com.juntcompany.godandgod.Main.MainActivity;
+import com.juntcompany.godandgod.Main.Profile.MyProfile.ProfileMyProfilePostViewHolder;
+import com.juntcompany.godandgod.Main.Profile.MyProfile.ProfileMyprofileFragment;
 import com.juntcompany.godandgod.Main.Video.VideoFragment;
 import com.juntcompany.godandgod.R;
 
@@ -161,15 +164,25 @@ public class MyStoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText myStoryInput = (EditText)findViewById(R.id.myStoryInput);
-
                 sendData sendData = new sendData();
-                sendData.postHomeUserName = "GnD";
-                sendData.postHomeTextTime = "2시간 전";
-                sendData.postHomeContentPic = inputBitmap;
-                sendData.postHomeContent = myStoryInput.getText().toString();
-                sendData.postHomeUserLikeNum = "10000";
-                sendData.postHomeUserCommentNum = "100000";
-                HomeFragment.mAdapter.add(sendData);
+                if( MainActivity.storyLine == 0) {
+                    sendData.postHomeUserName = "GnD";
+                    sendData.postHomeTextTime = "2시간 전";
+                    sendData.postHomeContentPic = inputBitmap;
+                    sendData.postHomeContent = myStoryInput.getText().toString();
+                    sendData.postHomeUserLikeNum = "10000";
+                    sendData.postHomeUserCommentNum = "100000";
+                    HomeFragment.mAdapter.add(sendData);
+                }
+                else if(MainActivity.storyLine == 1) {
+                    sendData.postMyProfileUserName = "GnD";
+                    sendData.postMyProfileTextTime = "2시간 전";
+                    sendData.postMyProfileContentPic = inputBitmap;
+                    sendData.postMyProfileContent = myStoryInput.getText().toString();
+                    sendData.postMyProfileUserLikeNum = "10000";
+                    sendData.postMyProfileUserCommentNum = "100000";
+                    ProfileMyprofileFragment.mAdapter.add(sendData);
+                }
                 finish();
             }
         });

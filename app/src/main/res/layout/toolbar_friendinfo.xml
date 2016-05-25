@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/searchActivityMove"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/searchtool"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/search" />
+
+        <TextView
+            android:id="@+id/searchTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/searchtool"
+            android:layout_toRightOf="@+id/searchtool"
+            android:text="검색"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp" />
+
+
+    </RelativeLayout>
+    <View
+        android:id="@+id/underLine"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/searchActivityMove"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/function2"
+        android:background="#FFFFFF" />
+
+</RelativeLayout>

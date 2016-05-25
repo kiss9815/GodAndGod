@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.juntcompany.godandgod.Data.Post;
@@ -70,6 +72,8 @@ public class FriendListFragment extends Fragment {
                         }
                     });
                 }
+
+
                 Log.e("recycler", String.valueOf(position));
 
 
@@ -88,7 +92,7 @@ public class FriendListFragment extends Fragment {
     }
 
     private void initData() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 1; i++) {
             Post post = new Post();
             post.postFriendListFriendPicture = getResources().getDrawable(R.drawable.emptyheart);
             post.postFriendListFriendName = "가나다";
