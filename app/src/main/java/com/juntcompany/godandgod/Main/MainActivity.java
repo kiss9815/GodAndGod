@@ -25,6 +25,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.juntcompany.godandgod.Data.sendData;
+import com.juntcompany.godandgod.Dialog.MyProfileUpdateDialog;
+import com.juntcompany.godandgod.Dialog.NoFriendResultDialog;
+import com.juntcompany.godandgod.Dialog.PictureActivity;
 import com.juntcompany.godandgod.Login.LoginActivity;
 import com.juntcompany.godandgod.Login.LoginHelper.HelperActivity;
 import com.juntcompany.godandgod.Main.Friend.FriendFragment;
@@ -48,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     Fragment f;
     private backpress backPressCloseHandler;
     boolean isEditClicked = false;
+    public static boolean friendStatue = false ;
     public static boolean loginStatus = false;
     public static boolean logout = false;
     public static int profileNum = 0;
@@ -330,6 +334,32 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    public void myinfoSettingClick(View v){
+        switch (v.getId()){
+            case R.id.myProfileChangeIntroduce:
+                Intent intent = new Intent(getApplicationContext(), MyProfileUpdateDialog.class);
+                startActivity(intent);
+        }
+    }
+
+    public void pictureClick(View v){
+        switch (v.getId()){
+            case R.id.myProfileUserPicture:
+                Intent intent = new Intent(getApplicationContext(), PictureActivity.class);
+                startActivity(intent);
+        }
+    }
+
+    public void messesClick(View v){
+        switch (v.getId()){
+            case R.id.rel2:
+                Intent intent = new Intent(getApplicationContext(), NoFriendResultDialog.class);
+                startActivity(intent);
+        }
+    }
+
+
 
 
     @Override

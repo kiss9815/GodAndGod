@@ -82,7 +82,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/view2"
-        android:gravity="center">
+        android:id="@+id/introduce"
+        android:gravity="center"
+        android:onClick="onClick">
 
         <ImageView
             android:id="@+id/profileimage3"

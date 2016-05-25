@@ -23,7 +23,7 @@
 
     <TextView
         android:layout_below="@+id/view"
-        android:id="@+id/chattext2"
+        android:id="@+id/deletechat"
         android:textColor="#000000"
         android:textStyle="bold"
         android:layout_width="match_parent"

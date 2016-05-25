@@ -43,6 +43,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/textView11"
         android:layout_below="@+id/allchattext2"
         android:layout_toLeftOf="@+id/textView10"
         android:layout_toStartOf="@+id/textView10"

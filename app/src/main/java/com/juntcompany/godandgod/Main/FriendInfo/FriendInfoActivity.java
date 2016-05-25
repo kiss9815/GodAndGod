@@ -27,9 +27,10 @@ public class FriendInfoActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     public static FriendInfoAdapter mAdapter;
-Intent intent;
+    Intent intent;
     Context context;
     int heartOn = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,10 +61,13 @@ Intent intent;
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.addOnItemTouchListener(new MainActivity.RecyclerTouchListener(context, recyclerView, new MainActivity.ClickListener() {
             @Override
-            public void onClick(View view, int position) {
+            public void onClick(final View view, int position) {
                 TableRow friendLikeBox = (TableRow) view.findViewById(R.id.friendLikeBox);
                 final TextView myFriendUserLikeNum = (TextView) view.findViewById(R.id.myFriendUserLikeNum);
                 final ImageView heartStatue = (ImageView) view.findViewById(R.id.heartStatue);
+                final RelativeLayout rel1 = (RelativeLayout) findViewById(R.id.rel1);
+                final ImageView ima = (ImageView)view.findViewById(R.id.userAdd1);
+/*
                 friendLikeBox.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -82,6 +86,9 @@ Intent intent;
                     }
                 });
 
+*/
+
+
             }
 
             @Override
@@ -89,6 +96,16 @@ Intent intent;
 
             }
         }));
+        ImageView userAdd1 = (ImageView)findViewById(R.id.userAdd1);
+        if(MainActivity.friendStatue){
+            MainActivity.friendStatue = false;
+            userAdd1.setBackgroundResource(R.drawable.camera);
+        }
+        else
+        {
+            MainActivity.friendStatue = true;
+            userAdd1.setBackgroundResource(R.drawable.useradd);
+        }
         initData();
     }
 
@@ -98,12 +115,29 @@ Intent intent;
         overridePendingTransition(0, 0);
     }
 
+    public void friendaddClick(View v){
+
+        ImageView userAdd1 = (ImageView)findViewById(R.id.userAdd1);
+        switch (v.getId()){
+            case R.id.rel1:
+                if(MainActivity.friendStatue){
+                    MainActivity.friendStatue = false;
+                    userAdd1.setBackgroundResource(R.drawable.camera);
+                }
+                else
+                {
+                    MainActivity.friendStatue = true;
+                    userAdd1.setBackgroundResource(R.drawable.useradd);
+                }
+        }
+    }
+
     private void initData() {
         for (int i = 0; i < 10; i++) {
             receiveData receiveData = new receiveData();
             receiveData.postMyFriendUserPicture = getResources().getDrawable(R.drawable.friendhome);
             receiveData.postMyFriendUserName = "이하" + i;
-            receiveData.postMyFriendTextTime = i+"시간 전";
+            receiveData.postMyFriendTextTime = i + "시간 전";
 //            receiveData.postMyFriendContentPic = getResources().getDrawable(R.drawable.picture);
             receiveData.postMyFriendContent = "칼퇴를 위하여!! " + i;
             receiveData.postMyFriendUserLikeNum = "100" + i;

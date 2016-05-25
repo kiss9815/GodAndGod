@@ -56,6 +56,8 @@ public class ProfileMyProfileAdapter extends RecyclerView.Adapter<RecyclerView.V
         }
     }
 
+
+
     @Override
     public int getItemViewType(int position) {
         if (position < 1) {

@@ -88,7 +88,7 @@ public class HelperEmailFindFragment extends Fragment {
                       //      HelperActivity.Emailaddr = "";
                          //   EditText p = (EditText) view.findViewById(R.id.InputEmailAddr);
                         //    p.setText(HelperActivity.Emailaddr);
-                            startActivity(new Intent(HelperActivity.helperActvity.getApplicationContext(), FriendRealDeleteDialog.class));
+                            startActivity(new Intent(HelperActivity.helperActvity.getApplicationContext(), ChatDeleteDialog.class));
                         }
             }
         });
