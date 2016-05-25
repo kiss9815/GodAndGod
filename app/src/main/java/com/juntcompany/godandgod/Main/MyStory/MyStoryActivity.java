@@ -1,11 +1,15 @@
 package com.juntcompany.godandgod.Main.MyStory;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.design.widget.TabLayout;
@@ -34,6 +38,9 @@ import com.juntcompany.godandgod.Main.Home.HomeAdapter;
 import com.juntcompany.godandgod.Main.Home.HomeFragment;
 import com.juntcompany.godandgod.Main.Live.LiveFragment;
 import com.juntcompany.godandgod.Main.Love.LoveFragment;
+import com.juntcompany.godandgod.Main.MainActivity;
+import com.juntcompany.godandgod.Main.Profile.MyProfile.ProfileMyProfilePostViewHolder;
+import com.juntcompany.godandgod.Main.Profile.MyProfile.ProfileMyprofileFragment;
 import com.juntcompany.godandgod.Main.Video.VideoFragment;
 import com.juntcompany.godandgod.R;
 
@@ -49,7 +56,8 @@ public class MyStoryActivity extends AppCompatActivity {
     int picAdd = 0;
     private int TAKE_CAMERA = 1; // 카메라 리턴 코드값 설정
     private int TAKE_GALLERY = 2; // 앨범선택에 대한 리턴 코드값 설정
-
+    Drawable inputBitmap;
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -156,14 +164,25 @@ public class MyStoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText myStoryInput = (EditText)findViewById(R.id.myStoryInput);
-
                 sendData sendData = new sendData();
-                sendData.postHomeUserName = "GnD";
-                sendData.postHomeTextTime = "2시간 전";
-                sendData.postHomeContent = myStoryInput.getText().toString();
-                sendData.postHomeUserLikeNum = "10000";
-                sendData.postHomeUserCommentNum = "100000";
-                HomeFragment.mAdapter.add(sendData);
+                if( MainActivity.storyLine == 0) {
+                    sendData.postHomeUserName = "GnD";
+                    sendData.postHomeTextTime = "2시간 전";
+                    sendData.postHomeContentPic = inputBitmap;
+                    sendData.postHomeContent = myStoryInput.getText().toString();
+                    sendData.postHomeUserLikeNum = "10000";
+                    sendData.postHomeUserCommentNum = "100000";
+                    HomeFragment.mAdapter.add(sendData);
+                }
+                else if(MainActivity.storyLine == 1) {
+                    sendData.postMyProfileUserName = "GnD";
+                    sendData.postMyProfileTextTime = "2시간 전";
+                    sendData.postMyProfileContentPic = inputBitmap;
+                    sendData.postMyProfileContent = myStoryInput.getText().toString();
+                    sendData.postMyProfileUserLikeNum = "10000";
+                    sendData.postMyProfileUserCommentNum = "100000";
+                    ProfileMyprofileFragment.mAdapter.add(sendData);
+                }
                 finish();
             }
         });
@@ -213,7 +232,7 @@ public class MyStoryActivity extends AppCompatActivity {
                         ImageView Iv = (ImageView) findViewById(R.id.myStoryPicture);
 
                         Iv.setImageBitmap(BitmapFactory.decodeByteArray(imageByte, 0, imageByte.length));
-
+                        inputBitmap = new BitmapDrawable(getResources(), BitmapFactory.decodeByteArray(imageByte, 0, imageByte.length));
 
                         int len;
 

@@ -7,7 +7,6 @@
     <ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:background="@drawable/heart"
         android:id="@+id/createGroupInputUserPic" />
 
     <TextView
@@ -18,8 +17,8 @@
         android:id="@+id/createGroupInputUserName"
         android:layout_marginLeft="6dp"
         android:layout_below="@+id/createGroupInputUserPic"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true"
+         />
 
     <TextView
         android:layout_width="23dp"

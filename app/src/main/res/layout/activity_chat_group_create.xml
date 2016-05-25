@@ -15,12 +15,7 @@
         android:id="@+id/ChatGroupCreateTopContainer">
 
     </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/ChatGroupCreateMiddleContainer">
 
-    </RelativeLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +26,7 @@
         android:id="@+id/underLine"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_below="@id/ChatGroupCreateMiddleContainer"
+        android:layout_below="@id/ChatGroupCreateTopContainer"
         android:layout_marginRight="5dp"
         android:layout_marginTop="2dp"
         android:background="#808080" />

@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -24,6 +25,8 @@ import com.juntcompany.godandgod.MainToolbar.ChatGroup.ChatGroupCreate.ChatGroup
 import com.juntcompany.godandgod.MainToolbar.ChatGroup.ChatGroupCreate.ChatGroupCreateMiddle.ChatGroupCreateMiddleFragment;
 import com.juntcompany.godandgod.R;
 
+import java.util.ArrayList;
+
 public class ChatGroupCreateBottomFragment extends Fragment {
 
 
@@ -34,9 +37,13 @@ public class ChatGroupCreateBottomFragment extends Fragment {
     Context context;
     int itemPosition;
     RecyclerView recyclerView;
-    ChatGroupCreateBottomAdapter mAdapter;
+    public static ChatGroupCreateBottomAdapter mAdapter;
+    public static ChatGroupCreateMiddleAdapter middleAdapter;
+
+    public static ArrayList<Integer> checkUser = new ArrayList<>();
 
     public static int VIEW_TYPE_ITEM = 10;
+    public static CheckBox input;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -54,7 +61,9 @@ public class ChatGroupCreateBottomFragment extends Fragment {
             @Override
             public void onClick(View view, int position) {
                 final TableRow createInputUserDelete = (TableRow) view.findViewById(R.id.createGroupInputUser);
-                final CheckBox input = (CheckBox) view.findViewById(R.id.checkFriendInput);
+                input = (CheckBox) view.findViewById(R.id.checkFriendInput);
+                final TextView inputFriendName = (TextView) view.findViewById(R.id.inputFriendName);
+                final ImageView inputFriendPic = (ImageView) view.findViewById(R.id.inputFriendPic);
                 itemPosition = position;
                 createInputUserDelete.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -64,7 +73,24 @@ public class ChatGroupCreateBottomFragment extends Fragment {
                             input.setChecked(false);
                         } else {
                             input.setChecked(true);
+                            Post post = new Post();
+                            post.postCreateGroupInputUserPic = inputFriendPic.getDrawable();
+                            post.postCreateGroupInputUserName = inputFriendName.getText().toString();
+                            ChatGroupCreateMiddleFragment.mAdapter.add(post);
+                            checkUser.add(itemPosition);
                         }
+                    }
+                });
+                input.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+
+                        Post post = new Post();
+                        post.postCreateGroupInputUserPic = inputFriendPic.getDrawable();
+                        post.postCreateGroupInputUserName = inputFriendName.getText().toString();
+                        ChatGroupCreateMiddleFragment.mAdapter.add(post);
+                        checkUser.add(itemPosition);
                     }
                 });
                 Log.e("recycler", String.valueOf(position));
@@ -90,7 +116,7 @@ public class ChatGroupCreateBottomFragment extends Fragment {
     private void initData() {
         for (int i = 0; i < 10; i++) {
             Post post = new Post();
-            post.postInputFriendPic = getResources().getDrawable(R.drawable.heart);
+            post.postInputFriendPic = getResources().getDrawable(R.drawable.picture);
             post.postInputFriendName = "이하" + i;
             mAdapter.add(post);
         }

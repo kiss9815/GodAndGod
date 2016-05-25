@@ -21,6 +21,8 @@ import com.juntcompany.godandgod.Data.Post;
 import com.juntcompany.godandgod.Main.MainActivity;
 import com.juntcompany.godandgod.MainToolbar.ChatGroup.ChatGroupChattingRoom.ChatGroupChattingRoomActivity;
 import com.juntcompany.godandgod.MainToolbar.ChatGroup.ChatGroupCreate.ChatGroupCreateActivity;
+import com.juntcompany.godandgod.MainToolbar.ChatGroup.ChatGroupCreate.ChatGroupCreateBottom.ChatGroupCreateBottomAdapter;
+import com.juntcompany.godandgod.MainToolbar.ChatGroup.ChatGroupCreate.ChatGroupCreateBottom.ChatGroupCreateBottomFragment;
 import com.juntcompany.godandgod.R;
 
 public class ChatGroupCreateMiddleFragment extends Fragment {
@@ -31,9 +33,9 @@ public class ChatGroupCreateMiddleFragment extends Fragment {
     }
 
     Context context;
-    int itemPosition;
+   public static int itemPosition;
     RecyclerView recyclerView;
-    ChatGroupCreateMiddleAdapter mAdapter;
+   public static ChatGroupCreateMiddleAdapter mAdapter;
 
     public static int VIEW_TYPE_ITEM = 10;
 
@@ -60,8 +62,10 @@ public class ChatGroupCreateMiddleFragment extends Fragment {
                     public void onClick(View v) {
 
                         if (VIEW_TYPE_ITEM >= 0) {
+
                             mAdapter.items.remove(itemPosition);
                             mAdapter.notifyItemRemoved(itemPosition);
+
                         } else {
                             return;
                         }
@@ -79,7 +83,6 @@ public class ChatGroupCreateMiddleFragment extends Fragment {
         }));
 
 
-        initData();
         return view;
 
 
@@ -87,14 +90,6 @@ public class ChatGroupCreateMiddleFragment extends Fragment {
         // return inflater.inflate(R.layout.fragment_love, container, false);
     }
 
-    public void initData() {
-        Post post = new Post();
-        for (int i = 0; i < 10; i++) {
-            post.postCreateGroupInputUserPic = post.postInputFriendPic;
-            post.postCreateGroupInputUserName = post.postInputFriendName;
-            mAdapter.add(post);
-        }
-    }
 
 
 }

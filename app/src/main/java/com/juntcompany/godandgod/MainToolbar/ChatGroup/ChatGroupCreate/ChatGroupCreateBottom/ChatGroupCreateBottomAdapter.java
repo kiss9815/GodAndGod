@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 
 import com.juntcompany.godandgod.Data.Post;
 import com.juntcompany.godandgod.R;
@@ -52,4 +53,5 @@ public class ChatGroupCreateBottomAdapter extends RecyclerView.Adapter<RecyclerV
     public int getItemCount() {
         return items.size(); // 헤더 포지션 1 더함
     }
+
 }

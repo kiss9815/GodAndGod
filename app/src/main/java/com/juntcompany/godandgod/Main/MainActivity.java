@@ -28,6 +28,7 @@ import com.juntcompany.godandgod.Data.sendData;
 import com.juntcompany.godandgod.Login.LoginActivity;
 import com.juntcompany.godandgod.Login.LoginHelper.HelperActivity;
 import com.juntcompany.godandgod.Main.Friend.FriendFragment;
+import com.juntcompany.godandgod.Main.FriendInfo.FriendInfoActivity;
 import com.juntcompany.godandgod.Main.Home.HomeFragment;
 import com.juntcompany.godandgod.Main.Live.LiveFragment;
 import com.juntcompany.godandgod.Main.Love.LoveFragment;
@@ -53,7 +54,10 @@ public class MainActivity extends AppCompatActivity {
     public static Activity main;
     public static int tapNprofileFriend = 0;//taplayout 0, profile 1
 
+    public static int storyLine = 0;//0 : home, 1 : myProfile
+
     public static Drawable HomeUserPicture;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,10 +67,10 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setDisplayShowTitleEnabled(false);
 
 
-        main = MainActivity.this;
         View titleView = getLayoutInflater().inflate(R.layout.toolbar_main, null);
         final RelativeLayout searchLayout = (RelativeLayout) titleView.findViewById(R.id.searchActivityMove);
         actionBar.setCustomView(titleView);
+        main = MainActivity.this;
         searchLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -186,9 +190,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         backPressCloseHandler = new backpress(this);
-        sendData.postHomeUserPicture =getResources().getDrawable(R.drawable.heart);
+        sendData.postHomeUserPicture = getResources().getDrawable(R.drawable.profile);
 
-        HomeUserPicture = getResources().getDrawable(R.drawable.heart);
+        HomeUserPicture = getResources().getDrawable(R.drawable.profile);
     }
 
 
@@ -283,6 +287,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void friendInfoClick(View v) {
+        switch (v.getId()) {
+            case R.id.friendListFriendPicture:
+                intent = new Intent(getApplicationContext(), FriendInfoActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                break;
+            case R.id.friendListFriendInfo:
+                intent = new Intent(getApplicationContext(), FriendInfoActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                break;
+        }
+    }
+
 
     public void ProfileSettingClick(View v) {
         switch (v.getId()) {
@@ -311,9 +330,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
-
-
 
 
     @Override

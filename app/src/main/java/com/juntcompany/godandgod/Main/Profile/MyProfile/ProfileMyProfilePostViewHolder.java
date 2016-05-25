@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.juntcompany.godandgod.Data.Post;
+import com.juntcompany.godandgod.Data.sendData;
 import com.juntcompany.godandgod.R;
 
 public class ProfileMyProfilePostViewHolder extends RecyclerView.ViewHolder {
@@ -13,6 +14,7 @@ public class ProfileMyProfilePostViewHolder extends RecyclerView.ViewHolder {
     ImageView myProfileUserPicture;
     TextView myProfileUserName;
     TextView myProfileTextTime;
+    ImageView myProfileContentPic;
     TextView myProfileContent;
     TextView myProfileUserLikeNum;
     TextView myProfileUserCommentNum;
@@ -23,18 +25,20 @@ public class ProfileMyProfilePostViewHolder extends RecyclerView.ViewHolder {
         myProfileUserPicture = (ImageView)itemView.findViewById(R.id.myProfileUserPicture);
         myProfileUserName = (TextView)itemView.findViewById(R.id.myProfileUserName);
         myProfileTextTime = (TextView)itemView.findViewById(R.id.myProfileTextTime);
+        myProfileContentPic = (ImageView)itemView.findViewById(R.id.myProfileContentPic);
         myProfileContent =(TextView)itemView.findViewById(R.id.myProfileContent);
         myProfileUserLikeNum = (TextView)itemView.findViewById(R.id.myProfileUserLikeNum);
         myProfileUserCommentNum = (TextView)itemView.findViewById(R.id.myProfileUserCommentNum);
     }
 
-    public void setData(Post post){
-        myProfileUserPicture.setImageDrawable(post.postMyProfileUserPicture);
-        myProfileUserName.setText(post.postMyProfileUserName);
-        myProfileTextTime.setText(post.postMyProfileTextTime);
-        myProfileContent.setText(post.postMyProfileContent);
-        myProfileUserLikeNum.setText(post.postMyProfileUserLikeNum);
-        myProfileUserCommentNum.setText(post.postMyProfileUserCommentNum);
+    public void setData(sendData sendData){
+        myProfileUserPicture.setImageDrawable(sendData.postMyProfileUserPicture);
+        myProfileUserName.setText(sendData.postMyProfileUserName);
+        myProfileTextTime.setText(sendData.postMyProfileTextTime);
+        myProfileContentPic.setImageDrawable(sendData.postMyProfileContentPic);
+        myProfileContent.setText(sendData.postMyProfileContent);
+        myProfileUserLikeNum.setText(sendData.postMyProfileUserLikeNum);
+        myProfileUserCommentNum.setText(sendData.postMyProfileUserCommentNum);
 
     }
 

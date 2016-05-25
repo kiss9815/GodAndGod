@@ -4,7 +4,15 @@
     android:layout_height="wrap_content"
 
     android:orientation="vertical">
-
+    <View
+        android:id="@+id/underLine"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/function3"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/function1"
+        android:visibility="invisible"
+        android:background="#FFFFFF" />
     <Button
         android:id="@+id/function3"
         android:layout_width="30dp"
@@ -16,5 +24,4 @@
         android:layout_marginTop="4dp"
         android:background="@drawable/profile"
         android:onClick="ToolbarOnClick" />
-
 </RelativeLayout>
