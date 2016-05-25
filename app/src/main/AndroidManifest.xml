@@ -37,7 +37,6 @@
         <activity android:name=".MainToolbar.ChatGroup.ChatGroupCreate.ChatGroupCreateActivity" />
         <activity android:name=".MainToolbar.ChatGroup.ChatGroupChattingRoom.ChatGroupChattingRoomActivity" />
         <activity android:name=".Main.MyStory.MyStoryActivity" />
-        <activity android:name=".Main.FriendInfo.FriendInfoActivity" />
         <activity
             android:name=".Dialog.EqualDialogActivity"
             android:label="@string/title_activity_sign_in"
@@ -48,32 +47,23 @@
         <activity
             android:name=".Dialog.CommentStatueDialog"
             android:theme="@android:style/Theme.Dialog" />
-        <activity
-            android:name=".Dialog.MyStoryContentCancelDialog"
-            android:theme="@android:style/Theme.Dialog" />
-        <activity
-            android:name=".Dialog.FriendRealDeleteDialog"
-            android:theme="@android:style/Theme.Dialog" />
+        <activity android:name=".Dialog.MyStoryContentCancelDialog" />
+        <activity android:name=".Dialog.FriendRealDeleteDialog" />
         <activity
             android:name=".Dialog.NoFriendResultDialog"
             android:theme="@android:style/Theme.Dialog" />
         <activity
             android:name=".Dialog.ChatAllContentDeleteDialog"
             android:theme="@android:style/Theme.Dialog" />
-        <activity
-            android:name=".Dialog.MyProfileUpdateDialog"
-            android:theme="@android:style/Theme.Dialog" />
+        <activity android:name=".Dialog.MyProfileUpdateDialog" />
         <activity
             android:name=".Dialog.FriendDeleteDialog"
             android:theme="@android:style/Theme.Dialog" />
         <activity
             android:name=".Dialog.ChatDeleteDialog"
             android:theme="@android:style/Theme.Dialog" />
-        <activity android:name=".Main.MyStory.MyIntroduceUpdateActivity" />
-        <activity
-            android:name=".Dialog.PictureActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Main.FriendInfo.FriendInfoActivity" />
+        <activity android:name=".Main.ReadMoreTimelineActivity"></activity>
     </application>
 
 </manifest>

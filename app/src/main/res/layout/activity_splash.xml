@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#043623"
+    android:background="#214C39"
     tools:context="com.juntcompany.godandgod.Login.SignIn.SignInPolicyFragment">
 
 
