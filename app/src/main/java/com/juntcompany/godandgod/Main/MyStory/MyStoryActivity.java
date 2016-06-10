@@ -33,6 +33,7 @@ import android.widget.Toast;
 
 import com.juntcompany.godandgod.Data.Post;
 import com.juntcompany.godandgod.Data.sendData;
+import com.juntcompany.godandgod.Dialog.MyStoryContentCancelDialog;
 import com.juntcompany.godandgod.Main.Friend.FriendFragment;
 import com.juntcompany.godandgod.Main.Home.HomeAdapter;
 import com.juntcompany.godandgod.Main.Home.HomeFragment;
@@ -51,17 +52,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
 public class MyStoryActivity extends AppCompatActivity {
     int picAdd = 0;
     private int TAKE_CAMERA = 1; // 카메라 리턴 코드값 설정
     private int TAKE_GALLERY = 2; // 앨범선택에 대한 리턴 코드값 설정
     Drawable inputBitmap;
+    public static Activity mystoryactivity;
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_story);
+        mystoryactivity = MyStoryActivity.this;
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayShowTitleEnabled(true);
@@ -192,7 +194,8 @@ public class MyStoryActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                finish();
+                Intent intent = new Intent(getApplicationContext(), MyStoryContentCancelDialog.class);
+                startActivity(intent);
                 break;
         }
         return true;
@@ -288,6 +291,12 @@ public class MyStoryActivity extends AppCompatActivity {
 
             }
         }
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(), MyStoryContentCancelDialog.class);
+        startActivity(intent);
+
     }
 
 }

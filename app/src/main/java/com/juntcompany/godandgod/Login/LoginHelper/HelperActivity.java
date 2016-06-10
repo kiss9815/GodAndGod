@@ -1,7 +1,6 @@
 package com.juntcompany.godandgod.Login.LoginHelper;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,13 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.Toast;
 
-import com.juntcompany.godandgod.Login.SignIn.SignInActivity;
-import com.juntcompany.godandgod.Main.MainActivity;
-import com.juntcompany.godandgod.Manager.PropertyManager;
 import com.juntcompany.godandgod.R;
 
 

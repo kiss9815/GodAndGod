@@ -7,6 +7,7 @@
     android:background="#FFFFFF"
     tools:context="com.juntcompany.godandgod.Dialog.FriendDeleteDialog">
 <TextView
+    android:id="@+id/deletefriend"
     android:layout_width="match_parent"
     android:textColor="#90909090"
     android:textSize="16dp"

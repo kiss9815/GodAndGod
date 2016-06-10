@@ -23,7 +23,7 @@ public class ChatAllContentDeleteDialog extends Activity {
         TextView tv1 = (TextView) findViewById(R.id.textView10);
         TextView tv2 = (TextView) findViewById(R.id.textView11);
         tv1.setOnClickListener(new View.OnClickListener() {
-//
+            //
             @Override
             public void onClick(View v) {
                 finish();

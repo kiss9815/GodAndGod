@@ -37,6 +37,7 @@
         android:text="소통을 하려면 친구 추가를 해주세요" />
 
     <TextView
+        android:id="@+id/textOk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

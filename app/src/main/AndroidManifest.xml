@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.juntcompany.godandgod">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+
     <application
         android:name=".GodAndGod"
         android:allowBackup="true"
@@ -47,23 +50,35 @@
         <activity
             android:name=".Dialog.CommentStatueDialog"
             android:theme="@android:style/Theme.Dialog" />
-        <activity android:name=".Dialog.MyStoryContentCancelDialog" />
-        <activity android:name=".Dialog.FriendRealDeleteDialog" />
+        <activity
+            android:name=".Dialog.MyStoryContentCancelDialog"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name=".Dialog.FriendRealDeleteDialog"
+            android:theme="@android:style/Theme.Dialog" />
         <activity
             android:name=".Dialog.NoFriendResultDialog"
             android:theme="@android:style/Theme.Dialog" />
         <activity
             android:name=".Dialog.ChatAllContentDeleteDialog"
             android:theme="@android:style/Theme.Dialog" />
-        <activity android:name=".Dialog.MyProfileUpdateDialog" />
+        <activity
+            android:name=".Dialog.MyProfileUpdateDialog"
+            android:theme="@android:style/Theme.Dialog" />
         <activity
             android:name=".Dialog.FriendDeleteDialog"
             android:theme="@android:style/Theme.Dialog" />
         <activity
             android:name=".Dialog.ChatDeleteDialog"
             android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name=".Dialog.PictureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Main.FriendInfo.FriendInfoActivity" />
-        <activity android:name=".Main.ReadMoreTimelineActivity"></activity>
+
+        <activity android:name=".Main.MyStory.MyIntroduceUpdateActivity" />
+        <activity android:name=".Main.ReadMoreTimelineActivity" />
     </application>
 
 </manifest>

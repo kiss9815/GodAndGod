@@ -43,7 +43,7 @@
         android:layout_marginRight="1dp"/>
 
     <TextView
-
+        android:id="@+id/textdelet4"
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:gravity="center"

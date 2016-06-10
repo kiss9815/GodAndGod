@@ -35,6 +35,7 @@
         android:gravity="center">
 
         <TextView
+            android:id="@+id/cenceltext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -52,6 +53,7 @@
             android:background="#000000" />
 
         <TextView
+            android:id="@+id/Oktext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
